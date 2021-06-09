@@ -55,7 +55,7 @@ Para que esse recebimento por parte do indecx seja possível, é necessário ter
 		{
 			"type": "LIKERT",
 			"text": "Pergunta D",
-			"review": 6
+			"review": 5
 		},
 		{
 			"type": "EMOTION",
