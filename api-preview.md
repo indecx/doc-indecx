@@ -20,7 +20,7 @@ A autenticação de todas as rotas é feita através da chave **company-key** qu
 # POST Envio de respostas transacionais para o Indecx
 ![Badge](https://img.shields.io/badge/POST-v2%2Factions-green)
 
-Com a rota abaixo, será possível enviar uma resposta coletada em seu APP ou sistema de forma transacional para dentro do sistema Indecx. Dessa forma é possível centralizar todos as análises e pesquisas dentro do Indecx e analisar os resultados com os relatórios disponíveis na plataforma.
+Com a rota abaixo, será possível enviar uma resposta coletada em seu APP ou sistema de forma transacional para dentro do sistema Indecx. Dessa forma é possível centralizar todas as análises e pesquisas dentro do Indecx e analisar os resultados com os relatórios disponíveis na plataforma.
 
 A comunicação será realizada através da seguinte URL:
 
