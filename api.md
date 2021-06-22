@@ -254,8 +254,6 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]?startDate=09-03-2020&
 | _id  | ID do indicador  |
 | column  | Nome do indicador  |
 | value  | Valor do indicador  |
-| indicatorId  | ??  |
-| key  | ???????   |
 
 **sentimentAnalyzeGCP**
 | Params  | Descrição |
