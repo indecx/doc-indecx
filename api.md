@@ -655,7 +655,7 @@ Para ter acesso a lista de todas as ações ativas disponíveis na conta, utiliz
 
 ```bash
 {
-  https://api-indecx.com/v2/actions-info/
+  https://indecx.com/v2/actions-info/
 }
 ```
 
