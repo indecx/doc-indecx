@@ -286,11 +286,13 @@ https://indecx.com/v2/no-response/[Identificador_da_acao]?[params]
 | limit  | Retorna o um valor limite por página  |
 | startDate  | Data inicial do parâmetro  |
 | endDate  | Data final do parâmetro  |
+| email  | Busca por email de usuário específico  |
 
 Exemplo de consulta:
 ```bash
 Https://indecx.com/v2/no-response/[Identificador_da_acao]?page=1&limit=10
 https://indecx.com/v2/no-response/[Identificador_da_acao]?startDate=09-03-2020&endDate=10-03-2020
+https://indecx.com/v2/no-response/[Identificador_da_acao]?email=[email do usuário]
 ```
 **Coletar respostas com limite de paginação e retorno máximo no payload de 1mil registros.**
 
