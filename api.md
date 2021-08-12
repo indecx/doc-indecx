@@ -559,6 +559,7 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
   {
 	"name": "José Paulo",
 	"email": "jose@gmail.com.br",
+	"phone": "1999999999",
 	"review": 9,
 	"feedback": "Teste",
 	"additionalQuestions": [
@@ -628,6 +629,7 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 | ------------- | ------------- |
 | name  | Nome do respondente   |
 | email  | E-mail do respondente  |
+| phone  | Telefone do respondente  |
 | review  | Nota atribuída para a métrica principal da pesquisa  |
 | feedback  | Campo de comentário do cliente    |
 | adittionalQuestions.type  | Tipo da pergunta adicional ex:REVIEWS,CSAT,LIKE/DISLIKE,LIKERT,EMOTION,MULTIPLE,INPUT   |
