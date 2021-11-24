@@ -557,6 +557,7 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 ## **Request**
 ```bash
   {
+  	"inviteId": "6143d38aaf080f75ffbdaCCC",
 	"name": "José Paulo",
 	"email": "jose@gmail.com.br",
 	"phone": "1999999999",
@@ -627,6 +628,7 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 
 | Params  | Descrição |
 | ------------- | ------------- |
+| inviteId  | id do convite   |
 | name  | Nome do respondente   |
 | email  | E-mail do respondente  |
 | phone  | Telefone do respondente  |
@@ -637,6 +639,7 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 | indicators.column  | Nome do indicador  |
 | indicators.value  | Valor do indicador  |
 
+*Importante: O campo inviteId somente é utilizado quando utilizamos uma conbinação da API de geração de link + API de resposta transacional, não sendo obrigatório para casos de inclusão simples de resposta. Para mais informações de como utilizar o inviteId, entre em contato com o time de suporte da Indecx.
 
 ## Entendendo as opções de respostas por tipo
 
