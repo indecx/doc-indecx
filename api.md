@@ -322,7 +322,8 @@ https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate
 			"validEmail": true,
 			"validPhone": true,
 			"createdAt": "2022-01-13T19:09:31.635Z",
-			"updatedAt": "2022-01-13T19:09:31.635Z"
+			"updatedAt": "2022-01-13T19:09:31.635Z",
+			"answeredId": "61df50e72d5402779195a001"
 		},
 		{
 			"_id": "61e078eba3320b1122232799",
@@ -371,6 +372,7 @@ https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate
 | validPhone  | Validador do telefone  |
 | createdAt  | Data da criação do convite   |
 | updateAt  | Data de update do convite   |
+| answeredId  | ID da resposta   |
 
 
 
