@@ -276,7 +276,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
 | categories  | Categorias incluídas nas respostas   |
 
 # GET Coletar Informações dos convites
-![Badge](https://img.shields.io/badge/GET-v2%2Fanswers--info%2F-orange)
+![Badge](https://img.shields.io/badge/GET-v2%2Finvites--info%2F-orange)
 
 Você pode ter acesso a lista de todos os clientes importados na plataforma com status se o convite já foi respondido ou não.
 
