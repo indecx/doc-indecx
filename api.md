@@ -894,6 +894,93 @@ Para ter acesso a estrutura do questionário programado dentro do Indecx. A comu
 | MULTIPLE  | Escala do tipo seleção única ou múltipla escolha.  |
 | INPUT  | Campo aberto para inclusão de resposta.  |
 
+# POST Envio de cliente para blacklist
+![Badge](https://img.shields.io/badge/POST-.v2%2Fsend-blacklist%2F-green)
+
+Caso você queira adicionar uma lista de clientes dentro da blacklist para evitar que esse e-mail receba novos contato, você pode realizar através dessa rota.
+
+A comunicação será realizada através da seguinte URL:
+```bash
+https://indecx.com/v2/send-blacklist
+```
+## **Request**
+```bash
+{
+{
+   "email":"contato_3@indecx.com.br",
+   "reason":"Não quer receber contato"
+	
+}
+}
+```
+## **Response**
+```bash
+{
+	"message": "Sent to the blacklist successfully."
+}
+```
+
+
+# GET Coletar informações da blacklist (Não quero receber mais contato)
+![Badge](https://img.shields.io/badge/GET-v2%2Fblacklist-info-orange)
+
+Você também pode ter acesso a lista de todos os clientes que entraram em blaclist.:
+
+```bash
+{
+  https://indecx.com/v2/blacklist-info?[params]
+}
+```
+## Query Params
+| Params  | Descrição |
+| ------------- | ------------- |
+| page  | Retorna os resultados de uma determinada página em específico  |
+| limit  | Retorna o um valor limite por página  |
+
+## **Response**
+
+```bash
+{
+	"page": 1,
+	"limit": 1000,
+	"data": [
+		{
+			"actionName": "Ação A",
+			"actionControlId": "74HSBB",
+			"inviteId": "60ef454559d33741586e0000",
+			"reason": Não desejo mais receber esses emails,
+			"email": "contato_1@indecx.com",
+			"createdAt": "2021-07-25T00:23:58.735Z"
+		},
+		{
+			"actionName": "Ação B",
+			"actionControlId": "74HSBB",
+			"inviteId": "60ef454559d33741586e0001",
+			"reason": "Outros",
+			"email": "contato_2@indecx.com",
+			"createdAt": "2021-07-22T17:11:32.877Z"
+		},
+		{
+			"actionName": "Ação C",
+			"actionControlId": "74HSBB",
+			"inviteId": "60ef454559d33741586e0002",
+			"reason": "Não desejo mais receber esses emails",
+			"email": "contato_3@indecx.com",
+			"createdAt": "2021-08-05T10:19:23.419Z"
+		}
+	]
+}
+```
+## Entendendo os campos de retorno
+
+| Params  | Descrição |
+| ------------- | ------------- |
+| actionName  | Nome da Ação  |
+| actionControlId  | ID da ação   |
+| inviteId  | ID do convite  |
+| reason  | Motivo da inclusão no blacklist  |
+| email  | Email do cliente    |
+| createdAt  | Data da inclusão do registro em blacklist    |
 
 ### Obrigado 💚
 
