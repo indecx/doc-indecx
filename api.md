@@ -127,11 +127,16 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]?[params]
 | limit  | Retorna o um valor limite por página  |
 | startDate  | Data inicial do parâmetro  |
 | endDate  | Data final do parâmetro  |
+| dateType  | Tipo da data createdAt (criação da pesquisa) ou updatedAt (Atualização da pesquisa)  |
+| email  | Parâmetro de email do respondente  |
+| phone  | Parâmetro de telefone do respondente  |
+
+Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" para retornar todas as resposta de todas as ações disponíveis.
 
 Exemplo de consulta:
 ```bash
 Https://indecx.com/v2/answers-info/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v2/answers-info/[Identificador_da_acao]?startDate=09-03-2020&endDate=10-03-2020
+https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
 ```
 
 ## **Response**
@@ -269,6 +274,105 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]?startDate=09-03-2020&
 | comments  | Comentário registrado pelo responsável  |
 | date  | Data da tratativa  |
 | categories  | Categorias incluídas nas respostas   |
+
+# GET Coletar Informações dos convites
+![Badge](https://img.shields.io/badge/GET-v2%2Fanswers--info%2F-orange)
+
+Você pode ter acesso a lista de todos os clientes importados na plataforma com status se o convite já foi respondido ou não.
+
+A comunicação será realizada através da seguinte URL:
+```bash
+https://indecx.com/v2/invites-info/[Identificador_da_acao]?[params]
+```
+## Query Params
+| Params  | Descrição |
+| ------------- | ------------- |
+| page  | Retorna os resultados de uma determinada página em específico  |
+| limit  | Retorna o um valor limite por página  |
+| startDate  | Data inicial do parâmetro  |
+| endDate  | Data final do parâmetro  |
+| dateType  | Tipo da data createdAt (criação do convite) ou updatedAt (Atualização do convite)  |
+| email  | Parâmetro de email do convite  |
+| phone  | Parâmetro de telefone do convite  |
+
+Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" para retornar todos os convites de todas as ações disponíveis.
+
+Exemplo de consulta:
+```bash
+https://indecx.com/v2/invites-info/all?page=1&limit=10
+https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+```
+
+## **Response**
+```bash
+ {
+	"page": 1,
+	"limit": 500,
+	"total": 409,
+	"invites": [
+		{
+			"_id": "61e078eba3320b33e7332888",
+			"answered": true,
+			"active": false,
+			"actionId": "61534bf90f9599741e703000",
+			"name": "Paulo",
+			"email": "contato_1@indecx.com.br",
+			"phone": "5511955555555",
+			"shortUrl": "https://id-cx.co/XiYyYxxx",
+			"validEmail": true,
+			"validPhone": true,
+			"createdAt": "2022-01-13T19:09:31.635Z",
+			"updatedAt": "2022-01-13T19:09:31.635Z"
+		},
+		{
+			"_id": "61e078eba3320b1122232799",
+			"answered": false,
+			"active": true,
+			"actionId": "61534bf90f9599741e703000",
+			"name": "Marcos",
+			"email": "contato_2@indecx.com.br",
+			"phone": "5599999999999",
+			"shortUrl": "https://id-cx.co/XmVAsdTg",
+			"validEmail": true,
+			"validPhone": true,
+			"createdAt": "2022-01-13T19:09:31.634Z",
+			"updatedAt": "2022-01-13T19:09:31.634Z"
+		},
+		{
+			"_id": "61e078eba3321111e7332779",
+			"answered": false,
+			"active": true,
+			"actionId": "61534bf90f9599741e703000",
+			"name": "Fernando",
+			"email": "contato_3@indecx.com.br",
+			"phone": "55119800000000",
+			"shortUrl": "https://id-cx.co/XfuIIuaD",
+			"validEmail": true,
+			"validPhone": true,
+			"createdAt": "2022-01-13T19:09:31.633Z",
+			"updatedAt": "2022-01-13T19:09:31.633Z"
+		}
+	]
+}
+```
+
+## Entendendo os campos de retorno
+| Params  | Descrição |
+| ------------- | ------------- |
+| _id  | ID do convite   |
+| answered  | Verifica se o convite foi respondido  |
+| active  | Verifica se o convite estar ativo  |
+| actionId  | ID da ação   |
+| name  | Nome do cliente   |
+| email  | E-mail do cliente   |
+| phone  | Telefone do cliente  |
+| shortUrl  | Endereço do link da pesquisa   |
+| validEmail  | Validador de e-mail   |
+| validPhone  | Validador do telefone  |
+| createdAt  | Data da criação do convite   |
+| updateAt  | Data de update do convite   |
+
+
 
 # GET Coletar clientes não respondentes
 ![Badge](https://img.shields.io/badge/GET-v2%2Fno--response-orange)
