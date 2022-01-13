@@ -276,7 +276,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
 | categories  | Categorias incluídas nas respostas   |
 
 # GET Coletar Informações dos convites
-![Badge](https://img.shields.io/badge/GET-v2%2Finvites--info%2F-orange)
+![Badge](https://img.shields.io/badge/GET-invites--info-orange)
 
 Você pode ter acesso a lista de todos os clientes importados na plataforma com status se o convite já foi respondido ou não.
 
@@ -895,7 +895,7 @@ Para ter acesso a estrutura do questionário programado dentro do Indecx. A comu
 | INPUT  | Campo aberto para inclusão de resposta.  |
 
 # POST Envio de cliente para blacklist
-![Badge](https://img.shields.io/badge/POST-send-blacklist-green)
+![Badge](https://img.shields.io/badge/POST-send--blacklist-green)
 
 Caso você queira adicionar uma lista de clientes dentro da blacklist para evitar que esse e-mail receba novos contato, você pode realizar através dessa rota.
 
@@ -922,7 +922,7 @@ https://indecx.com/v2/send-blacklist
 
 
 # GET Coletar informações da blacklist (Não quero receber mais contato)
-![Badge](https://img.shields.io/badge/GET-v2%2Fblacklist-info-orange)
+![Badge](https://img.shields.io/badge/GET-blacklist--info-orange)
 
 Você também pode ter acesso a lista de todos os clientes que entraram em blaclist.:
 
