@@ -895,7 +895,7 @@ Para ter acesso a estrutura do questionário programado dentro do Indecx. A comu
 | INPUT  | Campo aberto para inclusão de resposta.  |
 
 # POST Envio de cliente para blacklist
-![Badge](https://img.shields.io/badge/POST-.v2%2Fsend-blacklist%2F-green)
+![Badge](https://img.shields.io/badge/POST-send-blacklist-green)
 
 Caso você queira adicionar uma lista de clientes dentro da blacklist para evitar que esse e-mail receba novos contato, você pode realizar através dessa rota.
 
