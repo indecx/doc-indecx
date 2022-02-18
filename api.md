@@ -761,6 +761,15 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 
 *Importante: Os valores recebidos precisam estar de acordo com as opções de respostas disponíveis em cada métrica para que seja possível a realização da integração.
 
+## Lista de erros possíveis
+| Código  | Descrição |
+| ------------- | ------------- |
+| 400  | "message": "Invalid metric type. Allowed: REVIEWS, CSAT, LIKE/DISLIKE, LIKERT, EMOTION, MULTIPLE, INPUT, CES"|
+| 400  | "message": "Invalid answer for the question XXXX..." |
+| 400  | "message": "The Invite has already been answered" |
+| 500  | "message": "Internal server error" |
+
+
 # GET Listar ações ativas no Indecx
 ![Badge](https://img.shields.io/badge/GET-v2%2Factions--info-orange)
 
