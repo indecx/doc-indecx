@@ -242,6 +242,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
 | email  | E-mail do cliente   |
 | phone  | Telefone do cliente  |
 | feedback  | Comentário realizado pelo cliente no momento da resposta   |
+| categories  | Categorização do comentário (feedback)   |
 | channel  | Canal de coleta da resposta   |
 | companyId  | ID da empresa   |
 | actionId  | ID da ação   |
