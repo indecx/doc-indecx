@@ -155,6 +155,15 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
       "email": "clientea@gmail.com",
       "phone": 1199999222,
       "feedback": "O atendimento poderia ser melhor",
+      "categories": [
+         {
+            "category": "Atendimento Insatisfatorio",
+            "subCategory": "Gerente"
+         },
+         {
+            "category": "Conteúdo programático"
+         }
+      ],
       "additionalQuestions": [
         {
           "multipleValues": [],
