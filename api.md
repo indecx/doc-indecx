@@ -155,6 +155,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
       "email": "clientea@gmail.com",
       "phone": 1199999222,
       "feedback": "O atendimento poderia ser melhor",
+      "deleted": false,
       "categories": [
          {
             "category": "Atendimento Insatisfatorio",
@@ -252,6 +253,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
 | metric  | Métrica principal   |
 | createdAt  | Data da criação da resposta   |
 | updateAt  | Data de update da resposta   |
+| deleted | Verifica se a resposta foi excluída |
 
 **additionalQuestions**
 | Params  | Descrição |
@@ -333,7 +335,8 @@ https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate
 			"validPhone": true,
 			"createdAt": "2022-01-13T19:09:31.635Z",
 			"updatedAt": "2022-01-13T19:09:31.635Z",
-			"answeredId": "61df50e72d5402779195a001"
+			"answeredId": "61df50e72d5402779195a001",
+			"deletedAnswer": false,
 		},
 		{
 			"_id": "61e078eba3320b1122232799",
@@ -347,7 +350,8 @@ https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate
 			"validEmail": true,
 			"validPhone": true,
 			"createdAt": "2022-01-13T19:09:31.634Z",
-			"updatedAt": "2022-01-13T19:09:31.634Z"
+			"updatedAt": "2022-01-13T19:09:31.634Z",
+			"deletedAnswer": false,
 		},
 		{
 			"_id": "61e078eba3321111e7332779",
@@ -361,7 +365,8 @@ https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate
 			"validEmail": true,
 			"validPhone": true,
 			"createdAt": "2022-01-13T19:09:31.633Z",
-			"updatedAt": "2022-01-13T19:09:31.633Z"
+			"updatedAt": "2022-01-13T19:09:31.633Z",
+			"deletedAnswer": false,
 		}
 	]
 }
@@ -383,6 +388,7 @@ https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate
 | createdAt  | Data da criação do convite   |
 | updateAt  | Data de update do convite   |
 | answeredId  | ID da resposta   |
+| deletedAnswer | Verifica se a resposta foi excluída |
 
 
 
