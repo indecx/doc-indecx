@@ -312,7 +312,7 @@ Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" 
 Exemplo de consulta:
 ```bash
 https://indecx.com/v2/invites-info/all?page=1&limit=10
-https://indecx.com/v2/invites-info/[Identificador_da_acao]??limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+https://indecx.com/v2/invites-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
 ```
 
 ## **Response**
