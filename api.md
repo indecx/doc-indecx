@@ -136,7 +136,7 @@ Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" 
 Exemplo de consulta:
 ```bash
 Https://indecx.com/v2/answers-info/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+https://indecx.com/v2/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
 ```
 
 ## **Response**
@@ -898,7 +898,7 @@ Para ter acesso a estrutura do questionário programado dentro do Indecx. A comu
 | _id  | ID da ação  |
 | controlId  | Identificador de controle da ação   |
 | resendDates  | Lista de todas as data que houveram reenvio  |
-| surveyType  | tipo do questionário  |
+| surveyType  | Tipo do questionário  |
 | name  | Nome do questionário    |
 | type  | Métrica principal do questionário    |
 | question  | Pergunta da métrica principal   |
