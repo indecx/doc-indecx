@@ -802,6 +802,7 @@ Para ter acesso a lista de todas as ações ativas disponíveis na conta, utiliz
 ```bash
 [
   {
+    "_id": "61a6704c35927d3d11fe18f8"
     "surveyType": "survey",
     "type": "nps-0-10",
     "name": "Ação de pesquisa da área de pós-venda",
@@ -810,6 +811,7 @@ Para ter acesso a lista de todas as ações ativas disponíveis na conta, utiliz
     "createdAt": "2020-01-15T20:11:59.540Z"
   },
   {
+    "_id": "61a6704c35927d3d11fe18f9"
     "surveyType": "survey",
     "type": "nps-0-10",
     "name": "Ação de pesquisa da área de Vendas",
