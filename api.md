@@ -415,6 +415,8 @@ Exemplo de consulta:
 Https://indecx.com/v2/no-response/[Identificador_da_acao]?page=1&limit=10
 https://indecx.com/v2/no-response/[Identificador_da_acao]?startDate=09-03-2020&endDate=10-03-2020
 https://indecx.com/v2/no-response/[Identificador_da_acao]?email=[email do usuário]
+https://indecx.com/v2/no-response/[Identificador_da_acao]?clienteid=[clientId]
+https://indecx.com/v2/no-response/[Identificador_da_acao]?indicator=[Nome do Indicador]&indicatorValue=[valor do indicador]
 ```
 **Coletar respostas com limite de paginação e retorno máximo no payload de 1mil registros.**
 
