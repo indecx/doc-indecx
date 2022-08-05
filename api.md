@@ -1041,6 +1041,7 @@ Exemplo de consulta:
 ```bash
 
 https://indecx.com/v2/category-info/all?startDate=01-01-2022&endDate=28-07-2022&dateType=updatedAt
+```
 
 ## **Response**
 
@@ -1090,7 +1091,7 @@ https://indecx.com/v2/category-info/all?startDate=01-01-2022&endDate=28-07-2022&
 | subCategory  | Nome da subcategoria atribuida     |
 | createdAt  | Data da inclusão da resposta  |
 | updatedAt  | Data da atualização  da resposta  |
-| createdAt  | Data da inclusão da resposta  |
+| dateType  | Data da inclusão da resposta  |
 
 
 ### Obrigado 💚
