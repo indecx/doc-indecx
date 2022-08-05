@@ -1013,6 +1013,86 @@ Você também pode ter acesso a lista de todos os clientes que entraram em blacl
 | email  | Email do cliente    |
 | createdAt  | Data da inclusão do registro em blacklist    |
 
+
+
+# GET Coletar lista de respostas categorizadas
+![Badge](https://img.shields.io/badge/GET-blacklist--info-orange)
+
+Você também pode ter acesso a lista de todas as categorizações atribuídas.
+
+```bash
+{
+  https://indecx.com/v2/category-info?[params]
+}
+```
+## Query Params
+| Params  | Descrição |
+| ------------- | ------------- |
+| page  | Retorna os resultados de uma determinada página em específico  |
+| limit  | Retorna o um valor limite por página  |
+| startDate  | Data inicial do parâmetro  |
+| endDate  | Data final do parâmetro  |
+| dateType  | createdAt ou updatedAt  |
+
+
+Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" para retornar todos os convites de todas as ações disponíveis.
+
+Exemplo de consulta:
+```bash
+
+https://indecx.com/v2/category-info/all?startDate=01-01-2022&endDate=28-07-2022&dateType=updatedAt
+
+## **Response**
+
+```bash
+
+	"page": 1,
+	"limit": 50,
+	"total": 5648,
+	"answers": [
+		{
+			"answerId": "6258af1bec2fae3ee56d461a",
+			"inviteId": "62570d80d788a74c0e05aab7",
+			"categories": [
+				{
+					"category": "Elogio",
+					"subCategory": "Atendimento"
+				}
+			],
+			"createdAt": "2022-04-14T23:32:43.288Z",
+			"updatedAt": "2022-07-26T21:19:52.303Z"
+		},
+		{
+			"answerId": "625810a83b3c5d3ea7234302",
+			"inviteId": "62570d81d788a74c0e05cd97",
+			"categories": [
+				{
+					"category": "App/Painel",
+					"subCategory": "Quer Cartão"
+				},
+				{
+					"category": "Conta",
+					"subCategory": "Desativar / Cancelar"
+				}
+			],
+			"createdAt": "2022-04-14T12:16:40.714Z",
+			"updatedAt": "2022-07-26T21:19:52.303Z"
+		}
+	]
+```
+## Entendendo os campos de retorno
+
+| Params  | Descrição |
+| ------------- | ------------- |
+| answerId  | ID da resposta  |
+| inviteId  | ID do convite  |
+| category  | Nome da categoria atribuida  |
+| subCategory  | Nome da subcategoria atribuida     |
+| createdAt  | Data da inclusão da resposta  |
+| updatedAt  | Data da atualização  da resposta  |
+| createdAt  | Data da inclusão da resposta  |
+
+
 ### Obrigado 💚
 
 Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = )
