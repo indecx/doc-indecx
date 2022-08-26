@@ -1094,6 +1094,94 @@ https://indecx.com/v2/category-info/all?startDate=01-01-2022&endDate=28-07-2022&
 | dateType  | Data da inclusão da resposta  |
 
 
+
+
+# POST Cadastrar Filial (IH1)
+![Badge](https://img.shields.io/badge/GET-blacklist--info-orange)
+
+Você também pode cadastrar uma filial ou unidade de negócio via API. Essa filial que chamados de Ih1 na plataforma, será utilizada para que seja possível separar os dados e niveis de acesso por usuário.
+
+```bash
+{
+  https://indecx.com/v2/branches
+}
+```
+
+
+## **request json**
+```bash
+{
+   "corporate_name":"UNIDADE X - CENTRO",
+   "type":"ih1",
+   "secondary_fields":[
+      {
+         "key":"Codigo",
+         "value":"1"
+      }
+   ]
+}
+
+```
+
+## **Response**
+
+```bash
+
+{
+	"_id": "630918be7140e266cafafab7",
+	"active": true,
+	"corporate_name": "UNIDADE X - CENTRO",
+	"type": "ih1"
+}
+```
+## Entendendo os campos de retorno
+
+| Params  | Descrição |
+| ------------- | ------------- |
+| _id  | ID da filial  |
+| active  | status  |
+| corporate_name  | Nome da filial  |
+| type  | Tipo da Filial     |
+
+
+# GET Listar Filiais Cadastradas (IH1)
+![Badge](https://img.shields.io/badge/GET-blacklist--info-orange)
+
+API permite ter acesso a lista de todas as unidades cadastradas na plataforma.
+
+```bash
+{
+  https://indecx.com/v2/branches
+}
+```
+
+
+## **Response**
+
+```bash
+
+[
+	{
+		"_id": "62bdd0cb37a01172d1dcf65a",
+		"corporate_name": "101",
+		"type": "ih1",
+		"Grupo": "AA"
+	},
+	{
+		"_id": "62bdd0d91213ea72bc85fdfe",
+		"corporate_name": "100",
+		"type": "ih2",
+		"Grupo": "YY"
+	},
+	{
+		"_id": "62bdd12755052372d78d0251",
+		"corporate_name": "1002",
+		"type": "ih1",
+		"Grupo": "XX"
+	}
+	]
+```
+
 ### Obrigado 💚
 
 Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = )
