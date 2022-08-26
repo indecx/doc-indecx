@@ -1097,7 +1097,7 @@ https://indecx.com/v2/category-info/all?startDate=01-01-2022&endDate=28-07-2022&
 
 
 # POST Cadastrar Filial (IH1)
-![Badge](https://img.shields.io/badge/POST-.v2%2Fsend%2F-green)
+[![Badge](https://img.shields.io/badge/post-branch-green)
 
 Você também pode cadastrar uma filial ou unidade de negócio via API. Essa filial que chamados de Ih1 na plataforma, será utilizada para que seja possível separar os dados e niveis de acesso por usuário.
 
@@ -1145,7 +1145,7 @@ Você também pode cadastrar uma filial ou unidade de negócio via API. Essa fil
 
 
 # GET Listar Filiais Cadastradas (IH1)
-![Badge](https://img.shields.io/badge/GET-blacklist--info-orange)
+![Badge](https://img.shields.io/badge/get-branch-orange)
 
 API permite ter acesso a lista de todas as unidades cadastradas na plataforma.
 
