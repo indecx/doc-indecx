@@ -149,13 +149,9 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
       "_id": "60b680790be5ec68f9aaa8ac",
       "active": true,
       "date": "2021-06-01T18:46:17.374Z",
+      "answerDate": "2021-06-01T18:46:17.374Z",
       "anonymousResponse": false,
       "clientId": null,
-      "name": "Nome do Cliente A",
-      "email": "clientea@gmail.com",
-      "phone": 1199999222,
-      "feedback": "O atendimento poderia ser melhor",
-      "deleted": false,
       "categories": [
          {
             "category": "Atendimento Insatisfatorio",
@@ -165,6 +161,13 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
             "category": "Conteúdo programático"
          }
       ],
+      "tags": [],
+      "subTags": [],
+      "deleted": false,
+      "name": "Nome do Cliente A",
+      "email": "clientea@gmail.com",
+      "phone": 1199999222,
+      "feedback": "O atendimento poderia ser melhor",
       "additionalQuestions": [
         {
           "multipleValues": [],
@@ -186,6 +189,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
       "actionId": "6074572fa732a85e3683bf9f",
       "inviteId": "60b66441e4c5236925287995",
       "detailsId": "60b66440e4c523692528689a",
+      "text": "Em uma escala de 0 a 10, o quanto você indicaria a Indecx para amigos ou familiares?",
       "review": 7,
       "indicators": [
         {
@@ -237,6 +241,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
 | _id  | ID da resposta  |
 | active  | Status  |
 | date  | Data e hora da resposta  |
+| answerDate  | Data e hora da resposta  |
 | anonymousResponse  | Identificação se o cliente quis se identificar ou não.  |
 | clientId  | Identificador único do cliente   |
 | name  | Nome do cliente   |
@@ -249,6 +254,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate
 | actionId  | ID da ação   |
 | inviteId  | ID do convite   |
 | detailsId  | ID dos detalhes da importação   |
+| text  | Pergunta da métrica principal   |
 | review  | Nota atribuida na métrica principal   |
 | metric  | Métrica principal   |
 | createdAt  | Data da criação da resposta   |
