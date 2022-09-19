@@ -111,17 +111,20 @@ E-mail e telefone são campos obrigatórios, dependendo da configuração do tip
 }
 ```
 **Retornos possíveis**
-200 “message”: “Disparo configurado com sucesso!”
-400 “message”: “Action not found.”
-400 “message”: “Api key is missing.”
-400 “message”: “Please inform at least one customer.”
-401 “message”: “Company not found for this api key.”
-401 “message”: “Invalid api key.”
-401 “message”: “This action is blocked for integrations.”
-401 “message”: “This action is paused.”
-402 “message”: “Insufficient email balance.”
-402 “message”: “Insufficient sms balance.”
-500 "Internal Server Error"
+| Código  | Descrição |
+| ------------- | ------------- |
+| 200 | Disparo configurado com sucesso!  |
+| 400 | Action not found. |
+| 400 | Api key is missing.|
+| 400 | Please inform at least one customer. |
+| 401 | Company not found for this api key. |
+| 401 | Invalid api key. |
+| 401 | This action is blocked for integrations. |
+| 401 | This action is paused. |
+| 402 | Insufficient email balance. |
+| 402 | Insufficient sms balance. |
+| 500 | Internal Server Error |
+
 
 
 # GET Coletar Respostas
