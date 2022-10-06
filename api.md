@@ -512,11 +512,19 @@ A cada nova resposta você receberá um retorno com todas as informações do cl
 ## **Response**
 ```bash
 {
-  "answer": {
     "_id": "60ae3842a81a5d534cbcfb21",
     "active": true,
-    "date": "2021-05-26T12:00:02.548Z",
+    "date": "2022-10-06T17:43:47.367Z",
+    "answerDate": "2022-10-06T17:43:47.368Z",
+    "inviteDate": "2022-10-06T12:54:55.730Z",
     "anonymousResponse": true,
+    "clientId": null,
+    "categories":[],
+    "subCategories":[],
+    "tags":[],
+    "subTags":[],
+    "subCategoriesIA":[],
+    "deleted": false,
     "name": "****",
     "email": "****",
     "phone": "****",
@@ -563,7 +571,6 @@ A cada nova resposta você receberá um retorno com todas as informações do cl
     "metric": "nps-0-10",
     "createdAt": "2021-05-26T12:00:02.557Z",
     "updatedAt": "2021-05-26T12:00:02.557Z"
-  }
 }
 ```
 
