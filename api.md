@@ -152,7 +152,7 @@ Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" 
 Exemplo de consulta:
 ```bash
 Https://indecx.com/v2/answers-info/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v2/answers-info/[Identificador_da_acao]??limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+https://indecx.com/v2/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
 ```
 
 ## **Response**
@@ -435,7 +435,7 @@ https://indecx.com/v2/no-response/[Identificador_da_acao]?[params]
 Exemplo de consulta:
 ```bash
 Https://indecx.com/v2/no-response/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v2/no-response/[Identificador_da_acao]?startDate=09-03-2020&endDate=10-03-2020
+https://indecx.com/v2/no-response/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
 https://indecx.com/v2/no-response/[Identificador_da_acao]?email=[email do usuário]
 https://indecx.com/v2/no-response/[Identificador_da_acao]?clienteId=[clientId]
 https://indecx.com/v2/no-response/[Identificador_da_acao]?indicator=[Nome do Indicador]&indicatorValue=[valor do indicador]
