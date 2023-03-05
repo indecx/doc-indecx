@@ -72,7 +72,7 @@ As ações deverão ser criadas na plataforma app-indecx.com e os disparos poder
 E-mail e telefone são campos obrigatórios, dependendo da configuração do tipo de disparo. Consulte as configurações realizadas no momento da criação da ação. Para ser possível enviar dados para as colunas adicionais ( indicadores ) é necessário criar os indicadores dentro da ação anteriormente e utilizar exatamente os mesmos nomes criado dentro da plataforma. No nosso exemplo abaixo as colunas adicionais são: Filial, Área, Região e Tipo. 
 
 ## **Request**
-```bash
+```javascript
 {
    "nome":"Jose Paulo da Silva",
    "email":"clientejosepaulo@gmail.com",
@@ -85,7 +85,7 @@ E-mail e telefone são campos obrigatórios, dependendo da configuração do tip
 }
 ```
 ## **Response**
-```bash
+```javascript
 {
   "message": "Disparo configurado com sucesso!"
 }
