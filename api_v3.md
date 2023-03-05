@@ -56,7 +56,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 
 # POST Disparo de convite transacional
-![Badge](https://img.shields.io/badge/POST-.v2%2Fsend%2F-green)
+![Badge](https://img.shields.io/badge/POST-.v3%2Fsend%2F-green)
 
 Imagine uma situação onde você queira disparar uma pesquisa de satisfação a cada nova transação do cliente dentro do seu sistema, 
 seja uma prospecção, vendas, interação etc... No método disparo de convite transacional é possível e de forma bem fácil.
