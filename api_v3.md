@@ -8,21 +8,6 @@ A API IndeCX foi desenvolvida para que seja possível realizar diversas integra�
 
 Nessa documentação você encontrará exemplos de utilização de cada método.
 
-```css
-code {
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 10px;
-  font-size: 14px;
-  font-family: "Courier New", Courier, monospace;
-}
-```
-
-Veja um exemplo de código:
-
-```javascript
-console.log("Olá, mundo!");
-```
 
 ## Introdução
 A API utiliza autenticação e autorização via Bearer Token para proteger as rotas de acesso restrito. O Bearer Token deve ser enviado no cabeçalho Authorization de todas as requisições que requerem autenticação.
@@ -43,14 +28,14 @@ https://indecx.com/v3/integrations/authorization/token
 | company-key  | $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
 
 
-## Exemplo de solicitação
+## Exemplo de request
 ```javascript
 GET /v3/integrations/authorization/token HTTP/1.1
 Host: indecx.com
 Company-Key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
 
 ```
-## Exemplo de retorno
+## Exemplo de response
 ```javascript
 HTTP/1.1 200 OK
 Content-Type: application/json
