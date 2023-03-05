@@ -56,7 +56,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 
 # POST Disparo de convite transacional
-![Badge](https://img.shields.io/badge/POST-.v3%2Fsend%2F-green)
+![Badge](https://img.shields.io/badge/POST-.v3/integrations/%2Fsend%2F-green)
 
 Imagine uma situação onde você queira disparar uma pesquisa de satisfação a cada nova transação do cliente dentro do seu sistema, 
 seja uma prospecção, vendas, interação etc... No método disparo de convite transacional é possível e de forma bem fácil.
@@ -101,7 +101,7 @@ Exemplo parâmetro **“2020-12-16T20:20:00.000”** será disparos nos seguinte
 Brasil 17:20:00 (UTC - 3) , EUA Nova York 16:20:00 (UTC - 5)
 
 # POST Disparo de convite em lote
-![Badge](https://img.shields.io/badge/POST-.v2%2Fsend%2Fbulk-green)
+![Badge](https://img.shields.io/badge/POST-.v3/integrations/%2Fsend%2Fbulk-green)
 
 Você também pode realizar os disparos de forma automática para um lote de clientes de uma única vez 
 
@@ -167,7 +167,7 @@ E-mail e telefone são campos obrigatórios, dependendo da configuração do tip
 
 
 # GET Coletar Respostas
-![Badge](https://img.shields.io/badge/GET-v2%2Fanswers--info%2F-orange)
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Fanswers--info%2F-orange)
 
 Você também pode integrar as respostas coletadas via indecx no seu sistema. Para isso será necessário utilizar o método "Coletar respostas" para acesso a todas as respostas e detalhes dos clientes.
 
@@ -454,7 +454,7 @@ https://indecx.com/v3/integrations/invites-info/[Identificador_da_acao]?limit=10
 
 
 # GET Coletar clientes não respondentes
-![Badge](https://img.shields.io/badge/GET-v2%2Fno--response-orange)
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Fno--response-orange)
 
 Através desse método, você pode ter acesso a lista de todos os clientes que ainda não responderam a sua pesquisa.
 A comunicação será realizada através da seguinte URL:
@@ -614,7 +614,7 @@ A cada nova resposta você receberá um retorno com todas as informações do cl
 ```
 
 # POST Geração de link para pesquisa
-![Badge](https://img.shields.io/badge/POST-v2%2Factions-green)
+![Badge](https://img.shields.io/badge/POST-v3/integrations/%2Factions-green)
 
 Com a rota abaixo, será possível realizar a integração com a plataforma Indecx, onde o objetivo é criar um convite e retornar o link no response da chamada, para que seja utilizado dentro das mídias de contato com o cliente e esse link é único para cada novo convite gerado.
 
@@ -735,7 +735,7 @@ Também é possível enviar um disparo e obter o link através da API cadastrada
 ```
 
 # POST Envio de respostas transacionais para o Indecx
-![Badge](https://img.shields.io/badge/POST-v2%2Factions-green)
+![Badge](https://img.shields.io/badge/POST-v3/integrations/%2Factions-green)
 
 Com a rota abaixo, será possível enviar uma resposta coletada em seu APP ou sistema de forma transacional para dentro do sistema Indecx. Dessa forma é possível centralizar todas as análises e respostas dentro do Indecx e analisar os resultados com os relatórios disponíveis na plataforma.
 
@@ -857,7 +857,7 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 
 
 # GET Listar ações ativas no Indecx
-![Badge](https://img.shields.io/badge/GET-v2%2Factions--info-orange)
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Factions--info-orange)
 
 Para ter acesso a lista de todas as ações ativas disponíveis na conta, utilize a rota abaixo.
 
@@ -894,7 +894,7 @@ Para ter acesso a lista de todas as ações ativas disponíveis na conta, utiliz
 
 
 # GET Coletar informações do questionário
-![Badge](https://img.shields.io/badge/GET-v2%2Factions--info-orange)
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Factions--info-orange)
 
 Para ter acesso a estrutura do questionário programado dentro do Indecx. A comunicação será realizada através da seguinte URL:
 
