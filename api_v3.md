@@ -28,14 +28,14 @@ https://indecx.com/v3/integrations/authorization/token
 
 
 ## Exemplo de solicitação
-```bash
+```javascript
 GET /v3/integrations/authorization/token HTTP/1.1
 Host: indecx.com
 Company-Key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
 
 ```
 ## Exemplo de retorno
-```bash
+```javascript
 HTTP/1.1 200 OK
 Content-Type: application/json
 
@@ -47,7 +47,7 @@ Content-Type: application/json
 
 
 ## Exemplo de cabeçalho de autorização
-```bash
+```javascript
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra3R2a0pUQ1ZqLmRNNEgzbEhLeWlTam9SdDNucFhHeGNObGphMW1jRWUiLCJpYXQiOjE2Nzc5NDExOTEsImV4cCI6MTY3Nzk0Mjk5MX0.AMKRpb89gPBWf2kHLXrEt4t6m
 ```
 
