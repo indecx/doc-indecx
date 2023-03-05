@@ -48,6 +48,8 @@ Content-Type: application/json
 
 
 ## Exemplo de cabeçalho de autorização
+O Bearer Token deve ser enviado no cabeçalho Authorization de todas as requisições que requerem autenticação.
+
 ```javascript
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra3R2a0pUQ1ZqLmRNNEgzbEhLeWlTam9SdDNucFhHeGNObGphMW1jRWUiLCJpYXQiOjE2Nzc5NDExOTEsImV4cCI6MTY3Nzk0Mjk5MX0.AMKRpb89gPBWf2kHLXrEt4t6m
 ```
