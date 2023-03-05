@@ -24,7 +24,7 @@ seja uma prospecção, vendas, interação etc... No método disparo de convite 
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v2/send/[Identificador_da_acao]
+https://indecx.com/v3/integrations/[Identificador_da_acao]
 ```
 As ações deverão ser criadas na plataforma app-indecx.com e os disparos poderão ser efetuados via plataforma (manual) ou via API. Quando disparado via API, deve-se enviar um JSON via body para a URL mencionada acima e sua autenticação se dará através da company-key fornecida e enviada via HEADER.  Importante que seja enviado o identificador da ação e também que siga um padrão para envio do JSON via body.
 
@@ -68,7 +68,7 @@ Você também pode realizar os disparos de forma automática para um lote de cli
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v2/send/bulk/[Identificador_da_acao]
+https://indecx.com/v3/integrations/send/bulk/[Identificador_da_acao]
 ```
 As ações deverão ser criadas na plataforma app-indecx.com e os disparos poderão ser efetuados via plataforma ou via API. Quando disparado via API, deve-se enviar um JSON via body para a URL mencionada acima e sua autenticação se dará através da company-key fornecida e enviada via HEADER. 
 Importante que seja enviado o identificador da ação e também que siga um padrão para envio do JSON via body.
@@ -134,7 +134,7 @@ Você também pode integrar as respostas coletadas via indecx no seu sistema. Pa
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v2/answers-info/[Identificador_da_acao]?[params]
+https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?[params]
 ```
 ## Query Params
 | Params  | Descrição |
@@ -151,8 +151,8 @@ Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" 
 
 Exemplo de consulta:
 ```bash
-Https://indecx.com/v2/answers-info/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v2/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+Https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?page=1&limit=10
+https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
 ```
 
 ## **Response**
@@ -316,7 +316,7 @@ Você pode ter acesso a lista de todos os clientes importados na plataforma com 
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v2/invites-info/[Identificador_da_acao]?[params]
+https://indecx.com/v3/integrations/invites-info/[Identificador_da_acao]?[params]
 ```
 ## Query Params
 | Params  | Descrição |
@@ -333,8 +333,8 @@ Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" 
 
 Exemplo de consulta:
 ```bash
-https://indecx.com/v2/invites-info/all?page=1&limit=10
-https://indecx.com/v2/invites-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+https://indecx.com/v3/integrations/invites-info/all?page=1&limit=10
+https://indecx.com/v3/integrations/invites-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
 ```
 
 ## **Response**
@@ -420,7 +420,7 @@ https://indecx.com/v2/invites-info/[Identificador_da_acao]?limit=1000&startDate=
 Através desse método, você pode ter acesso a lista de todos os clientes que ainda não responderam a sua pesquisa.
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v2/no-response/[Identificador_da_acao]?[params]
+https://indecx.com/v3/integrations/[Identificador_da_acao]?[params]
 ```
 
 ## Query Params
@@ -434,11 +434,11 @@ https://indecx.com/v2/no-response/[Identificador_da_acao]?[params]
 
 Exemplo de consulta:
 ```bash
-Https://indecx.com/v2/no-response/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v2/no-response/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
-https://indecx.com/v2/no-response/[Identificador_da_acao]?email=[email do usuário]
-https://indecx.com/v2/no-response/[Identificador_da_acao]?clienteId=[clientId]
-https://indecx.com/v2/no-response/[Identificador_da_acao]?indicator=[Nome do Indicador]&indicatorValue=[valor do indicador]
+Https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?page=1&limit=10
+https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?email=[email do usuário]
+https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?clienteId=[clientId]
+https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?indicator=[Nome do Indicador]&indicatorValue=[valor do indicador]
 ```
 **Coletar respostas com limite de paginação e retorno máximo no payload de 1mil registros.**
 
@@ -581,7 +581,7 @@ Com a rota abaixo, será possível realizar a integração com a plataforma Inde
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v2/actions/[Identificador_da_acao]/invites
+https://indecx.com/v3/integrations/actions/[Identificador_da_acao]/invites
 ```
 As ações deverão ser criadas na plataforma app-indecx.com e os disparos poderão ser efetuados via plataforma ou via API. Quando disparado via API, deve-se enviar um JSON via body para a URL mencionada acima e sua autenticação se dará através da company-key fornecida e enviada via HEADER.  Importante que seja enviado o identificador da ação e também que siga um padrão para envio do JSON via body
 
@@ -703,7 +703,7 @@ Com a rota abaixo, será possível enviar uma resposta coletada em seu APP ou si
 A comunicação será realizada através da seguinte URL:
 
 ```bash
-https://indecx.com/v2/create-answer/[Identificador_da_acao]
+https://indecx.com/v3/integrations/create-answer/[Identificador_da_acao]
 ```
 Para que esse recebimento por parte do Indecx seja possível, é necessário ter uma ação criada com as configurações de questionários compatíveis com o que foi respondido pelo cliente.
 
@@ -824,7 +824,7 @@ Para ter acesso a lista de todas as ações ativas disponíveis na conta, utiliz
 
 ```bash
 {
-  https://indecx.com/v2/actions-info/
+  https://indecx.com/v3/integrations/actions-info/
 }
 ```
 
@@ -861,7 +861,7 @@ Para ter acesso a estrutura do questionário programado dentro do Indecx. A comu
 
 ```bash
 {
-  https://indecx.com/v2/actions-info/[Identificador_da_acao]
+  https://indecx.com/v3/integrations/actions-info/[Identificador_da_acao]
 }
 ```
 
@@ -961,7 +961,7 @@ Caso você queira adicionar uma lista de clientes dentro da blacklist para evita
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v2/send-blacklist
+https://indecx.com/v3/integrations/send-blacklist
 ```
 ## **Request**
 ```bash
@@ -988,7 +988,7 @@ Você também pode ter acesso a lista de todos os clientes que entraram em blacl
 
 ```bash
 {
-  https://indecx.com/v2/blacklist-info?[params]
+  https://indecx.com/v3/integrations/blacklist-info?[params]
 }
 ```
 ## Query Params
@@ -1069,7 +1069,7 @@ Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" 
 Exemplo de consulta:
 ```bash
 
-https://indecx.com/v2/category-info/all?startDate=01-01-2022&endDate=28-07-2022&dateType=updatedAt
+https://indecx.com/v3/integrations/category-info/all?startDate=01-01-2022&endDate=28-07-2022&dateType=updatedAt
 ```
 
 ## **Response**
@@ -1132,7 +1132,7 @@ Você também pode cadastrar uma filial ou unidade de negócio via API. Essa fil
 
 ```bash
 {
-  https://indecx.com/v2/branches
+  https://indecx.com/v3/integrations/branches
 }
 ```
 
@@ -1180,7 +1180,7 @@ API permite ter acesso a lista de todas as unidades cadastradas na plataforma.
 
 ```bash
 {
-  https://indecx.com/v2/branches
+  https://indecx.com/v3/integrations/branches
 }
 ```
 
