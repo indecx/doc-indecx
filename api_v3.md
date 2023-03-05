@@ -18,7 +18,7 @@ Para autenticar com a API, você deve enviar um pedido de autenticação com sua
 
 
 ## Endpoint /get
-
+![Badge](https://img.shields.io/badge/GET-authorization--token-orange)
 ```bash
 https://indecx.com/v3/integrations/authorization/token
 ```
@@ -993,14 +993,14 @@ Para ter acesso a estrutura do questionário programado dentro do Indecx. A comu
 | MULTIPLE  | Escala do tipo seleção única ou múltipla escolha.  |
 | INPUT  | Campo aberto para inclusão de resposta.  |
 
-# POST Envio de cliente para blacklist
-![Badge](https://img.shields.io/badge/POST-send--blacklist-green)
+# POST Envio de cliente para blocklist
+![Badge](https://img.shields.io/badge/POST-send--blocklist-green)
 
-Caso você queira adicionar uma lista de clientes dentro da blacklist para evitar que esse e-mail receba novos contato, você pode realizar através dessa rota.
+Caso você queira adicionar uma lista de clientes dentro da blocklist para evitar que esse e-mail receba novos contato, você pode realizar através dessa rota.
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v3/integrations/send-blacklist
+https://indecx.com/v3/integrations/send-blocklist
 ```
 ## **Request**
 ```bash
@@ -1015,19 +1015,19 @@ https://indecx.com/v3/integrations/send-blacklist
 ## **Response**
 ```bash
 {
-	"message": "Sent to the blacklist successfully."
+	"message": "Sent to the blocklist successfully."
 }
 ```
 
 
-# GET Coletar informações da blacklist (Não quero receber mais contato)
-![Badge](https://img.shields.io/badge/GET-blacklist--info-orange)
+# GET Coletar informações da blocklist (Não quero receber mais contato)
+![Badge](https://img.shields.io/badge/GET-blocklist--info-orange)
 
 Você também pode ter acesso a lista de todos os clientes que entraram em blaclist.:
 
 ```bash
 {
-  https://indecx.com/v3/integrations/blacklist-info?[params]
+  https://indecx.com/v3/integrations/blocklist-info?[params]
 }
 ```
 ## Query Params
@@ -1077,14 +1077,14 @@ Você também pode ter acesso a lista de todos os clientes que entraram em blacl
 | actionName  | Nome da Ação  |
 | actionControlId  | ID da ação   |
 | inviteId  | ID do convite  |
-| reason  | Motivo da inclusão no blacklist  |
+| reason  | Motivo da inclusão no blocklist  |
 | email  | Email do cliente    |
-| createdAt  | Data da inclusão do registro em blacklist    |
+| createdAt  | Data da inclusão do registro em blocklist    |
 
 
 
 # GET Coletar lista de respostas categorizadas
-![Badge](https://img.shields.io/badge/GET-blacklist--info-orange)
+![Badge](https://img.shields.io/badge/GET-blocklist--info-orange)
 
 Você também pode ter acesso a lista de todas as categorizações atribuídas.
 
