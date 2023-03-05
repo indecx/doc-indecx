@@ -8,15 +8,15 @@ A API IndeCX foi desenvolvida para que seja possível realizar diversas integra�
 
 Nessa documentação você encontrará exemplos de utilização de cada método.
 
-# Introdução
+## Introdução
 A API utiliza autenticação e autorização via Bearer Token para proteger as rotas de acesso restrito. O Bearer Token deve ser enviado no cabeçalho Authorization de todas as requisições que requerem autenticação.
 
 
-# Autenticação
+## Autenticação
 Para autenticar com a API, você deve enviar um pedido de autenticação com suas credenciais de usuário (**company-key**) enviado via header, disponíveis dentro de configurações da conta na plataforma Indecx. A API retornará um Bearer Token, que você deve usar em todas as solicitações futuras que exigem autenticação.
 
 
-# Endpoint /get
+## Endpoint /get
 
 ```bash
 https://indecx.com/v3/integrations/authorization/token
@@ -27,14 +27,14 @@ https://indecx.com/v3/integrations/authorization/token
 | company-key  | $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
 
 
-# Exemplo de solicitação
+## Exemplo de solicitação
 ```bash
 GET /v3/integrations/authorization/token HTTP/1.1
 Host: indecx.com
 Company-Key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
 
 ```
-# Exemplo de retorno
+## Exemplo de retorno
 ```bash
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -46,7 +46,7 @@ Content-Type: application/json
 ```
 
 
-#Exemplo de cabeçalho de autorização
+## Exemplo de cabeçalho de autorização
 ```bash
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra3R2a0pUQ1ZqLmRNNEgzbEhLeWlTam9SdDNucFhHeGNObGphMW1jRWUiLCJpYXQiOjE2Nzc5NDExOTEsImV4cCI6MTY3Nzk0Mjk5MX0.AMKRpb89gPBWf2kHLXrEt4t6m
 ```
