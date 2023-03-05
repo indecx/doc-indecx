@@ -8,13 +8,49 @@ A API IndeCX foi desenvolvida para que seja possível realizar diversas integra�
 
 Nessa documentação você encontrará exemplos de utilização de cada método.
 
+# Introdução
+A API utiliza autenticação e autorização via Bearer Token para proteger as rotas de acesso restrito. O Bearer Token deve ser enviado no cabeçalho Authorization de todas as requisições que requerem autenticação.
+
+
 # Autenticação
-A autenticação de todas as rotas é feita através da chave **company-key** que é fornecida dentro da plataforma no menu dados da conta.
+Para autenticar com a API, você deve enviar um pedido de autenticação com suas credenciais de usuário (**company-key**) enviado via header, disponíveis dentro de configurações da conta na plataforma Indecx. A API retornará um Bearer Token, que você deve usar em todas as solicitações futuras que exigem autenticação.
+
+
+# Endpoint /get
+
+```bash
+https://indecx.com/v3/integrations/authorization/token
+```
 
 | Params  | Descrição |
 | ------------- | ------------- |
-| Content-Type  | application/json  |
-| company-key  | Exemplo key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
+| company-key  | $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
+
+
+# Exemplo de solicitação
+```bash
+GET /v3/integrations/authorization/token HTTP/1.1
+Host: indecx.com
+Company-Key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
+
+```
+# Exemplo de retorno
+```bash
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+	"authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra3R2a0pUQ1ZqLmRNNEgzbEhLeWlTam9SdDNucFhHeGNObGphMW1jRWUiLCJpYXQiOjE2Nzc5NDExOTEsImV4cCI6MTY3Nzk0Mjk5MX0.AMKRpb89gPBWf2kHLXrEt4t6m"
+}
+
+```
+
+
+#Exemplo de cabeçalho de autorização
+```bash
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra3R2a0pUQ1ZqLmRNNEgzbEhLeWlTam9SdDNucFhHeGNObGphMW1jRWUiLCJpYXQiOjE2Nzc5NDExOTEsImV4cCI6MTY3Nzk0Mjk5MX0.AMKRpb89gPBWf2kHLXrEt4t6m
+```
+
 
 # POST Disparo de convite transacional
 ![Badge](https://img.shields.io/badge/POST-.v2%2Fsend%2F-green)
@@ -1051,7 +1087,7 @@ Você também pode ter acesso a lista de todas as categorizações atribuídas.
 
 ```bash
 {
-  https://indecx.com/v2/category-info?[params]
+  https://indecx.com/v3/integrations/category-info?[params]
 }
 ```
 ## Query Params
