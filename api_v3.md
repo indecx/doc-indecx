@@ -74,6 +74,11 @@ E-mail e telefone são campos obrigatórios, dependendo da configuração do tip
 
 ## **Request**
 ```javascript
+POST /v3/integrations/send/T0AXXX HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
 {
    "nome":"Jose Paulo da Silva",
    "email":"clientejosepaulo@gmail.com",
@@ -118,7 +123,11 @@ Importante que seja enviado o identificador da ação e também que siga um padr
 E-mail e telefone são campos obrigatórios, dependendo da configuração do tipo de disparo. Consulte as configurações realizadas no momento da criação da ação. Para ser possível enviar dados para as colunas adicionais ( indicadores ) é necessário criar os indicadores dentro da ação anteriormente e utilizar exatamente os mesmos nomes criado dentro da plataforma.
 **Essa API possui um limite máximo de 1.000 clientes por requisição.**
 
-```bash
+```javascript
+POST /v3/integrations/send/bulk/T0AXXX HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 {
    "customers":[
       {
@@ -190,13 +199,16 @@ https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?[params]
 Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" para retornar todas as resposta de todas as ações disponíveis.
 
 Exemplo de consulta:
-```bash
-Https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+
+```javascript
+GET /v3/integrations/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
 ## **Response**
-```bash
+```javascript
  {
    "page": 1,
    "limit": 50,
@@ -372,13 +384,15 @@ https://indecx.com/v3/integrations/invites-info/[Identificador_da_acao]?[params]
 Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" para retornar todos os convites de todas as ações disponíveis.
 
 Exemplo de consulta:
-```bash
-https://indecx.com/v3/integrations/invites-info/all?page=1&limit=10
-https://indecx.com/v3/integrations/invites-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+```javascript
+GET /v3/integrations/invites-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
 ## **Response**
-```bash
+```javascript
  {
 	"page": 1,
 	"limit": 500,
@@ -473,17 +487,23 @@ https://indecx.com/v3/integrations/[Identificador_da_acao]?[params]
 | email  | Busca por email de usuário específico  |
 
 Exemplo de consulta:
-```bash
-Https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?page=1&limit=10
-https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
-https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?email=[email do usuário]
-https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?clienteId=[clientId]
-https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?indicator=[Nome do Indicador]&indicatorValue=[valor do indicador]
+
+```javascript
+GET /v3/integrations/no-response/[Identificador_da_acao]?page=1&limit=10
+GET /v3/integrations/no-response/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+GET /v3/integrations/no-response/[Identificador_da_acao]?email=[email do usuário]
+GET /v3/integrations/no-response/[Identificador_da_acao]?clienteId=[clientId]
+GET /v3/integrations/no-response/[Identificador_da_acao]?indicator=[Nome do Indicador]&indicatorValue=[valor do indicador]
+
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
+
 **Coletar respostas com limite de paginação e retorno máximo no payload de 1mil registros.**
 
 ## **Response**
-```bash
+```javascript
 {
   "invites": [
     {
@@ -626,7 +646,13 @@ https://indecx.com/v3/integrations/actions/[Identificador_da_acao]/invites
 As ações deverão ser criadas na plataforma app-indecx.com e os disparos poderão ser efetuados via plataforma ou via API. Quando disparado via API, deve-se enviar um JSON via body para a URL mencionada acima e sua autenticação se dará através da company-key fornecida e enviada via HEADER.  Importante que seja enviado o identificador da ação e também que siga um padrão para envio do JSON via body
 
 ## **Request**
-```bash
+
+```javascript
+POST /v3/integrations/actions/T0AXXX/invites
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
 {
    "customers":[
       {
@@ -645,7 +671,7 @@ As ações deverão ser criadas na plataforma app-indecx.com e os disparos poder
 ```
 
 ## **Response**
-```bash
+```javascript
 {
   "customers": [
     {
@@ -678,7 +704,13 @@ Também é possível enviar um disparo e obter o link através da API cadastrada
 **maxmsg** Máximo de retorno de registro no JSON. Exemplo: Caso você faça um disparo de 1.000 clientes com maxmsg = 100,  Você vai receber 10 requisições com 100 registros em cada.
 
 ## **Request**
-```bash
+
+```javascript
+POST /v3/integrations/actions/T0AXXX/invites
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
 {
     "webhook": {
         "callbackurl": "https://webhook.site/58f1d980-89b4-4121-83b9-8cce55b128f4",
@@ -701,14 +733,14 @@ Também é possível enviar um disparo e obter o link através da API cadastrada
 ```
 
 ## **Response**
-```bash
+```javascript
 {
   "message": "Request received. The result will be sent to https://webhook.site/58f1d980-89b4-4121-83b9-8cce55b128f4"
 }
 ```
 
 ## **Response callbackurl**
-```bash
+```javascript
 {
   "customers": [
     {
@@ -748,7 +780,12 @@ https://indecx.com/v3/integrations/create-answer/[Identificador_da_acao]
 Para que esse recebimento por parte do Indecx seja possível, é necessário ter uma ação criada com as configurações de questionários compatíveis com o que foi respondido pelo cliente.
 
 ## **Request**
-```bash
+```javascript
+POST /v3/integrations/create-answer/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
   {
   	"inviteId": "6143d38aaf080f75ffbdaCCC",
 	"name": "José Paulo",
@@ -808,7 +845,7 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 
 ## **Response**
 
-```bash
+```javascript
 {
   "message": "Successfully integrated answer.",
    "id": "asy8765gasasgydasd"
@@ -862,15 +899,16 @@ Para que esse recebimento por parte do Indecx seja possível, é necessário ter
 
 Para ter acesso a lista de todas as ações ativas disponíveis na conta, utilize a rota abaixo.
 
-```bash
-{
-  https://indecx.com/v3/integrations/actions-info/
-}
+```javascript
+GET /v3/integrations/actions-info
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
 ## **Response**
 
-```bash
+```javascript
 [
   {
     "_id": "61a6704c35927d3d11fe18f8"
@@ -899,15 +937,17 @@ Para ter acesso a lista de todas as ações ativas disponíveis na conta, utiliz
 
 Para ter acesso a estrutura do questionário programado dentro do Indecx. A comunicação será realizada através da seguinte URL:
 
-```bash
-{
-  https://indecx.com/v3/integrations/actions-info/[Identificador_da_acao]
-}
+
+```javascript
+GET /v3/integrations/actions-info/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
 ## **Response**
 
-```bash
+```javascript
 {
   "_id": "60ae764cec27e759d6268563",
   "controlId": "PJ48WM",
@@ -1004,17 +1044,20 @@ A comunicação será realizada através da seguinte URL:
 https://indecx.com/v3/integrations/send-blocklist
 ```
 ## **Request**
-```bash
-{
+```javascript
+POST /v3/integrations/send-blacklist
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
 {
    "email":"contato_3@indecx.com.br",
    "reason":"Não quer receber contato"
 	
 }
-}
 ```
 ## **Response**
-```bash
+```javascript
 {
 	"message": "Sent to the blocklist successfully."
 }
@@ -1026,11 +1069,13 @@ https://indecx.com/v3/integrations/send-blocklist
 
 Você também pode ter acesso a lista de todos os clientes que entraram em blaclist.:
 
-```bash
-{
-  https://indecx.com/v3/integrations/blocklist-info?[params]
-}
+```javascript
+GET /v3/integrations/blocklist-info/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
+
 ## Query Params
 | Params  | Descrição |
 | ------------- | ------------- |
@@ -1089,11 +1134,13 @@ Você também pode ter acesso a lista de todos os clientes que entraram em blacl
 
 Você também pode ter acesso a lista de todas as categorizações atribuídas.
 
-```bash
-{
-  https://indecx.com/v3/integrations/category-info?[params]
-}
+```javascript
+GET /v3/integrations/category-info/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
+
 ## Query Params
 | Params  | Descrição |
 | ------------- | ------------- |
@@ -1107,14 +1154,17 @@ Você também pode ter acesso a lista de todas as categorizações atribuídas.
 Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" para retornar todos os convites de todas as ações disponíveis.
 
 Exemplo de consulta:
-```bash
 
-https://indecx.com/v3/integrations/category-info/all?startDate=01-01-2022&endDate=28-07-2022&dateType=updatedAt
+```javascript
+GET /v3/integrations/category-info/all?startDate=01-01-2022&endDate=28-07-2022&dateType=updatedAt
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
 ## **Response**
 
-```bash
+```javascript
 
 	"page": 1,
 	"limit": 50,
@@ -1170,6 +1220,8 @@ https://indecx.com/v3/integrations/category-info/all?startDate=01-01-2022&endDat
 
 Você também pode cadastrar uma filial ou unidade de negócio via API. Essa filial que chamados de Ih1 na plataforma, será utilizada para que seja possível separar os dados e niveis de acesso por usuário.
 
+
+
 ```bash
 {
   https://indecx.com/v3/integrations/branches
@@ -1178,7 +1230,14 @@ Você também pode cadastrar uma filial ou unidade de negócio via API. Essa fil
 
 
 ## **request json**
-```bash
+
+
+```javascript
+POST /v3/integrations/branches
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
 {
    "corporate_name":"UNIDADE X - CENTRO",
    "type":"ih1",
@@ -1218,16 +1277,16 @@ Você também pode cadastrar uma filial ou unidade de negócio via API. Essa fil
 
 API permite ter acesso a lista de todas as unidades cadastradas na plataforma.
 
-```bash
-{
-  https://indecx.com/v3/integrations/branches
-}
+```javascript
+GET /v3/integrations/branches
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
-
 
 ## **Response**
 
-```bash
+```javascript
 
 [
 	{
