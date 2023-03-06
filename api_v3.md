@@ -2,9 +2,10 @@
   <img alt="" title="" src="./assets/header_indecx_API.png" />
 </h1>
 
-![Badge](https://img.shields.io/badge/version-Preview-blue)
+![Badge](https://img.shields.io/badge/integrations-v3-blue) 
 
-A API IndeCX foi desenvolvida para que seja possível realizar diversas integrações entre seu sistema e as funcionalidades disponíveis na nossa plataforma.
+
+A API IndeCX foi desenvolvida para que seja possível realizar diversas integrações entre seu sistema e as funcionalidades disponíveis na nossa plataforma. Nessa Versão, a API conta com uma melhoria no processo de autenticação e autorização utilizando Bearer token que é uma abordagem segura, simples, escalável, flexível e padronizada para garantir a segurança em APIs.
 
 Nessa documentação você encontrará exemplos de utilização de cada método.
 
@@ -48,7 +49,7 @@ Content-Type: application/json
 
 
 ## Exemplo de cabeçalho de autorização
-O Bearer Token deve ser enviado no cabeçalho Authorization de todas as requisições que requerem autenticação.
+O Bearer Token deve ser enviado no cabeçalho Authorization de todas as requisições que requerem autenticação. Token possui validade de 30 minutos.
 
 ```javascript
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra...
@@ -1252,4 +1253,5 @@ API permite ter acesso a lista de todas as unidades cadastradas na plataforma.
 
 ### Obrigado 💚
 
-Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = 
+Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = )
+Atualizado em 01/01/2023
