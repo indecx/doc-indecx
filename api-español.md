@@ -99,3 +99,39 @@ La comunicación se realizará a través de la siguiente URL:
 | tipo de fecha	| Tipo de fecha createdAt (creación de búsqueda) o updatedAt (actualización de búsqueda) |
 | correo electrónico	| Parámetro de correo electrónico del encuestado |
 | teléfono	| Parámetro del teléfono del encuestado |
+
+Nota: Para el valor [Action_Identifier], el parámetro "/all" se puede usar para devolver todas las respuestas de todas las acciones disponibles.
+
+Ejemplo de consulta: 
+(Imagen)
+
+### Respuesta
+
+(Imagen)
+
+### Comprender los campos de devolución 
+
+| parámetros |	Descripción |
+| ------------- | ------------- |
+| `_Identificación` |	ID de respuesta |
+| activo |	estado |
+| Fecha	| Fecha y hora de respuesta |
+| Fecha de respuesta	| Fecha y hora de respuesta |
+| Respuesta anónima	| Identificación si el cliente quiere identificarse o no. |
+| Identificación del cliente	| Identificador único del cliente |
+| Nombre	| Nombre del cliente |
+| Correo electrónico	| Correo electrónico del cliente |
+| Teléfono	| Teléfono del cliente |
+| Comentario	| Comentario realizado por el cliente en el momento de la encuesta |
+| categorías	| Categorización de comentarios (feedback) |
+| Canal	| Canal de recogida de respuestas |
+| ID de la compañía	| ID de la compañía |
+| ID de acción	| identificador de acción |
+| ID de invitación	| identificación de invitación |
+| ID de detalles	| ID de detalles de importación |
+| Texto	| Pregunta métrica clave |
+| Revisar	|Puntuación asignada en la métrica principal |
+| Métrico	| métrica principal |
+| Creado en	| Fecha de creación de la respuesta |
+| Actualizar en	| Fecha de actualización de la respuesta |
+| Eliminado	| Comprueba si la respuesta fue eliminada |
