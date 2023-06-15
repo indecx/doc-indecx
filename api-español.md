@@ -232,3 +232,37 @@ A través de este método, puede acceder a una lista de todos los clientes que a
 | fecha de inicio	| Fecha de inicio del parámetro |
 | fecha final	| Fecha de finalización del parámetro |
 | correo electrónico	| Buscar correo electrónico de un usuario en específico |
+
+Ejemplo de consulta:
+
+(imagen)
+
+recopilación de respuestas con un límite de paginación y un retorno de carga útil máximo de 1000 registros.
+
+### Respuesta
+
+(imagen)
+
+### Comprender los campos de devolución 
+| parámetros	| Descripción |
+| ------------- | ------------- |
+| `_identificación`	| ID de respuesta |
+| contestada	| estado de respuesta |
+| Reenviar/Fechas	| Lista de todas las fechas para las que se reenvió la invitación |
+| activo	| estado de la invitación |
+| Recordatorio/Fechas	| Lista de todas las fechas para las que hubo recordatorios |
+| ID de control	| Identificador de control de invitación |
+| actionId.nombre	| Nombre de la acción asignada a la invitación |
+| actionId.controlId	| Identificador de control de acción |
+| nombre	| Nombre del cliente |
+| correo electrónico	| correo electrónico del cliente |
+| teléfono	| teléfono del cliente |
+| URL corta	| enlace de encuesta al cliente |
+| email valido |	Validador de campo de correo electrónico |
+| teléfono válido |	validador de campo de teléfono |
+| indicadores	| Lista de indicadores asignados a la invitación |
+| métrico	| Métrica de invitación clave |
+| Creado en	| ? |
+| página	| paginación de retorno |
+| límite	| Límite máximo de devolución de consultas |
+| total	| Total, de registros consultados |
