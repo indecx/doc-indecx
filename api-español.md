@@ -79,3 +79,23 @@ Posibles devoluciones
 | 402	| Saldo de mensaje insuficiente. |
 | 500	| Error Interno del Servidor |
 
+### OBTENER Recopilar respuestas 
+(imagen/link)
+
+También puede integrar las respuestas recopiladas a través de indecx en su sistema. Para ello, deberá utilizar el método "Recopilar respuestas" para acceder a todas las respuestas y detalles de los clientes.
+
+La comunicación se realizará a través de la siguiente URL:
+
+(link)
+
+### Parámetros de consultas 
+
+| parámetros	| Descripción |
+| ------------- | ------------- |
+| página	| Devuelve los resultados de una página específica | 
+| límite	| Devuelve un valor límite por página |
+| fecha de inicio	| Fecha de inicio del parámetro |
+| fecha final	| Fecha de finalización del parámetro |
+| tipo de fecha	| Tipo de fecha createdAt (creación de búsqueda) o updatedAt (actualización de búsqueda) |
+| correo electrónico	| Parámetro de correo electrónico del encuestado |
+| teléfono	| Parámetro del teléfono del encuestado |
