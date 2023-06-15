@@ -217,3 +217,18 @@ Ejemplo de consulta:
 | actualizar en	| Fecha de actualización de la invitación |
 | ID de respuesta	| ID de respuesta |
 | Eliminado/Respuesta	| Comprueba si la respuesta fue eliminada |
+
+### GET recopilación de clientes que no responden 
+(LINK)
+
+A través de este método, puede acceder a una lista de todos los clientes que aún no han respondido a su encuesta. La comunicación se realizará a través de la siguiente URL:
+(link)
+
+### Parámetros de Consulta 
+| parámetros	| Descripción |
+| ------------- | ------------- |
+| página	| Devuelve los resultados de una página específica |
+| límite	| Devuelve un valor límite por página |
+| fecha de inicio	| Fecha de inicio del parámetro |
+| fecha final	| Fecha de finalización del parámetro |
+| correo electrónico	| Buscar correo electrónico de un usuario en específico |
