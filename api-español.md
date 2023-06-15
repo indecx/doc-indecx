@@ -64,16 +64,18 @@ Las acciones deben crearse en la plataforma app-indecx.com y los envíos se pued
 (Imagen)
 
 Posibles devoluciones 
-|**Código** |	**Descripción** |
-200	¡Envíos configurados con éxito!
-400	Acción no encontrada.
-400	Falta la clave API.
-400	Informe al menos a un cliente.
-401	No se encontró la compañía para esta clave API.
-401	Clave API no válida.
-401	Esta acción está bloqueada para integraciones.
-401	Esta acción está en pausa.
-402	Saldo de correo electrónico insuficiente.
-402	Saldo de mensaje insuficiente.
-500	Error Interno del Servidor
+
+| Código | Descripción |
+| ------------- | ------------- |
+| 200	| ¡Envíos configurados con éxito! |
+| 400	| Acción no encontrada. |
+| 400	| Falta la clave API. |
+| 400	| Informe al menos a un cliente. |
+| 401	| No se encontró la compañía para esta clave API. |
+| 401	| Clave API no válida. |
+| 401	| Esta acción está bloqueada para integraciones. |
+| 401	| Esta acción está en pausa. |
+| 402	| Saldo de correo electrónico insuficiente. |
+| 402	| Saldo de mensaje insuficiente. |
+| 500	| Error Interno del Servidor |
 
