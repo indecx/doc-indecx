@@ -135,3 +135,85 @@ Ejemplo de consulta:
 | Creado en	| Fecha de creación de la respuesta |
 | Actualizar en	| Fecha de actualización de la respuesta |
 | Eliminado	| Comprueba si la respuesta fue eliminada |
+
+### Preguntas adicionales
+
+| parámetros |	Descripción |
+| ------------- | ------------- |
+| `_Identificación`	| identificación de la pregunta |
+| Tipo	| Tipo de pregunta RESEÑAS, ME GUSTA/NO ME GUSTA, CSAT, EMOCIÓN, MÚLTIPLES, ENTRADA |
+| Texto	| Pregunta Descripción |
+| revisar	| grado asignado |
+| Responder texto	| Retorno de texto en caso de pregunta adicional de tipo **INPUT** |
+| multipleValues	| Devolución de respuestas múltiples en caso de tipo de pregunta adicional **MÚLTIPLE** |
+
+### Indicadores
+| parámetros |	Descripción |
+| ------------- | ------------- |
+| `_identificación` |	identificación del indicador |
+| Columna	| nombre del indicador |
+| Valor	| valor del indicador |
+
+### sentimientoAnalyzeGCP
+| parámetros	| Descripción | 
+| ------------- | ------------- |
+| puntaje	| puntaje de sentimiento |
+| frases clave	| Palabras claves identificadas en los comentarios de los clientes |
+
+### Tratos
+| parámetros	| Descripción |
+| ------------- | ------------- |
+| estado	| Estado de negociación |
+| patrocinador	| Nombre de la persona a cargo |
+| comentarios	| Comentario registrado por el responsable |
+| Fecha	| fecha de negociación |
+| categorías	| Categorías incluidas en las respuestas |
+
+### OBTENER Recopilar informaciones de invitación
+
+(LINK)
+
+Puede acceder a la lista de todos los clientes importados a la plataforma con estado si la invitación ya fue respondida o no.
+
+La comunicación se realizará a través de la siguiente URL:
+
+(LINK)
+
+### Parámetros de consulta
+| parámetros	| Descripción |
+| ------------- | ------------- |
+| página	| Devuelve los resultados de una página específica |
+| límite	| Devuelve un valor límite por página |
+| fecha de inicio	| Fecha de inicio del parámetro |
+| fecha final	| Fecha de finalización del parámetro |
+| tipo de fecha	| Tipo de fecha createdAt (creación de invitación) o updatedAt (actualización de invitación) |
+| correo electrónico	| Parámetro de correo electrónico de invitación |
+| teléfono	| Parámetro de teléfono de invitación |
+
+Nota: Para el valor [Identifier_da_acao] se puede utilizar el parámetro "/all" para devolver todas las invitaciones de todas las acciones disponibles.
+
+Ejemplo de consulta:
+
+(IMAGEN/LINK)
+
+### RESPUESTA
+
+(IMAGEN)
+
+### Comprender los campos de devolución
+| parámetros	| Descripción |
+| ------------- | ------------- |
+| `_identificación`	| identificación de invitación |
+| contestada	| Comprueba si la invitación fue respondida |
+| activo	| Comprueba si la invitación está activa |
+| ID de acción	| identificador de acción |
+| nombre	| Nombre del cliente |
+| correo electrónico	| correo electrónico del cliente |
+| teléfono	| teléfono del cliente |
+| URL corta	| Dirección del enlace de la encuesta |
+| email valido	| validador de correo electrónico |
+| teléfono válido	| validador de teléfono |
+| Creado en	| Fecha de creación de la invitación |
+| actualizar en	| Fecha de actualización de la invitación |
+| ID de respuesta	| ID de respuesta |
+| Eliminado/Respuesta	| Comprueba si la respuesta fue eliminada |
