@@ -48,3 +48,32 @@ Las acciones deben crearse en la plataforma app-indecx.com y los envió se puede
 Para tomas programadas, la invitación tendrá un estado **programado** en el índice y, si es necesario, también es posible cancelar la toma directamente a través de la plataforma en el menú Tomas>>Agendamientos
 
 **Importante:** El campo “programación” utiliza el estándar UTC, por lo que es posible programar tomas con horarios locales en otros países. El parámetro de ejemplo **"2020-12-16T20:20:00.000"** se activará en los siguientes horarios: Brasil 17:20:00 (UTC - 3), EE. UU. Nueva York 16:20:00 (UTC - 5)
+
+### POST envíos de invitación por lotes 
+
+(IMAGEN)
+
+Las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se activa a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave proporcionada a la empresa y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo.
+
+### Configuración JSON
+**Importante** El correo electrónico y el teléfono son campos obligatorios, según la configuración del tipo de activador. Consulta la configuración realizada al crear la acción. Para poder enviar datos a las columnas adicionales (indicadores) es necesario crear los indicadores dentro de la acción previamente y usar exactamente los mismos nombres creados dentro de la plataforma. **Esta API tiene un límite máximo de 1.000 clientes por solicitud.**
+
+(Imagen)
+### Respuesta 
+
+(Imagen)
+
+Posibles devoluciones 
+|**Código** |	**Descripción** |
+200	¡Envíos configurados con éxito!
+400	Acción no encontrada.
+400	Falta la clave API.
+400	Informe al menos a un cliente.
+401	No se encontró la compañía para esta clave API.
+401	Clave API no válida.
+401	Esta acción está bloqueada para integraciones.
+401	Esta acción está en pausa.
+402	Saldo de correo electrónico insuficiente.
+402	Saldo de mensaje insuficiente.
+500	Error Interno del Servidor
+
