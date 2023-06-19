@@ -29,8 +29,16 @@ Company-Key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
 
 ```
 
-### Ejemplo de respuesta 
-(imagen)
+## Ejemplo de respuesta 
+```javascript
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+	"authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra..."
+}
+
+```
 
 ### Ejemplo de encabezado de autorización
 El Bearer Token debe enviarse en el encabezado de Autorización de todas las solicitudes que requieren autenticación. El token es válido por 30 minutos.
