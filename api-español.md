@@ -143,11 +143,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-### Respuesta 
+## Respuesta 
 
-(Imagen)
+```bash
+{
+  "message": "Disparo configurado com sucesso!"
+}
+```
 
-Posibles devoluciones 
+**Posibles devoluciones** 
 
 | Código | Descripción |
 | ------------- | ------------- |
