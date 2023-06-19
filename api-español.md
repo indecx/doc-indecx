@@ -84,24 +84,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
    "scheduling":""
 }
 ```
-## **Response**
+## **RESPUESTA**
 ```javascript
 {
   "message": "Disparo configurado com sucesso!"
 }
 ```
 
-### RESPUESTA
-
-(IMAGEN)
-
 Para tomas programadas, la invitación tendrá un estado **programado** en el índice y, si es necesario, también es posible cancelar la toma directamente a través de la plataforma en el menú Tomas>>Agendamientos
 
 **Importante:** El campo “programación” utiliza el estándar UTC, por lo que es posible programar tomas con horarios locales en otros países. El parámetro de ejemplo **"2020-12-16T20:20:00.000"** se activará en los siguientes horarios: Brasil 17:20:00 (UTC - 3), EE. UU. Nueva York 16:20:00 (UTC - 5)
 
-### POST envíos de invitación por lotes 
-
-(IMAGEN)
+# POST envíos de invitación por lotes 
+![Badge](https://img.shields.io/badge/POST-.v3/integrations/%2Fsend%2Fbulk-green)
 
 Las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se activa a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave proporcionada a la empresa y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo.
 
