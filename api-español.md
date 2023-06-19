@@ -21,8 +21,13 @@ https://indecx.com/v3/integrations/authorization/token
 | ------------- | ------------- |
 | company-key  | $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
 
-### Ejemplo de solicitud 
-(Imagen)
+## Ejemplo de solicitud 
+```javascript
+GET /v3/integrations/authorization/token HTTP/1.1
+Host: indecx.com
+Company-Key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
+
+```
 
 ### Ejemplo de respuesta 
 (imagen)
