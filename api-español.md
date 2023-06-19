@@ -6,14 +6,14 @@ La API de IndeCX fue desarrollada para que sea posible realizar diversas integra
 
 En esta documentación encontrará ejemplos del uso de cada método.
 
-### INTRODUCCIÓN
+## INTRODUCCIÓN
 La API utiliza autenticación y autorización de token de portador para proteger las rutas de acceso restringido. El Bearer Token debe enviarse en el encabezado de Autorización de todas las solicitudes que requieren autenticación.
 
-### Autenticación
+## Autenticación
 Para autenticarse con la API, debe enviar una solicitud de autenticación con sus credenciales de usuario (**empresa-clave**) enviada a través del encabezado, disponible dentro de la configuración de la cuenta en la plataforma Indecx. La API devolverá un token de portador, que debe usar para todas las solicitudes futuras que requieran autenticación.
 
-### Punto Final/ Obtener 
-(Imagen) 
+## Punto Final/ Obtener 
+![Badge](https://img.shields.io/badge/GET-authorization--token-orange) 
 
 ### Ejemplo de solicitud 
 (Imagen)
