@@ -328,7 +328,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 | parámetros |	Descripción |
 | ------------- | ------------- |
-| `_Identificación`	| identificación de la pregunta |
+| _Identificación	| identificación de la pregunta |
 | Tipo	| Tipo de pregunta RESEÑAS, ME GUSTA/NO ME GUSTA, CSAT, EMOCIÓN, MÚLTIPLES, ENTRADA |
 | Texto	| Pregunta Descripción |
 | revisar	| grado asignado |
@@ -338,7 +338,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ## Indicadores
 | parámetros |	Descripción |
 | ------------- | ------------- |
-| `_identificación` |	identificación del indicador |
+| _identificación |	identificación del indicador |
 | Columna	| nombre del indicador |
 | Valor	| valor del indicador |
 
