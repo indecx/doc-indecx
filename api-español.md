@@ -167,16 +167,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | 402	| Saldo de mensaje insuficiente. |
 | 500	| Error Interno del Servidor |
 
-### OBTENER Recopilar respuestas 
-(imagen/link)
+# OBTENER Recopilar respuestas 
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Fanswers--info%2F-orange)
 
 También puede integrar las respuestas recopiladas a través de indecx en su sistema. Para ello, deberá utilizar el método "Recopilar respuestas" para acceder a todas las respuestas y detalles de los clientes.
 
 La comunicación se realizará a través de la siguiente URL:
 
-(link)
+```bash
+https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?[params]
+```
 
-### Parámetros de consultas 
+## Parámetros de consultas 
 
 | parámetros	| Descripción |
 | ------------- | ------------- |
@@ -191,7 +193,12 @@ La comunicación se realizará a través de la siguiente URL:
 Nota: Para el valor [Action_Identifier], el parámetro "/all" se puede usar para devolver todas las respuestas de todas las acciones disponibles.
 
 Ejemplo de consulta: 
-(Imagen)
+```javascript
+GET /v3/integrations/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
 ### Respuesta
 
