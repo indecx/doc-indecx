@@ -98,12 +98,51 @@ Para tomas programadas, la invitación tendrá un estado **programado** en el í
 # POST envíos de invitación por lotes 
 ![Badge](https://img.shields.io/badge/POST-.v3/integrations/%2Fsend%2Fbulk-green)
 
+Você também pode realizar os disparos de forma automática para um lote de clientes de uma única vez
+
+A comunicação será realizada através da seguinte URL:
+
+```bash
+https://indecx.com/v3/integrations/send/bulk/[Identificador_da_acao]
+```
+
 Las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se activa a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave proporcionada a la empresa y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo.
 
-### Configuración JSON
-**Importante** El correo electrónico y el teléfono son campos obligatorios, según la configuración del tipo de activador. Consulta la configuración realizada al crear la acción. Para poder enviar datos a las columnas adicionales (indicadores) es necesario crear los indicadores dentro de la acción previamente y usar exactamente los mismos nombres creados dentro de la plataforma. **Esta API tiene un límite máximo de 1.000 clientes por solicitud.**
+## Configuración JSON
+**Importante** 
+El correo electrónico y el teléfono son campos obligatorios, según la configuración del tipo de activador. Consulta la configuración realizada al crear la acción. Para poder enviar datos a las columnas adicionales (indicadores) es necesario crear los indicadores dentro de la acción previamente y usar exactamente los mismos nombres creados dentro de la plataforma. **Esta API tiene un límite máximo de 1.000 clientes por solicitud.**
 
-(Imagen)
+```javascript
+POST /v3/integrations/send/bulk/T0AXXX HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+{
+   "customers":[
+      {
+         "nome":"ClienteA",
+         "email":"ClienteD@gmail.com",
+         "telefone":""
+      },
+      {
+         "nome":"ClienteB",
+         "email":"ClienteD@gmail.com",
+         "telefone":""
+      },
+		  {
+         "nome":"ClienteC",
+         "email":"ClienteD@gmail.com",
+         "telefone":""
+      },
+		  {
+         "nome":"ClienteD",
+         "email":"ClienteD@gmail.com",
+         "telefone":""
+      }
+   ]
+}
+```
+
 ### Respuesta 
 
 (Imagen)
