@@ -266,3 +266,83 @@ recopilación de respuestas con un límite de paginación y un retorno de carga 
 | página	| paginación de retorno |
 | límite	| Límite máximo de devolución de consultas |
 | total	| Total, de registros consultados |
+
+### WEBHOOK recopilar respuestas
+
+También puedes registrar tu endpoint dentro de la plataforma Indecx para que cada nueva respuesta sea enviada automáticamente a tu sistema. Ingresando a la plataforma Indecx, vaya a: **Configuración >> Integraciones >> Recopilación de respuestas**
+
+Con cada nueva respuesta recibirá una devolución con toda la información del cliente y las respuestas asignadas por él, como se muestra en el siguiente ejemplo:
+
+### Respuesta
+
+(imagen)
+
+### POST generación de un enlace de encuesta 
+(link)
+
+Con la ruta a continuación, se podrá integrar con la plataforma Indecx, donde el objetivo es crear una invitación y devolver el enlace en la respuesta de llamada, para que pueda ser utilizado dentro de los medios de contacto con el cliente, este enlace será único para cada nueva invitación generada.
+
+La comunicación se realizará a través de la siguiente URL:
+
+(link)	
+
+las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se active a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave proporcionada a la empresa y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo
+
+### Pedido 
+
+(imagen)
+
+### RESPUESTA
+
+(imagen)
+
+### Generación de un enlace de encuesta con URL de devolución de llamadas 
+
+También es posible enviar un disparador y obtener el enlace a través de la API registrada en la callbackurl.
+ruta API **callbackurl**
+**maxmsg** Retorno máximo de registros en JSON. Ejemplo: si activa 1000 clientes con maxmsg = 100, recibirá 10 solicitudes con 100 registros cada una.
+
+### Pedido
+
+(imagen)
+
+### RESPUESTA
+
+(imagen)
+
+### URL de devolución de llamadas y respuestas 
+
+(imagen)
+
+### POST Enviar transacciones de respuestas a Indecx 
+
+ (lINK)
+
+Con la ruta a continuación, será posible enviar una respuesta recopilada en su APP o sistema de manera transaccional al sistema Indecx. De esta forma, es posible centralizar todos los análisis y respuestas dentro de Indecx y analizar los resultados con los informes disponibles en la plataforma.
+La comunicación se realizará a través de la siguiente URL:
+
+(LINK)
+
+Para que este recibo por parte de Indecx sea posible, es necesario tener una acción creada con configuraciones de cuestionario compatibles con lo que fue respondido por el cliente.
+
+### Pedido
+
+(imagen)
+
+### RESPUESTA
+
+(imagen)
+
+### Comprender los campos de solicitud
+| Parámetros	| Descripción |
+| ------------- | ------------- |
+| ID de invitación	| identificación de invitación
+| nombre	| nombre del encuestado
+| correo electrónico	| correo electrónico del encuestado
+| teléfono	| teléfono del encuestado
+| revisar	| Puntuación asignada a la métrica principal de la encuesta
+| comentario	| Campo de comentario del cliente
+| preguntas adicionales/tipo	| Tipo de pregunta adicional, por ejemplo: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA
+| preguntas adicionales/texto	| Descripción adicional de la pregunta
+| Indicadores/columna	| nombre del indicador
+| Indicadores/valor	| valor del indicador
