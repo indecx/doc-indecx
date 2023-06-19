@@ -40,10 +40,12 @@ Content-Type: application/json
 
 ```
 
-### Ejemplo de encabezado de autorización
+## Ejemplo de encabezado de autorización
 El Bearer Token debe enviarse en el encabezado de Autorización de todas las solicitudes que requieren autenticación. El token es válido por 30 minutos.
 
-(IMAGEN)
+```javascript
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra...
+```
 
 ### Desencadenador de invitación POST transaccional 
 Imagine una situación en la que desea activar una encuesta de satisfacción para cada nueva transacción de cliente dentro de su sistema, ya sea prospección, ventas, interacción, etc. El método de activación de invitación transaccional es posible y muy fácil.
