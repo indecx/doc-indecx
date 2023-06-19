@@ -297,11 +297,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
     }
 ```
 
-### Comprender los campos de devolución 
+## Comprender los campos de devolución 
 
 | parámetros |	Descripción |
 | ------------- | ------------- |
-| `_Identificación` |	ID de respuesta |
+| _Identificación |	ID de respuesta |
 | activo |	estado |
 | Fecha	| Fecha y hora de respuesta |
 | Fecha de respuesta	| Fecha y hora de respuesta |
@@ -324,7 +324,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | Actualizar en	| Fecha de actualización de la respuesta |
 | Eliminado	| Comprueba si la respuesta fue eliminada |
 
-### Preguntas adicionales
+## Preguntas adicionales
 
 | parámetros |	Descripción |
 | ------------- | ------------- |
@@ -335,7 +335,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | Responder texto	| Retorno de texto en caso de pregunta adicional de tipo **INPUT** |
 | multipleValues	| Devolución de respuestas múltiples en caso de tipo de pregunta adicional **MÚLTIPLE** |
 
-### Indicadores
+## Indicadores
 | parámetros |	Descripción |
 | ------------- | ------------- |
 | `_identificación` |	identificación del indicador |
