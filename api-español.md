@@ -462,3 +462,74 @@ También puede tener acceso a la lista de todos los clientes que ingresaron al b
 | razón	| Motivo de la inclusión en la lista de bloqueo |
 | correo electrónico	| correo electrónico del cliente |
 | Creado en	| Fecha de inclusión del registro en la lista de bloqueo |
+
+### GET Recopilar una lista de respuestas categorizadas
+(link)
+
+También puede acceder a la lista de todas las categorizaciones asignadas.
+
+(Imagen)
+
+### Parámetros de consulta
+| Parámetros	| Descripción |
+| ------------- | ------------- |
+| página	| Devuelve los resultados de una página específica |
+| límite	| Devuelve un valor límite por página |
+| fecha de inicio	| Fecha de inicio del parámetro |
+| fecha final	| Fecha de finalización del parámetro |
+| tipo de fecha	| creado en o actualizado en |
+
+Nota: Para el valor [Identifier_da_acao] se puede utilizar el parámetro "/all" para devolver todas las invitaciones de todas las acciones disponibles.
+
+Ejemplo de consulta:
+(imagen)
+
+### RESPUESTA
+
+(Imagen)
+
+### Comprender los campos de devolución
+| Parámetros	| Descripción |
+| -- | -- |
+| ID de respuesta	| ID de respuesta |
+| ID de invitación	| identificación de invitación |
+| categoría	| Nombre de categoría asignado |
+| subcategoría	| Nombre de subcategoría asignado |
+| Creado en	| Fecha de inclusión de la respuesta |
+| actualizado en	| Fecha de actualización de la respuesta |
+| tipo de fecha	| Fecha de inclusión de la respuesta |
+
+### Sucursal de registro POST (IH1)
+(link/imagen)
+
+También puede registrar una sucursal o unidad de negocio a través de la API. Esta rama, denominada Ih1 en la plataforma, se utilizará para separar datos y niveles de acceso por usuario.
+(imagen)
+
+### Solicitar json
+
+(Imagen)
+
+### RESPUESTA
+
+(Imagen)
+
+### Comprender los campos de devolución
+| Parámetros	| Descripción |
+| - | - |
+| ´_identificación´	| identificación de la sucursal |
+| activo	| estado |
+| nombre corporativo	| nombre de la sucursal |
+| tipo	| Tipo de sucursal |
+
+### GET Lista de Sucursales Registradas (IH1)
+(link/imagen)
+
+La API permite el acceso a la lista de todas las unidades registradas en la plataforma.
+
+(imagen)
+### RESPUESTA
+
+(Imagen)
+
+Gracias💚
+¿Existe alguna ruta que te haga el día a día más fácil?? ¡Ponte en contacto con el equipo de Indecx CX que desarrollamos para ti! =) Actualizado el 01/01/2023
