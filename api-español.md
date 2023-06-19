@@ -336,13 +336,74 @@ Para que este recibo por parte de Indecx sea posible, es necesario tener una acc
 ### Comprender los campos de solicitud
 | Parámetros	| Descripción |
 | ------------- | ------------- |
-| ID de invitación	| identificación de invitación
-| nombre	| nombre del encuestado
-| correo electrónico	| correo electrónico del encuestado
-| teléfono	| teléfono del encuestado
-| revisar	| Puntuación asignada a la métrica principal de la encuesta
-| comentario	| Campo de comentario del cliente
-| preguntas adicionales/tipo	| Tipo de pregunta adicional, por ejemplo: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA
-| preguntas adicionales/texto	| Descripción adicional de la pregunta
-| Indicadores/columna	| nombre del indicador
-| Indicadores/valor	| valor del indicador
+| ID de invitación	| identificación de invitación |
+| nombre	| nombre del encuestado |
+| correo electrónico	| correo electrónico del encuestado |
+| teléfono	| teléfono del encuestado |
+| revisar	| Puntuación asignada a la métrica principal de la encuesta |
+| comentario	| Campo de comentario del cliente |
+| preguntas adicionales/tipo	| Tipo de pregunta adicional, por ejemplo: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA |
+| preguntas adicionales/texto	| Descripción adicional de la pregunta |
+| Indicadores/columna	| nombre del indicador |
+| Indicadores/valor	| valor del indicador |
+
+***Importante:** El campo inviteId solo se usa cuando usamos una combinación de API de generación de enlaces + API de respuesta transaccional, y no es obligatorio para casos de inclusión de respuesta simple. Para obtener más información sobre cómo usar el inviteId, comuníquese con el equipo de soporte de Indecx.
+
+### Comprender las opciones de respuesta por tipo
+| Parámetros	| Descripción |
+| ------------- | ------------- |
+| RESEÑAS	| Escala de 5 puntos (1 a 5) en forma de "estrellas" | 
+| CSAT	| Escala de 10 puntos (1 a 10) en forma de escala de evaluación |
+| GUSTAR DISGUSTAR	| Escala booleana (0 y 1) en forma de icono positivo y negativo |
+| ME GUSTA	| Escala de 5 puntos (1 a 5) donde 1 = "Muy Insatisfecho", 2 = "Insatisfecho", 3 = "Indiferente", 4 = "Satisfecho" y 5 = "Muy Satisfecho" |
+| EMOCIÓN	| Escala booleana (0 y 1) en forma de icono emoji positivo y negativo |
+| MÚLTIPLE	| Escala de selección única o de opción múltiple. |
+| APORTE	| Campo abierto para la inclusión de la respuesta. |
+
+***Importante:** Los valores recibidos deben estar de acuerdo con las opciones de respuesta disponibles en cada métrica para que se pueda realizar la integración.
+
+### Lista de posibles errores
+| Código	| Descripción |
+| ------------- | ------------- |
+| 400	| "mensaje": "Tipo de métrica no válido. Permitido: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA, CES" |
+| 400	| "mensaje": "Respuesta inválida para la pregunta XXXX..." |
+| 400	| "mensaje": "La invitación ya ha sido respondida" |
+| 500	| "mensaje": "Error interno del servidor" |
+
+### GET Lista de acciones activas en Indecx
+(link)
+Para acceder a la lista de todas las acciones activas disponibles en la cuenta, use la ruta a continuación.
+
+(imagen)
+
+### RESPUESTA
+
+(imagen)
+
+### OBTENER Recopilar información de la encuesta
+(link)
+
+Acceder a la estructura del cuestionario programado dentro de Indecx. La comunicación se realizará a través de la siguiente URL:
+
+(imagen)
+
+### RESPUESTA
+
+(imagen)
+
+### Comprender los campos de devolución
+| Parámetros	| Descripción |
+| ------------- | ------------- |
+| ´_identificación´	| identificador de acción |
+| ID de control	| Identificador de control de acción |
+| Reenviar | Fechas	Lista de todas las fechas de reenvío| 
+| tipo de encuesta	| tipo de cuestionario |
+| nombre	| Nombre del cuestionario |
+| tipo	| Métrica principal del cuestionario |
+| pregunta	| Pregunta métrica clave |
+| Habilitar Anónimo	| Opción de anonimato de datos habilitada |
+| preguntas adicionales/tipo	| Tipo de pregunta adicional, por ejemplo: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA |
+| preguntas adicionales/texto	| Descripción adicional de la pregunta |
+| preguntas adicionales/tipo múltiple |	Tipo de selección única (radio) u opción múltiple (casilla de verificación) |
+| preguntas adicionales/opciones	| Opciones de elección para múltiples tipos. |
+| todas las respuestas Requeridas	| Respuestas de tipo obligatorio. |
