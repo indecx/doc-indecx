@@ -17,6 +17,9 @@ Para autenticarse con la API, debe enviar una solicitud de autenticación con su
 ```bash
 https://indecx.com/v3/integrations/authorization/token
 ```
+| parámetros	| Descripción |
+| ------------- | ------------- |
+| company-key  | $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
 
 ### Ejemplo de solicitud 
 (Imagen)
