@@ -54,17 +54,42 @@ Imagine una situación en la que desea activar una encuesta de satisfacción par
 
 La comunicación se realizará a través del siguiente URL:
 
-(Imagen)
+```bash
+https://indecx.com/v3/integrations/[Identificador_da_acao]
+```
 
 Las acciones deben crearse en la plataforma app-indecx.com y los envió se pueden realizar a través de la plataforma (manual) o a través de la API. Cuando se hace la activación a través de la API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave de empresa proporcionada y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo.
 
-### Configuración JSON
+## Configuración JSON
 
-**Importante:** El correo electrónico y el teléfono son campos obligatorios, según la configuración del tipo de activador. Consulta la configuración realizada al crear la acción. Para poder enviar datos a las columnas adicionales (indicadores) es necesario crear los indicadores dentro de la acción previamente y usar exactamente los mismos nombres creados dentro de la plataforma.  En nuestro ejemplo a continuación, las columnas adicionales son: Sucursal, Área, Región y Tipo.
+**Importante:**
+El correo electrónico y el teléfono son campos obligatorios, según la configuración del tipo de activador. Consulta la configuración realizada al crear la acción. Para poder enviar datos a las columnas adicionales (indicadores) es necesario crear los indicadores dentro de la acción previamente y usar exactamente los mismos nombres creados dentro de la plataforma.  En nuestro ejemplo a continuación, las columnas adicionales son: Sucursal, Área, Región y Tipo.
 
-### PEDIDO
+## **PEDIDO**
 
-(IMAGEN)
+```javascript
+POST /v3/integrations/send/T0AXXX HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
+{
+   "nome":"Jose Paulo da Silva",
+   "email":"clientejosepaulo@gmail.com",
+   "telefone":"11998720000",
+   "Filial":"Filial B",
+   "Area":"SP",
+   "Regiao":"Campinas",
+   "Tipo":"Vendas",
+   "scheduling":""
+}
+```
+## **Response**
+```javascript
+{
+  "message": "Disparo configurado com sucesso!"
+}
+```
 
 ### RESPUESTA
 
