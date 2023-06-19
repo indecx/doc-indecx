@@ -47,7 +47,9 @@ El Bearer Token debe enviarse en el encabezado de Autorización de todas las sol
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra...
 ```
 
-### Desencadenador de invitación POST transaccional 
+# Desencadenador de invitación POST transaccional 
+![Badge](https://img.shields.io/badge/POST-.v3/integrations/%2Fsend%2F-green)
+
 Imagine una situación en la que desea activar una encuesta de satisfacción para cada nueva transacción de cliente dentro de su sistema, ya sea prospección, ventas, interacción, etc. El método de activación de invitación transaccional es posible y muy fácil.
 
 La comunicación se realizará a través del siguiente URL:
