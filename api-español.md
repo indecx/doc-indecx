@@ -407,3 +407,58 @@ Acceder a la estructura del cuestionario programado dentro de Indecx. La comunic
 | preguntas adicionales/tipo múltiple |	Tipo de selección única (radio) u opción múltiple (casilla de verificación) |
 | preguntas adicionales/opciones	| Opciones de elección para múltiples tipos. |
 | todas las respuestas Requeridas	| Respuestas de tipo obligatorio. |
+
+### Comprender las opciones de respuesta por tipo
+| Parámetros	| Descripción |
+| ------------- | ------------- |
+| RESEÑAS	| Escala de 5 puntos (1 a 5) en forma de "estrella" |
+| CSAT	| Escala de 10 puntos (1 a 10) en forma de escala de evaluación |
+| GUSTAR DISGUSTAR	| Escala booleana (0 y 1) en forma de icono positivo y negativo |
+| ME GUSTA	| Escala de 5 puntos (1 a 5) donde 1 = "Muy Insatisfecho", 2 = "Insatisfecho", 3 = "Indiferente", 4 = "Satisfecho" y 5 = "Muy Satisfecho" |
+| EMOCIÓN	| Escala booleana (0 y 1) en forma de icono emoji positivo y negativo |
+| MÚLTIPLE	| Escala de selección única o de opción múltiple. |
+| APORTE	| Campo abierto para la inclusión de la respuesta. |
+
+### POST Enviar cliente a la lista de bloqueo
+(link)
+
+Si desea agregar una lista de clientes a la lista de bloqueo para evitar que este correo electrónico reciba nuevos contactos, puede usar esta ruta.
+La comunicación se realizará a través de la siguiente URL:
+(Link)
+
+### Pedido
+
+(imagen)
+
+### RESPUESTA
+
+(Imagen)
+
+### OBTENER Recopilar información de la lista de bloqueo (no quiero recibir más contactos)
+
+(LINK)
+
+También puede tener acceso a la lista de todos los clientes que ingresaron al blaclist:
+
+(imagen)
+
+### Parámetros de consulta     
+
+| Parámetros	| Descripción |
+| ------------- | ------------- |
+| página	| Devuelve los resultados de una página específica |
+| límite	| Devuelve un valor límite por página |
+
+### RESPUESTA
+
+(Imagen)
+
+### Comprender los campos de devolución
+| Parámetros	| Descripción |
+| ------------- | ------------- |
+| actionName	| Compartir nombre |
+| actionControlId	| identificador de acción |
+| ID de invitación	| identificación de invitación |
+| razón	| Motivo de la inclusión en la lista de bloqueo |
+| correo electrónico	| correo electrónico del cliente |
+| Creado en	| Fecha de inclusión del registro en la lista de bloqueo |
