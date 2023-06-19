@@ -200,9 +200,102 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-### Respuesta
+## **Respuesta**
 
-(Imagen)
+```javascript
+ {
+   "page": 1,
+   "limit": 50,
+   "total": 825,
+   "answers": [
+      "_id": "60b680790be5ec68f9aaa8ac",
+      "active": true,
+      "date": "2021-06-01T18:46:17.374Z",
+      "answerDate": "2021-06-01T18:46:17.374Z",
+      "anonymousResponse": false,
+      "clientId": null,
+      "categories": [
+         {
+            "category": "Atendimento Insatisfatorio",
+            "subCategory": "Gerente"
+         },
+         {
+            "category": "Conteúdo programático"
+         }
+      ],
+      "tags": [],
+      "subTags": [],
+      "deleted": false,
+      "name": "Nome do Cliente A",
+      "email": "clientea@gmail.com",
+      "phone": 1199999222,
+      "feedback": "O atendimento poderia ser melhor",
+      "additionalQuestions": [
+        {
+          "multipleValues": [],
+          "_id": "60b690786b90df6a1c0c25c7",
+          "type": "REVIEWS",
+          "text": "Atendimento",
+          "review": 5
+        },
+	{
+          "multipleValues": [],
+          "_id": "60b690786b90df6a1c0c25c8",
+          "type": "CSAT",
+          "text": "Prazo",
+          "review": 8
+        },
+      ],
+      "channel": "email",
+      "companyId": "5edfb0342e03a449708e67df",
+      "actionId": "6074572fa732a85e3683bf9f",
+      "inviteId": "60b66441e4c5236925287995",
+      "detailsId": "60b66440e4c523692528689a",
+      "text": "Em uma escala de 0 a 10, o quanto você indicaria a Indecx para amigos ou familiares?",
+      "review": 7,
+      "indicators": [
+        {
+          "_id": "60b66440e4c523692528689b",
+          "column": "sent_date",
+          "value": "2021-06-01",
+          "indicatorId": "60999b6846cfe15d3e276b67",
+          "key": "2021-06-01"
+        },
+	{
+          "_id": "60b66440e4c523692528689c",
+          "column": "seller_id",
+          "value": "18/05/3038",
+          "indicatorId": "6099701094450d5d31861a87",
+          "key": "415785"
+        },
+        {
+          "_id": "60b66440e4c523692528689d",
+          "column": "seller_type",
+          "value": "biz",
+          "indicatorId": "609970140ad6c05d4c8ae98e",
+          "key": "biz"
+        },
+	],
+      "controlId": "S8C0VE",
+      "metric": "nps-0-10",
+      "createdAt": "2021-06-01T18:46:17.380Z",
+      "updatedAt": "2021-06-01T18:46:17.780Z",
+      "sentimentAnalyzeGCP": {
+        "score": 0,
+        "keyPhrases": [
+          "Atendimento",
+          "Melhor"
+        ]
+	},
+      "treatments": {
+        "status": "aberto",
+        "sponsor": "Ninguém",
+        "comments": [],
+        "date": "2021-06-01T18:46:17.374Z",
+        "categories": []
+      }
+    }
+```
 
 ### Comprender los campos de devolución 
 
