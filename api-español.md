@@ -360,7 +360,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | date	| fecha de negociación |
 | categories	| Categorías incluidas en las respuestas |
 
-### OBTENER Recopilar informaciones de invitación
+## GET Recopilar informaciones de invitación
 
 ![Badge](https://img.shields.io/badge/GET-invites--info-orange)
 
