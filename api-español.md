@@ -478,14 +478,14 @@ A través de este método, puede acceder a una lista de todos los clientes que a
 https://indecx.com/v3/integrations/[Identificador_da_acao]?[params]
 ```
 
-## Parámetros de Consulta 
+## Query Params
 | parámetros	| Descripción |
 | ------------- | ------------- |
-| página	| Devuelve los resultados de una página específica |
-| límite	| Devuelve un valor límite por página |
-| fecha de inicio	| Fecha de inicio del parámetro |
-| fecha final	| Fecha de finalización del parámetro |
-| correo electrónico	| Buscar correo electrónico de un usuario en específico |
+| page	        | Devuelve los resultados de una página específica |
+| limit 	| Devuelve un valor límite por página |
+| startDate	| Fecha de inicio del parámetro |
+| endDate	| Fecha de finalización del parámetro |
+| email 	| Buscar correo electrónico de un usuario en específico |
 
 Ejemplo de consulta:
 
@@ -503,7 +503,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 **recopilación de respuestas con un límite de paginación y un retorno de carga útil máximo de 1000 registros.**
 
-## **Respuesta**
+## **Response**
 
 ```javascript
 {
