@@ -324,7 +324,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | Actualizar en	| Fecha de actualización de la respuesta |
 | Eliminado	| Comprueba si la respuesta fue eliminada |
 
-## Preguntas adicionales
+**Preguntas adicionales**
 
 | parámetros |	Descripción |
 | ------------- | ------------- |
@@ -335,20 +335,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | Responder texto	| Retorno de texto en caso de pregunta adicional de tipo **INPUT** |
 | multipleValues	| Devolución de respuestas múltiples en caso de tipo de pregunta adicional **MÚLTIPLE** |
 
-## Indicadores
+**Indicadores**
 | parámetros |	Descripción |
 | ------------- | ------------- |
 | _identificación |	identificación del indicador |
 | Columna	| nombre del indicador |
 | Valor	| valor del indicador |
 
-### sentimientoAnalyzeGCP
+**sentimientoAnalyzeGCP**
 | parámetros	| Descripción | 
 | ------------- | ------------- |
 | puntaje	| puntaje de sentimiento |
 | frases clave	| Palabras claves identificadas en los comentarios de los clientes |
 
-### Tratos
+**Tratos*
 | parámetros	| Descripción |
 | ------------- | ------------- |
 | estado	| Estado de negociación |
