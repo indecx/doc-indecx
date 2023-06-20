@@ -304,61 +304,61 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 | parámetros |	Descripción |
 | ------------- | ------------- |
-| _Identificación |	ID de respuesta |
-| activo |	estado |
-| Fecha	| Fecha y hora de respuesta |
-| Fecha de respuesta	| Fecha y hora de respuesta |
-| Respuesta anónima	| Identificación si el cliente quiere identificarse o no. |
-| Identificación del cliente	| Identificador único del cliente |
-| Nombre	| Nombre del cliente |
-| Correo electrónico	| Correo electrónico del cliente |
-| Teléfono	| Teléfono del cliente |
-| Comentario	| Comentario realizado por el cliente en el momento de la encuesta |
-| categorías	| Categorización de comentarios (feedback) |
-| Canal	| Canal de recogida de respuestas |
-| ID de la compañía	| ID de la compañía |
-| ID de acción	| identificador de acción |
-| ID de invitación	| identificación de invitación |
-| ID de detalles	| ID de detalles de importación |
-| Texto	| Pregunta métrica clave |
-| Revisar	|Puntuación asignada en la métrica principal |
-| Métrico	| métrica principal |
-| Creado en	| Fecha de creación de la respuesta |
-| Actualizar en	| Fecha de actualización de la respuesta |
-| Eliminado	| Comprueba si la respuesta fue eliminada |
+| _id |	ID de respuesta |
+| active |	Estado |
+| date	| Fecha y hora de respuesta |
+| answerDate	| Fecha y hora de respuesta |
+| anonymousResponse	| Identificación si el cliente quiere identificarse o no. |
+| clientId	| Identificador único del cliente |
+| name	| Nombre del cliente |
+| email	| Correo electrónico del cliente |
+| phone	| Teléfono del cliente |
+| feedback	| Comentario realizado por el cliente en el momento de la encuesta |
+| categories	| Categorización de comentarios (feedback) |
+| channel	| Canal de recogida de respuestas |
+| companyId	| ID de la compañía |
+| actionId	| Identificador de acción |
+| inviteId	| Identificación de invitación |
+| detailsId	| ID de detalles de importación |
+| text	| Pregunta métrica clave |
+| review	|Puntuación asignada en la métrica principal |
+| metric	| Métrica principal |
+| createdAt	| Fecha de creación de la respuesta |
+| updateAt	| Fecha de actualización de la respuesta |
+| deleted	| Comprueba si la respuesta fue eliminada |
 
-**Preguntas adicionales**
+**additionalQuestions**
 
 | parámetros |	Descripción |
 | ------------- | ------------- |
-| _Identificación	| identificación de la pregunta |
-| Tipo	| Tipo de pregunta RESEÑAS, ME GUSTA/NO ME GUSTA, CSAT, EMOCIÓN, MÚLTIPLES, ENTRADA |
-| Texto	| Pregunta Descripción |
-| revisar	| grado asignado |
-| Responder texto	| Retorno de texto en caso de pregunta adicional de tipo **INPUT** |
+| _id	| Identificación de la pregunta |
+| type	| Tipo de pregunta REVIEWS,LIKE/DISLIKE,LIKERT,CSAT,EMOTION,MULTIPLE,INPUT |
+| text	| Pregunta Descripción |
+| review	| Grado asignado |
+| answerText	| Retorno de texto en caso de pregunta adicional de tipo **INPUT** |
 | multipleValues	| Devolución de respuestas múltiples en caso de tipo de pregunta adicional **MÚLTIPLE** |
 
-**Indicadores**
+**indicators**
 | parámetros |	Descripción |
 | ------------- | ------------- |
-| _identificación |	identificación del indicador |
-| Columna	| nombre del indicador |
-| Valor	| valor del indicador |
+| _id |	ID del indicador |
+| column	| Nombre del indicador |
+| value	| Valor del indicador |
 
 **sentimientoAnalyzeGCP**
 | parámetros	| Descripción | 
 | ------------- | ------------- |
-| puntaje	| puntaje de sentimiento |
-| frases clave	| Palabras claves identificadas en los comentarios de los clientes |
+| score	| Puntaje de sentimiento |
+| keyPhrases	| Palabras claves identificadas en los comentarios de los clientes |
 
-**Tratos**
+**treatments**
 | parámetros	| Descripción |
 | ------------- | ------------- |
-| estado	| Estado de negociación |
-| patrocinador	| Nombre de la persona a cargo |
-| comentarios	| Comentario registrado por el responsable |
-| Fecha	| fecha de negociación |
-| categorías	| Categorías incluidas en las respuestas |
+| status	| Estado de negociación |
+| sponsor	| Nombre de la persona a cargo |
+| comments	| Comentario registrado por el responsable |
+| date	| fecha de negociación |
+| categories	| Categorías incluidas en las respuestas |
 
 ### OBTENER Recopilar informaciones de invitación
 
