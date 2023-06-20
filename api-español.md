@@ -777,21 +777,90 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ![Badge](https://img.shields.io/badge/POST-v3/integrations/%2Factions-green)
 
 Con la ruta a continuación, será posible enviar una respuesta recopilada en su APP o sistema de manera transaccional al sistema Indecx. De esta forma, es posible centralizar todos los análisis y respuestas dentro de Indecx y analizar los resultados con los informes disponibles en la plataforma.
+
 La comunicación se realizará a través de la siguiente URL:
 
-(LINK)
+```bash
+https://indecx.com/v3/integrations/create-answer/[Identificador_da_acao]
+```
 
 Para que este recibo por parte de Indecx sea posible, es necesario tener una acción creada con configuraciones de cuestionario compatibles con lo que fue respondido por el cliente.
 
-### Pedido
+## **Pedido**
 
-(imagen)
+```javascript
+POST /v3/integrations/create-answer/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 
-### RESPUESTA
+  {
+  	"inviteId": "6143d38aaf080f75ffbdaCCC",
+	"name": "José Paulo",
+	"email": "jose@gmail.com.br",
+	"phone": "1999999999",
+	"review": 9,
+	"feedback": "Teste",
+	"additionalQuestions": [
+		{
+			"type": "REVIEWS",
+			"text": "Pergunta A",
+			"review": 4
+		},
+		{
+			"type": "LIKE/DISLIKE",
+			"text": "Pergunta B",	
+			"review": 1
+		},
+		{
+			"type": "CSAT",
+			"text": "Pergunta C",
+			"review": 5
+		},
+		{
+			"type": "LIKERT",
+			"text": "Pergunta D",
+			"review": 5
+		},
+		{
+			"type": "EMOTION",
+			"text": "Pergunta E",
+			"review": 1
+		},
+		{
+			"type": "MULTIPLE",
+			"text": "Qual o motivo?",
+			"review": ["Opção 1", "Opção 2"]
+		},
+		{
+			"type": "INPUT",
+			"text": "Qual foi seu vendedor",
+			"review": "Francisco da silva"
+		}
+	],
+	"indicators": [
+		{
+			"column": "UF",
+			"value": "SP"
+		},
+		{
+			"column": "Regiao",
+			"value": "Campinas"
+		}
+	]
+}
+```
 
-(imagen)
+## **RESPUESTA**
 
-### Comprender los campos de solicitud
+```javascript
+{
+  "message": "Successfully integrated answer.",
+   "id": "asy8765gasasgydasd"
+}
+```
+
+## Comprender los campos de solicitud
 | Parámetros	| Descripción |
 | ------------- | ------------- |
 | ID de invitación	| identificación de invitación |
@@ -805,9 +874,9 @@ Para que este recibo por parte de Indecx sea posible, es necesario tener una acc
 | Indicadores/columna	| nombre del indicador |
 | Indicadores/valor	| valor del indicador |
 
-***Importante:** El campo inviteId solo se usa cuando usamos una combinación de API de generación de enlaces + API de respuesta transaccional, y no es obligatorio para casos de inclusión de respuesta simple. Para obtener más información sobre cómo usar el inviteId, comuníquese con el equipo de soporte de Indecx.
+*Importante: El campo inviteId solo se usa cuando usamos una combinación de API de generación de enlaces + API de respuesta transaccional, y no es obligatorio para casos de inclusión de respuesta simple. Para obtener más información sobre cómo usar el inviteId, comuníquese con el equipo de soporte de Indecx.
 
-### Comprender las opciones de respuesta por tipo
+## Comprender las opciones de respuesta por tipo
 | Parámetros	| Descripción |
 | ------------- | ------------- |
 | RESEÑAS	| Escala de 5 puntos (1 a 5) en forma de "estrellas" | 
@@ -820,7 +889,7 @@ Para que este recibo por parte de Indecx sea posible, es necesario tener una acc
 
 ***Importante:** Los valores recibidos deben estar de acuerdo con las opciones de respuesta disponibles en cada métrica para que se pueda realizar la integración.
 
-### Lista de posibles errores
+## Lista de posibles errores
 | Código	| Descripción |
 | ------------- | ------------- |
 | 400	| "mensaje": "Tipo de métrica no válido. Permitido: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA, CES" |
@@ -828,28 +897,116 @@ Para que este recibo por parte de Indecx sea posible, es necesario tener una acc
 | 400	| "mensaje": "La invitación ya ha sido respondida" |
 | 500	| "mensaje": "Error interno del servidor" |
 
-### GET Lista de acciones activas en Indecx
-(link)
+# GET Lista de acciones activas en Indecx
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Factions--info-orange)
+
 Para acceder a la lista de todas las acciones activas disponibles en la cuenta, use la ruta a continuación.
 
-(imagen)
+```javascript
+GET /v3/integrations/actions-info
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-### RESPUESTA
+## **RESPUESTA**
 
-(imagen)
+```javascript
+[
+  {
+    "_id": "61a6704c35927d3d11fe18f8"
+    "surveyType": "survey",
+    "type": "nps-0-10",
+    "name": "Ação de pesquisa da área de pós-venda",
+    "channel": "emailsms",
+    "controlId": "5Q0WB7",
+    "createdAt": "2020-01-15T20:11:59.540Z"
+  },
+  {
+    "_id": "61a6704c35927d3d11fe18f9"
+    "surveyType": "survey",
+    "type": "nps-0-10",
+    "name": "Ação de pesquisa da área de Vendas",
+    "channel": "emailsms",
+    "controlId": "5YSZVS",
+    "createdAt": "2020-01-20T17:16:14.951Z"
+  }
+]
+```
 
-### OBTENER Recopilar información de la encuesta
-(link)
+# OBTENER Recopilar información de la encuesta
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Factions--info-orange)
 
 Acceder a la estructura del cuestionario programado dentro de Indecx. La comunicación se realizará a través de la siguiente URL:
 
-(imagen)
+```javascript
+GET /v3/integrations/actions-info/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-### RESPUESTA
+## **RESPUESTA**
 
-(imagen)
+```javascript
+{
+  "_id": "60ae764cec27e759d6268563",
+  "controlId": "PJ48WM",
+  "surveyType": "survey",
+  "name": "Teste ClientID",
+  "type": "nps-0-10",
+  "question": "Em uma escala de 0 a 10, quanto você indicaria a IndeCX para um amigo ou familiar?",
+  "enableAnonymous": null,
+  "adittionalQuestions": [
+    {
+      "type": "REVIEWS",
+      "text": "Atendimento"
+    },
+    {
+      "type": "CSAT",
+      "text": "Prazo"
+    },
+    {
+      "type": "LIKE/DISLIKE",
+      "text": "Satisfação com o produto"
+    },
+    {
+      "type": "LIKERT",
+      "text": "Qual sua avaliação sobre o tema A?"
+    },
+    {
+      "type": "EMOTION",
+      "text": "Foi entregue no prazo?"
+    },
+    {
+      "type": "MULTIPLE",
+      "text": "o que você acha?",
+      "multipleType": "radio",
+      "choices": [
+        {
+          "text": "Opção 1"
+        },
+        {
+          "text": "Opção 2"
+        },
+        {
+          "text": "Opção 3"
+        },
+        {
+          "text": "Opção 4"
+        }
+      ]
+    },
+    {
+      "type": "INPUT",
+      "text": "pergunta Input"
+    }
+  ],
+  "allAnswersRequired": false
+}
+```
 
-### Comprender los campos de devolución
+## Comprender los campos de devolución
 | Parámetros	| Descripción |
 | ------------- | ------------- |
 | ´_identificación´	| identificador de acción |
@@ -866,7 +1023,7 @@ Acceder a la estructura del cuestionario programado dentro de Indecx. La comunic
 | preguntas adicionales/opciones	| Opciones de elección para múltiples tipos. |
 | todas las respuestas Requeridas	| Respuestas de tipo obligatorio. |
 
-### Comprender las opciones de respuesta por tipo
+## Comprender las opciones de respuesta por tipo
 | Parámetros	| Descripción |
 | ------------- | ------------- |
 | RESEÑAS	| Escala de 5 puntos (1 a 5) en forma de "estrella" |
@@ -877,24 +1034,42 @@ Acceder a la estructura del cuestionario programado dentro de Indecx. La comunic
 | MÚLTIPLE	| Escala de selección única o de opción múltiple. |
 | APORTE	| Campo abierto para la inclusión de la respuesta. |
 
-### POST Enviar cliente a la lista de bloqueo
-(link)
+# POST Enviar cliente a la lista de bloqueo
+![Badge](https://img.shields.io/badge/POST-send--blocklist-green)
 
 Si desea agregar una lista de clientes a la lista de bloqueo para evitar que este correo electrónico reciba nuevos contactos, puede usar esta ruta.
+
 La comunicación se realizará a través de la siguiente URL:
-(Link)
+```bash
+https://indecx.com/v3/integrations/send-blocklist
+```
 
-### Pedido
+## **Pedido**
 
-(imagen)
+```javascript
+POST /v3/integrations/send-blacklist
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 
-### RESPUESTA
+{
+   "email":"contato_3@indecx.com.br",
+   "reason":"Não quer receber contato"
+	
+}
+```
 
-(Imagen)
+## **RESPUESTA**
 
-### OBTENER Recopilar información de la lista de bloqueo (no quiero recibir más contactos)
+```javascript
+{
+	"message": "Sent to the blocklist successfully."
+}
+```
 
-(LINK)
+# OBTENER Recopilar información de la lista de bloqueo (no quiero recibir más contactos)
+
+![Badge](https://img.shields.io/badge/GET-blocklist--info-orange)
 
 También puede tener acceso a la lista de todos los clientes que ingresaron al blaclist:
 
