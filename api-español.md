@@ -109,7 +109,7 @@ La comunicación será realizada a través del siguiente URL:
 https://indecx.com/v3/integrations/send/bulk/[Identificador_da_acao]
 ```
 
-Las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se activa a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave proporcionada a la empresa y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo.
+Las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se activa a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la company-key proporcionada y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del body.
 
 ## Configuración JSON
 **Importante** 
@@ -146,7 +146,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-## Respuesta 
+## Response 
 
 ```bash
 {
@@ -170,7 +170,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | 402	| Saldo de mensaje insuficiente. |
 | 500	| Error Interno del Servidor |
 
-# OBTENER Recopilar respuestas 
+# GET Recopilar respuestas 
 ![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Fanswers--info%2F-orange)
 
 También puede integrar las respuestas recopiladas a través de indecx en su sistema. Para ello, deberá utilizar el método "Recopilar respuestas" para acceder a todas las respuestas y detalles de los clientes.
