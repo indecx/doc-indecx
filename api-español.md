@@ -372,18 +372,18 @@ La comunicación se realizará a través de la siguiente URL:
 https://indecx.com/v3/integrations/invites-info/[Identificador_da_acao]?[params]
 ```
 
-## Parámetros de consulta
+## Query Params
 | parámetros	| Descripción |
 | ------------- | ------------- |
-| página	| Devuelve los resultados de una página específica |
-| límite	| Devuelve un valor límite por página |
-| fecha de inicio	| Fecha de inicio del parámetro |
-| fecha final	| Fecha de finalización del parámetro |
-| tipo de fecha	| Tipo de fecha createdAt (creación de invitación) o updatedAt (actualización de invitación) |
-| correo electrónico	| Parámetro de correo electrónico de invitación |
-| teléfono	| Parámetro de teléfono de invitación |
+| page	| Devuelve los resultados de una página específica |
+| limit	| Devuelve un valor límite por página |
+| startDate	| Fecha de inicio del parámetro |
+| endDate	| Fecha de finalización del parámetro |
+| dateType	| Tipo de fecha createdAt (creación de invitación) o updatedAt (actualización de invitación) |
+| email	| Parámetro de correo electrónico de invitación |
+| phone	| Parámetro de teléfono de invitación |
 
-Nota: Para el valor [Identifier_da_acao] se puede utilizar el parámetro "/all" para devolver todas las invitaciones de todas las acciones disponibles.
+Nota: Para el valor [Identificador_da_acao] se puede utilizar el parámetro "/all" para devolver todas las invitaciones de todas las acciones disponibles.
 
 Ejemplo de consulta:
 
@@ -394,7 +394,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## **RESPUESTA**
+## **Response**
 
 ```javascript
  {
@@ -455,20 +455,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ## Comprender los campos de devolución
 | parámetros	| Descripción |
 | ------------- | ------------- |
-| `_identificación`	| identificación de invitación |
-| contestada	| Comprueba si la invitación fue respondida |
-| activo	| Comprueba si la invitación está activa |
-| ID de acción	| identificador de acción |
-| nombre	| Nombre del cliente |
-| correo electrónico	| correo electrónico del cliente |
-| teléfono	| teléfono del cliente |
-| URL corta	| Dirección del enlace de la encuesta |
-| email valido	| validador de correo electrónico |
-| teléfono válido	| validador de teléfono |
-| Creado en	| Fecha de creación de la invitación |
-| actualizar en	| Fecha de actualización de la invitación |
-| ID de respuesta	| ID de respuesta |
-| Eliminado/Respuesta	| Comprueba si la respuesta fue eliminada |
+| _id		| ID de invitación |
+| answered	| Comprueba si la invitación fue respondida |
+| active	| Comprueba si la invitación está activa |
+| actionId	| ID de acción |
+| name          | Nombre del cliente |
+| email 	| Correo electrónico del cliente |
+| phone 	| Teléfono del cliente |
+| shortUrl	| Dirección del enlace de la encuesta |
+| validEmail	| Validador de correo electrónico |
+| validPhone	| Validador de teléfono |
+| createdAt	| Fecha de creación de la invitación |
+| updateAt	| Fecha de actualización de la invitación |
+| answeredId	| ID de respuesta |
+| deletedAnswer	| Comprueba si la respuesta fue eliminada |
 
 # GET recopilación de clientes que no responden 
 ![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Fno--response-orange)
