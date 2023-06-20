@@ -181,19 +181,19 @@ La comunicación se realizará a través de la siguiente URL:
 https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?[params]
 ```
 
-## Parámetros de consultas 
+## Query Params
 
 | parámetros	| Descripción |
 | ------------- | ------------- |
-| página	| Devuelve los resultados de una página específica | 
-| límite	| Devuelve un valor límite por página |
-| fecha de inicio	| Fecha de inicio del parámetro |
-| fecha final	| Fecha de finalización del parámetro |
-| tipo de fecha	| Tipo de fecha createdAt (creación de búsqueda) o updatedAt (actualización de búsqueda) |
-| correo electrónico	| Parámetro de correo electrónico del encuestado |
-| teléfono	| Parámetro del teléfono del encuestado |
+| page	| Devuelve los resultados de una página específica | 
+| limit	| Devuelve un valor límite por página |
+| startDate	| Fecha de inicio del parámetro |
+| endDate	| Fecha de finalización del parámetro |
+| dateType	| Tipo de fecha createdAt (creación de búsqueda) o updatedAt (actualización de búsqueda) |
+| email	| Parámetro de correo electrónico del encuestado |
+| phone	| Parámetro del teléfono del encuestado |
 
-Nota: Para el valor [Action_Identifier], el parámetro "/all" se puede usar para devolver todas las respuestas de todas las acciones disponibles.
+Nota: Para el valor [Identificador_da_acao], el parámetro "/all" se puede usar para devolver todas las respuestas de todas las acciones disponibles.
 
 Ejemplo de consulta: 
 ```javascript
@@ -203,7 +203,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## **Respuesta**
+## **Response**
 
 ```javascript
  {
