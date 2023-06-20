@@ -348,7 +348,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | puntaje	| puntaje de sentimiento |
 | frases clave	| Palabras claves identificadas en los comentarios de los clientes |
 
-**Tratos*
+**Tratos**
 | parámetros	| Descripción |
 | ------------- | ------------- |
 | estado	| Estado de negociación |
@@ -359,15 +359,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 ### OBTENER Recopilar informaciones de invitación
 
-(LINK)
+![Badge](https://img.shields.io/badge/GET-invites--info-orange)
 
 Puede acceder a la lista de todos los clientes importados a la plataforma con estado si la invitación ya fue respondida o no.
 
 La comunicación se realizará a través de la siguiente URL:
 
-(LINK)
+```bash
+https://indecx.com/v3/integrations/invites-info/[Identificador_da_acao]?[params]
+```
 
-### Parámetros de consulta
+## Parámetros de consulta
 | parámetros	| Descripción |
 | ------------- | ------------- |
 | página	| Devuelve los resultados de una página específica |
@@ -382,13 +384,72 @@ Nota: Para el valor [Identifier_da_acao] se puede utilizar el parámetro "/all" 
 
 Ejemplo de consulta:
 
-(IMAGEN/LINK)
+```javascript
+GET /v3/integrations/invites-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-### RESPUESTA
+## **RESPUESTA**
 
-(IMAGEN)
+```javascript
+ {
+	"page": 1,
+	"limit": 500,
+	"total": 409,
+	"invites": [
+		{
+			"_id": "61e078eba3320b33e7332888",
+			"answered": true,
+			"active": false,
+			"actionId": "61534bf90f9599741e703000",
+			"name": "Paulo",
+			"email": "contato_1@indecx.com.br",
+			"phone": "5511955555555",
+			"shortUrl": "https://id-cx.co/XiYyYxxx",
+			"validEmail": true,
+			"validPhone": true,
+			"createdAt": "2022-01-13T19:09:31.635Z",
+			"updatedAt": "2022-01-13T19:09:31.635Z",
+			"answeredId": "61df50e72d5402779195a001",
+			"deletedAnswer": false,
+		},
+		{
+			"_id": "61e078eba3320b1122232799",
+			"answered": false,
+			"active": true,
+			"actionId": "61534bf90f9599741e703000",
+			"name": "Marcos",
+			"email": "contato_2@indecx.com.br",
+			"phone": "5599999999999",
+			"shortUrl": "https://id-cx.co/XmVAsdTg",
+			"validEmail": true,
+			"validPhone": true,
+			"createdAt": "2022-01-13T19:09:31.634Z",
+			"updatedAt": "2022-01-13T19:09:31.634Z",
+			"deletedAnswer": false,
+		},
+		{
+			"_id": "61e078eba3321111e7332779",
+			"answered": false,
+			"active": true,
+			"actionId": "61534bf90f9599741e703000",
+			"name": "Fernando",
+			"email": "contato_3@indecx.com.br",
+			"phone": "55119800000000",
+			"shortUrl": "https://id-cx.co/XfuIIuaD",
+			"validEmail": true,
+			"validPhone": true,
+			"createdAt": "2022-01-13T19:09:31.633Z",
+			"updatedAt": "2022-01-13T19:09:31.633Z",
+			"deletedAnswer": false,
+		}
+	]
+}
+```
 
-### Comprender los campos de devolución
+## Comprender los campos de devolución
 | parámetros	| Descripción |
 | ------------- | ------------- |
 | `_identificación`	| identificación de invitación |
@@ -406,13 +467,15 @@ Ejemplo de consulta:
 | ID de respuesta	| ID de respuesta |
 | Eliminado/Respuesta	| Comprueba si la respuesta fue eliminada |
 
-### GET recopilación de clientes que no responden 
-(LINK)
+# GET recopilación de clientes que no responden 
+![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Fno--response-orange)
 
 A través de este método, puede acceder a una lista de todos los clientes que aún no han respondido a su encuesta. La comunicación se realizará a través de la siguiente URL:
-(link)
+```bash
+https://indecx.com/v3/integrations/[Identificador_da_acao]?[params]
+```
 
-### Parámetros de Consulta 
+## Parámetros de Consulta 
 | parámetros	| Descripción |
 | ------------- | ------------- |
 | página	| Devuelve los resultados de una página específica |
@@ -423,15 +486,56 @@ A través de este método, puede acceder a una lista de todos los clientes que a
 
 Ejemplo de consulta:
 
-(imagen)
+```javascript
+GET /v3/integrations/no-response/[Identificador_da_acao]?page=1&limit=10
+GET /v3/integrations/no-response/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+GET /v3/integrations/no-response/[Identificador_da_acao]?email=[email do usuário]
+GET /v3/integrations/no-response/[Identificador_da_acao]?clienteId=[clientId]
+GET /v3/integrations/no-response/[Identificador_da_acao]?indicator=[Nome do Indicador]&indicatorValue=[valor do indicador]
 
-recopilación de respuestas con un límite de paginación y un retorno de carga útil máximo de 1000 registros.
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-### Respuesta
+**recopilación de respuestas con un límite de paginación y un retorno de carga útil máximo de 1000 registros.**
 
-(imagen)
+## **Respuesta**
 
-### Comprender los campos de devolución 
+```javascript
+{
+  "invites": [
+    {
+      "_id": "60b0e0430ca11b72bbba6616",
+      "answered": false,
+      "resendDates": [
+        "2021-05-28T12:22:32.488Z"
+      ],
+      "active": true,
+      "reminderDates": [],
+      "controlId": "1M311J",
+      "actionId": {
+        "name": "Teste ClientID",
+        "controlId": "PJ48WM"
+      },
+      "name": "Caio fernando do Nascimento",
+      "email": "caio.nasc@ymail.com",
+      "phone": "5519993133850",
+      "shortUrl": "https://id-cx.co/8JoD5sLL/s",
+      "validEmail": true,
+      "validPhone": true,
+      "indicators": [],
+      "metric": "nps-0-10",
+      "createdAt": "2021-05-28T12:21:23.668Z"
+    }
+  ],
+  "page": 1,
+  "limit": 20,
+  "total": 5
+}
+```
+
+## Comprender los campos de devolución 
 | parámetros	| Descripción |
 | ------------- | ------------- |
 | `_identificación`	| ID de respuesta |
@@ -455,13 +559,17 @@ recopilación de respuestas con un límite de paginación y un retorno de carga 
 | límite	| Límite máximo de devolución de consultas |
 | total	| Total, de registros consultados |
 
-### WEBHOOK recopilar respuestas
+# WEBHOOK recopilar respuestas
+![Badge](https://img.shields.io/badge/webhook-answers-red)
 
 También puedes registrar tu endpoint dentro de la plataforma Indecx para que cada nueva respuesta sea enviada automáticamente a tu sistema. Ingresando a la plataforma Indecx, vaya a: **Configuración >> Integraciones >> Recopilación de respuestas**
+<h1 align="center">
+  <img alt="" title="" src="./assets/webhook-answer.png" />
+</h1>
 
 Con cada nueva respuesta recibirá una devolución con toda la información del cliente y las respuestas asignadas por él, como se muestra en el siguiente ejemplo:
 
-### Respuesta
+## **Respuesta**
 
 (imagen)
 
