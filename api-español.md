@@ -743,7 +743,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-## **URL de devolución de llamadas y respuestas **
+## URL de devolución de llamadas y respuestas
 
 ```javascript
 {
@@ -1071,22 +1071,58 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 ![Badge](https://img.shields.io/badge/GET-blocklist--info-orange)
 
-También puede tener acceso a la lista de todos los clientes que ingresaron al blaclist:
+También puede tener acceso a la lista de todos los clientes que ingresaron al blacklist:
 
-(imagen)
+```javascript
+GET /v3/integrations/blocklist-info/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-### Parámetros de consulta     
+## Parámetros de consulta     
 
 | Parámetros	| Descripción |
 | ------------- | ------------- |
 | página	| Devuelve los resultados de una página específica |
 | límite	| Devuelve un valor límite por página |
 
-### RESPUESTA
+## RESPUESTA
 
-(Imagen)
+```bash
+{
+	"page": 1,
+	"limit": 1000,
+	"data": [
+		{
+			"actionName": "Ação A",
+			"actionControlId": "74HSBB",
+			"inviteId": "60ef454559d33741586e0000",
+			"reason": Não desejo mais receber esses emails,
+			"email": "contato_1@indecx.com",
+			"createdAt": "2021-07-25T00:23:58.735Z"
+		},
+		{
+			"actionName": "Ação B",
+			"actionControlId": "74HSBB",
+			"inviteId": "60ef454559d33741586e0001",
+			"reason": "Outros",
+			"email": "contato_2@indecx.com",
+			"createdAt": "2021-07-22T17:11:32.877Z"
+		},
+		{
+			"actionName": "Ação C",
+			"actionControlId": "74HSBB",
+			"inviteId": "60ef454559d33741586e0002",
+			"reason": "Não desejo mais receber esses emails",
+			"email": "contato_3@indecx.com",
+			"createdAt": "2021-08-05T10:19:23.419Z"
+		}
+	]
+}
+```
 
-### Comprender los campos de devolución
+## Comprender los campos de devolución
 | Parámetros	| Descripción |
 | ------------- | ------------- |
 | actionName	| Compartir nombre |
@@ -1096,14 +1132,19 @@ También puede tener acceso a la lista de todos los clientes que ingresaron al b
 | correo electrónico	| correo electrónico del cliente |
 | Creado en	| Fecha de inclusión del registro en la lista de bloqueo |
 
-### GET Recopilar una lista de respuestas categorizadas
-(link)
+# GET Recopilar una lista de respuestas categorizadas
+![Badge](https://img.shields.io/badge/GET-blocklist--info-orange)
 
 También puede acceder a la lista de todas las categorizaciones asignadas.
 
-(Imagen)
+```javascript
+GET /v3/integrations/category-info/T0AXXX
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-### Parámetros de consulta
+## Parámetros de consulta
 | Parámetros	| Descripción |
 | ------------- | ------------- |
 | página	| Devuelve los resultados de una página específica |
@@ -1115,13 +1156,53 @@ También puede acceder a la lista de todas las categorizaciones asignadas.
 Nota: Para el valor [Identifier_da_acao] se puede utilizar el parámetro "/all" para devolver todas las invitaciones de todas las acciones disponibles.
 
 Ejemplo de consulta:
-(imagen)
+```javascript
+GET /v3/integrations/category-info/all?startDate=01-01-2022&endDate=28-07-2022&dateType=updatedAt
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-### RESPUESTA
+## **RESPUESTA**
 
-(Imagen)
+```javascript
 
-### Comprender los campos de devolución
+	"page": 1,
+	"limit": 50,
+	"total": 5648,
+	"answers": [
+		{
+			"answerId": "6258af1bec2fae3ee56d461a",
+			"inviteId": "62570d80d788a74c0e05aab7",
+			"categories": [
+				{
+					"category": "Elogio",
+					"subCategory": "Atendimento"
+				}
+			],
+			"createdAt": "2022-04-14T23:32:43.288Z",
+			"updatedAt": "2022-07-26T21:19:52.303Z"
+		},
+		{
+			"answerId": "625810a83b3c5d3ea7234302",
+			"inviteId": "62570d81d788a74c0e05cd97",
+			"categories": [
+				{
+					"category": "App/Painel",
+					"subCategory": "Quer Cartão"
+				},
+				{
+					"category": "Conta",
+					"subCategory": "Desativar / Cancelar"
+				}
+			],
+			"createdAt": "2022-04-14T12:16:40.714Z",
+			"updatedAt": "2022-07-26T21:19:52.303Z"
+		}
+	]
+```
+
+## Comprender los campos de devolución
 | Parámetros	| Descripción |
 | -- | -- |
 | ID de respuesta	| ID de respuesta |
@@ -1132,19 +1213,48 @@ Ejemplo de consulta:
 | actualizado en	| Fecha de actualización de la respuesta |
 | tipo de fecha	| Fecha de inclusión de la respuesta |
 
-### Sucursal de registro POST (IH1)
-(link/imagen)
+## Sucursal de registro POST (IH1)
+![Badge](https://img.shields.io/badge/post-branch-green)
 
 También puede registrar una sucursal o unidad de negocio a través de la API. Esta rama, denominada Ih1 en la plataforma, se utilizará para separar datos y niveles de acceso por usuario.
-(imagen)
+```bash
+{
+  https://indecx.com/v3/integrations/branches
+}
+```
 
-### Solicitar json
+## Solicitar json
 
-(Imagen)
+```javascript
+POST /v3/integrations/branches
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
+{
+   "corporate_name":"UNIDADE X - CENTRO",
+   "type":"ih1",
+   "secondary_fields":[
+      {
+         "key":"Codigo",
+         "value":"1"
+      }
+   ]
+}
+
+```
 
 ### RESPUESTA
 
-(Imagen)
+```bash
+
+{
+	"_id": "630918be7140e266cafafab7",
+	"active": true,
+	"corporate_name": "UNIDADE X - CENTRO",
+	"type": "ih1"
+}
+```
 
 ### Comprender los campos de devolución
 | Parámetros	| Descripción |
@@ -1154,15 +1264,44 @@ También puede registrar una sucursal o unidad de negocio a través de la API. E
 | nombre corporativo	| nombre de la sucursal |
 | tipo	| Tipo de sucursal |
 
-### GET Lista de Sucursales Registradas (IH1)
-(link/imagen)
+# GET Lista de Sucursales Registradas (IH1)
+![Badge](https://img.shields.io/badge/get-branch-orange)
 
 La API permite el acceso a la lista de todas las unidades registradas en la plataforma.
 
-(imagen)
-### RESPUESTA
+```javascript
+GET /v3/integrations/branches
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
 
-(Imagen)
+## RESPUESTA
 
-Gracias💚
-¿Existe alguna ruta que te haga el día a día más fácil?? ¡Ponte en contacto con el equipo de Indecx CX que desarrollamos para ti! =) Actualizado el 01/01/2023
+```javascript
+
+[
+	{
+		"_id": "62bdd0cb37a01172d1dcf65a",
+		"corporate_name": "101",
+		"type": "ih1",
+		"Grupo": "AA"
+	},
+	{
+		"_id": "62bdd0d91213ea72bc85fdfe",
+		"corporate_name": "100",
+		"type": "ih2",
+		"Grupo": "YY"
+	},
+	{
+		"_id": "62bdd12755052372d78d0251",
+		"corporate_name": "1002",
+		"type": "ih1",
+		"Grupo": "XX"
+	}
+	]
+```
+
+### Gracias💚
+
+¿Existe alguna ruta que te haga el día a día más fácil?? ¡Ponte en contacto con el equipo de Indecx CX que desarrollamos para ti! =) Actualizado el 20/06/2023
