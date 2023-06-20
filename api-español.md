@@ -7,12 +7,12 @@ La API de IndeCX fue desarrollada para que sea posible realizar diversas integra
 En esta documentación encontrará ejemplos del uso de cada método.
 
 ## Introducción
-La API utiliza autenticación y autorización de token de portador para proteger las rutas de acceso restringido. El Bearer Token debe enviarse en el encabezado de Autorización de todas las solicitudes que requieren autenticación.
+La API utiliza autenticación y autorización de token de portador para proteger las rutas de acceso restringido. El Bearer Token debe enviarse en el encabezado de Authorization de todas las solicitudes que requieren autenticación.
 
 ## Autenticación
-Para autenticarse con la API, debe enviar una solicitud de autenticación con sus credenciales de usuario (**empresa-clave**) enviada a través del encabezado, disponible dentro de la configuración de la cuenta en la plataforma Indecx. La API devolverá un token de portador, que debe usar para todas las solicitudes futuras que requieran autenticación.
+Para autenticarse con la API, debe enviar una solicitud de autenticación con sus credenciales de usuario (**company-key**) enviada a través del header, disponible dentro de la configuración de la cuenta en la plataforma Indecx. La API devolverá un Bearer Token, que debe usar para todas las solicitudes futuras que requieran autenticación.
 
-## Punto Final/ Obtener 
+## Endpoint / get
 ![Badge](https://img.shields.io/badge/GET-authorization--token-orange) 
 ```bash
 https://indecx.com/v3/integrations/authorization/token
@@ -21,7 +21,7 @@ https://indecx.com/v3/integrations/authorization/token
 | ------------- | ------------- |
 | company-key  | $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
 
-## Ejemplo de solicitud 
+## Ejemplo de request 
 ```javascript
 GET /v3/integrations/authorization/token HTTP/1.1
 Host: indecx.com
@@ -29,7 +29,7 @@ Company-Key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
 
 ```
 
-## Ejemplo de respuesta 
+## Ejemplo de response 
 ```javascript
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -41,7 +41,7 @@ Content-Type: application/json
 ```
 
 ## Ejemplo de encabezado de autorización
-El Bearer Token debe enviarse en el encabezado de Autorización de todas las solicitudes que requieren autenticación. El token es válido por 30 minutos.
+El Bearer Token debe enviarse en el encabezado de Authorization de todas las solicitudes que requieren autenticación. El token es válido por 30 minutos.
 
 ```javascript
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVlLU1Rra...
@@ -58,7 +58,7 @@ La comunicación se realizará a través del siguiente URL:
 https://indecx.com/v3/integrations/[Identificador_da_acao]
 ```
 
-Las acciones deben crearse en la plataforma app-indecx.com y los envió se pueden realizar a través de la plataforma (manual) o a través de la API. Cuando se hace la activación a través de la API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave de empresa proporcionada y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo.
+Las acciones deben crearse en la plataforma app-indecx.com y los envió se pueden realizar a través de la plataforma (manual) o a través de la API. Cuando se hace la activación a través de la API, debe enviar un JSON a través del body a la URL mencionada anteriormente y su autenticación se realizará a través de la company-key proporcionada y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del body.
 
 ## Configuración JSON
 
