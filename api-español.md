@@ -571,48 +571,210 @@ Con cada nueva respuesta recibirá una devolución con toda la información del 
 
 ## **Respuesta**
 
-(imagen)
+```bash
+{
+    "_id": "60ae3842a81a5d534cbcfb21",
+    "active": true,
+    "date": "2022-10-06T17:43:47.367Z",
+    "answerDate": "2022-10-06T17:43:47.368Z",
+    "inviteDate": "2022-10-06T12:54:55.730Z",
+    "anonymousResponse": true,
+    "clientId": null,
+    "categories":[],
+    "subCategories":[],
+    "tags":[],
+    "subTags":[],
+    "subCategoriesIA":[],
+    "deleted": false,
+    "name": "****",
+    "email": "****",
+    "phone": "****",
+    "feedback": "Demora na entrega do veículo. ",
+    "additionalQuestions": [
+      {
+        "multipleValues": [],
+        "_id": "60ae3842a81a5d534cbcfb22",
+        "type": "REVIEWS",
+        "text": "Como você avalia sua experiência geral?",
+        "review": 3
+      },
+      {
+        "multipleValues": [],
+        "_id": "60ae3842a81a5d534cbcfb23",
+        "type": "REVIEWS",
+        "text": "Qual a possibilidade de voltar a utilizar os serviços?",
+	 "review": 3
+      },
+    ],
+    "channel": "email",
+    "companyId": "5e18ccd0dc36a60022491bdf",
+    "actionId": "5e3b51300de04300f04eae90",
+    "inviteId": "60ae358f05b1b32c15a389b1",
+    "detailsId": "60ae358f05b1b32c15a386ae",
+    "review": 5,
+    "indicators": [
+      {
+        "_id": "60ae358f05b1b32c15a386af",
+        "column": "subsegmento",
+        "value": "****",
+        "indicatorId": "5f25907d6be88015eea3a6e1",
+        "key": "****"
+      },
+      {
+        "_id": "60ae358f05b1b32c15a386b0",
+        "column": "estadocliente",
+        "value": "****",
+        "indicatorId": "5f25907d6be88015eea3a6e2",
+        "key": "****"
+      },
+    ],
+    "controlId": "KUHC68",
+    "metric": "nps-0-10",
+    "createdAt": "2021-05-26T12:00:02.557Z",
+    "updatedAt": "2021-05-26T12:00:02.557Z"
+}
+```
 
-### POST generación de un enlace de encuesta 
-(link)
+# POST generación de un enlace de encuesta 
+![Badge](https://img.shields.io/badge/POST-v3/integrations/%2Factions-green)
 
 Con la ruta a continuación, se podrá integrar con la plataforma Indecx, donde el objetivo es crear una invitación y devolver el enlace en la respuesta de llamada, para que pueda ser utilizado dentro de los medios de contacto con el cliente, este enlace será único para cada nueva invitación generada.
 
 La comunicación se realizará a través de la siguiente URL:
 
-(link)	
+```bash
+https://indecx.com/v3/integrations/actions/[Identificador_da_acao]/invites
+```
 
 las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se active a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave proporcionada a la empresa y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo
 
-### Pedido 
+## **Pedido**
 
-(imagen)
+```javascript
+POST /v3/integrations/actions/T0AXXX/invites
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 
-### RESPUESTA
+{
+   "customers":[
+      {
+         "nome":"client A",
+         "email":"clientec@indecx.com",
+         "telefone":""
+      },
+      {
+         "nome":"Cliente B",
+         "email":"clienteb@indecx.com",
+         "telefone":""
+      }
+		 
+   ]
+}
+```
 
-(imagen)
+## **RESPUESTA**
 
-### Generación de un enlace de encuesta con URL de devolución de llamadas 
+```javascript
+{
+  "customers": [
+    {
+      "nome": "client A",
+      "email": "clientec@indecx.com",
+      "telefone": "",
+      "inviteId": "6143d38aaf080f75ffbdacf2",
+      "shortUrl": "https://id-cx.co/ZT4wLBEL",
+      "created_at": "2021-06-02T22:07:33.977Z",
+      "actionId": "DHNS7U",
+      "status": "integrado"
+    },
+    {
+      "nome": "Cliente B",
+      "email": "clienteb@indecx.com",
+      "telefone": "",
+      "inviteId": "6143d38aaf080f75ffbdacf3",
+      "shortUrl": "https://id-cx.co/XgHQ3z7z",
+      "created_at": "2021-06-02T22:07:34.172Z",
+      "actionId": "DHNS7U",
+      "status": "integrado"
+    }
+```  
+
+## Generación de un enlace de encuesta con URL de devolución de llamadas 
 
 También es posible enviar un disparador y obtener el enlace a través de la API registrada en la callbackurl.
 ruta API **callbackurl**
 **maxmsg** Retorno máximo de registros en JSON. Ejemplo: si activa 1000 clientes con maxmsg = 100, recibirá 10 solicitudes con 100 registros cada una.
 
-### Pedido
+## **Pedido**
 
-(imagen)
+```javascript
+POST /v3/integrations/actions/T0AXXX/invites
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 
-### RESPUESTA
+{
+    "webhook": {
+        "callbackurl": "https://webhook.site/58f1d980-89b4-4121-83b9-8cce55b128f4",
+        "maxmsg": 100
+    },
+   "customers":[
+      {
+         "nome":"client A",
+         "email":"clientec@indecx.com",
+         "telefone":""
+      },
+      {
+         "nome":"Cliente B",
+         "email":"clienteb@indecx.com",
+         "telefone":""
+      }
+		 
+   ]
+}
+```
 
-(imagen)
+## **RESPUESTA**
 
-### URL de devolución de llamadas y respuestas 
+```javascript
+{
+  "message": "Request received. The result will be sent to https://webhook.site/58f1d980-89b4-4121-83b9-8cce55b128f4"
+}
+```
 
-(imagen)
+## **URL de devolución de llamadas y respuestas **
 
-### POST Enviar transacciones de respuestas a Indecx 
+```javascript
+{
+  "customers": [
+    {
+      "nome": "client A",
+      "email": "clientec@indecx.com",
+      "telefone": "",
+      "inviteId": "6143d38aaf080f75ffbdacf2",
+      "shortUrl": "https://id-cx.co/sH2zmIhY",
+      "created_at": "2021-06-02T21:57:09.239Z",
+      "actionId": "DHNS7U",
+      "status": "integrado"
+    },
+    {
+      "nome": "Cliente B",
+      "email": "clienteb@indecx.com",
+      "telefone": "",
+      "inviteId": "6143d38aaf080f75ffbdacf3",
+      "shortUrl": "https://id-cx.co/PV0DCQtS",
+      "created_at": "2021-06-02T21:57:09.421Z",
+      "actionId": "DHNS7U",
+      "status": "integrado"
+    }
+  ]
+}
+```
 
- (lINK)
+# POST Enviar transacciones de respuestas a Indecx 
+
+![Badge](https://img.shields.io/badge/POST-v3/integrations/%2Factions-green)
 
 Con la ruta a continuación, será posible enviar una respuesta recopilada en su APP o sistema de manera transaccional al sistema Indecx. De esta forma, es posible centralizar todos los análisis y respuestas dentro de Indecx y analizar los resultados con los informes disponibles en la plataforma.
 La comunicación se realizará a través de la siguiente URL:
