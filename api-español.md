@@ -101,9 +101,9 @@ Para tomas programadas, la invitación tendrá un estado **programado** en el í
 # POST envíos de invitación por lotes 
 ![Badge](https://img.shields.io/badge/POST-.v3/integrations/%2Fsend%2Fbulk-green)
 
-Você também pode realizar os disparos de forma automática para um lote de clientes de uma única vez
+Usted también puede realizar los envíos de forma automática para una cantidad de clientes una única vez
 
-A comunicação será realizada através da seguinte URL:
+La comunicación será realizada a través del siguiente URL:
 
 ```bash
 https://indecx.com/v3/integrations/send/bulk/[Identificador_da_acao]
