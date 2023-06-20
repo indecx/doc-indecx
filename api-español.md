@@ -65,7 +65,7 @@ Las acciones deben crearse en la plataforma app-indecx.com y los envió se puede
 **Importante:**
 El correo electrónico y el teléfono son campos obligatorios, según la configuración del tipo de activador. Consulta la configuración realizada al crear la acción. Para poder enviar datos a las columnas adicionales (indicadores) es necesario crear los indicadores dentro de la acción previamente y usar exactamente los mismos nombres creados dentro de la plataforma.  En nuestro ejemplo a continuación, las columnas adicionales son: Sucursal, Área, Región y Tipo.
 
-## **PEDIDO**
+## **Request**
 
 ```javascript
 POST /v3/integrations/send/T0AXXX HTTP/1.1
@@ -84,7 +84,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
    "scheduling":""
 }
 ```
-## **RESPUESTA**
+## **Response**
 ```javascript
 {
   "message": "Disparo configurado com sucesso!"
