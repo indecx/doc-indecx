@@ -562,7 +562,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | limit	| Límite máximo de devolución de consultas |
 | total	| Total, de registros consultados |
 
-# WEBHOOK recopilar respuestas
+# WEBHOOK Cecopilar respuestas
 ![Badge](https://img.shields.io/badge/webhook-answers-red)
 
 También puedes registrar tu endpoint dentro de la plataforma Indecx para que cada nueva respuesta sea enviada automáticamente a tu sistema. Ingresando a la plataforma Indecx, vaya a: **Configuración >> Integraciones >> Recopilación de respuestas**
@@ -572,7 +572,7 @@ También puedes registrar tu endpoint dentro de la plataforma Indecx para que ca
 
 Con cada nueva respuesta recibirá una devolución con toda la información del cliente y las respuestas asignadas por él, como se muestra en el siguiente ejemplo:
 
-## **Respuesta**
+## **Response**
 
 ```bash
 {
