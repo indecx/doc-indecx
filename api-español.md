@@ -541,25 +541,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ## Comprender los campos de devolución 
 | parámetros	| Descripción |
 | ------------- | ------------- |
-| `_identificación`	| ID de respuesta |
-| contestada	| estado de respuesta |
-| Reenviar/Fechas	| Lista de todas las fechas para las que se reenvió la invitación |
-| activo	| estado de la invitación |
-| Recordatorio/Fechas	| Lista de todas las fechas para las que hubo recordatorios |
-| ID de control	| Identificador de control de invitación |
-| actionId.nombre	| Nombre de la acción asignada a la invitación |
-| actionId.controlId	| Identificador de control de acción |
-| nombre	| Nombre del cliente |
-| correo electrónico	| correo electrónico del cliente |
-| teléfono	| teléfono del cliente |
-| URL corta	| enlace de encuesta al cliente |
-| email valido |	Validador de campo de correo electrónico |
-| teléfono válido |	validador de campo de teléfono |
-| indicadores	| Lista de indicadores asignados a la invitación |
-| métrico	| Métrica de invitación clave |
-| Creado en	| ? |
-| página	| paginación de retorno |
-| límite	| Límite máximo de devolución de consultas |
+| _id	| ID de respuesta |
+| answered	| estado de respuesta |
+| resendDates	| Lista de todas las fechas para las que se reenvió la invitación |
+| active	| estado de la invitación |
+| reminderDates	| Lista de todas las fechas para las que hubo recordatorios |
+| controlId	| Identificador de control de invitación |
+| actionId.name	| Nombre de la acción asignada a la invitación |
+| actionId.controlId | Identificador de control de acción |
+| name	| Nombre del cliente |
+| email	| correo electrónico del cliente |
+| phone	| teléfono del cliente |
+| shortUrl	| enlace de encuesta al cliente |
+| validEmail |	Validador de campo de correo electrónico |
+| validPhone |	validador de campo de teléfono |
+| indicators	| Lista de indicadores asignados a la invitación |
+| metric	| Métrica de invitación clave |
+| createdAt	| ? |
+| page	| paginación de retorno |
+| limit	| Límite máximo de devolución de consultas |
 | total	| Total, de registros consultados |
 
 # WEBHOOK recopilar respuestas
