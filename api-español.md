@@ -707,10 +707,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 También es posible enviar un disparador y obtener el enlace a través de la API registrada en la callbackurl.
 
-ruta API **callbackurl**
+**callbackurl** ruta API 
+
 **maxmsg** Retorno máximo de registros en JSON. Ejemplo: si activa 1000 clientes con maxmsg = 100, recibirá 10 solicitudes con 100 registros cada una.
 
-## **Pedido**
+## **Request**
 
 ```javascript
 POST /v3/integrations/actions/T0AXXX/invites
@@ -739,7 +740,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-## **RESPUESTA**
+## **Response**
 
 ```javascript
 {
@@ -747,7 +748,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-## URL de devolución de llamadas y respuestas
+## Response callbackurl
 
 ```javascript
 {
