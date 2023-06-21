@@ -791,7 +791,7 @@ https://indecx.com/v3/integrations/create-answer/[Identificador_da_acao]
 
 Para que este recibo por parte de Indecx sea posible, es necesario tener una acción creada con configuraciones de cuestionario compatibles con lo que fue respondido por el cliente.
 
-## **Pedido**
+## **Request**
 
 ```javascript
 POST /v3/integrations/create-answer/T0AXXX
@@ -856,7 +856,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-## **RESPUESTA**
+## **Response**
 
 ```javascript
 {
@@ -868,29 +868,29 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ## Comprender los campos de solicitud
 | Parámetros	| Descripción |
 | ------------- | ------------- |
-| ID de invitación	| identificación de invitación |
-| nombre	| nombre del encuestado |
-| correo electrónico	| correo electrónico del encuestado |
-| teléfono	| teléfono del encuestado |
-| revisar	| Puntuación asignada a la métrica principal de la encuesta |
-| comentario	| Campo de comentario del cliente |
-| preguntas adicionales/tipo	| Tipo de pregunta adicional, por ejemplo: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA |
-| preguntas adicionales/texto	| Descripción adicional de la pregunta |
-| Indicadores/columna	| nombre del indicador |
-| Indicadores/valor	| valor del indicador |
+| inviteId	| Identificación de invitación |
+| name	| Nombre del encuestado |
+| email	| Correo electrónico del encuestado |
+| phone	| Teléfono del encuestado |
+| review	| Puntuación asignada a la métrica principal de la encuesta |
+| feedback	| Campo de comentario del cliente |
+| adittionalQuestions.type	| Tipo de pregunta adicional, por ejemplo: REVIEWS,CSAT,LIKE/DISLIKE,LIKERT,EMOTION,MULTIPLE,INPUT |
+| adittionalQuestions.text	| Descripción adicional de la pregunta |
+| indicators.column	| Nombre del indicador |
+| indicators.value	| Valor del indicador |
 
 *Importante: El campo inviteId solo se usa cuando usamos una combinación de API de generación de enlaces + API de respuesta transaccional, y no es obligatorio para casos de inclusión de respuesta simple. Para obtener más información sobre cómo usar el inviteId, comuníquese con el equipo de soporte de Indecx.
 
 ## Comprender las opciones de respuesta por tipo
 | Parámetros	| Descripción |
 | ------------- | ------------- |
-| RESEÑAS	| Escala de 5 puntos (1 a 5) en forma de "estrellas" | 
+| REVIEWS	| Escala de 5 puntos (1 a 5) en forma de "estrellas" | 
 | CSAT	| Escala de 10 puntos (1 a 10) en forma de escala de evaluación |
-| GUSTAR DISGUSTAR	| Escala booleana (0 y 1) en forma de icono positivo y negativo |
-| ME GUSTA	| Escala de 5 puntos (1 a 5) donde 1 = "Muy Insatisfecho", 2 = "Insatisfecho", 3 = "Indiferente", 4 = "Satisfecho" y 5 = "Muy Satisfecho" |
-| EMOCIÓN	| Escala booleana (0 y 1) en forma de icono emoji positivo y negativo |
-| MÚLTIPLE	| Escala de selección única o de opción múltiple. |
-| APORTE	| Campo abierto para la inclusión de la respuesta. |
+| LIKE/DISLIKE	| Escala booleana (0 y 1) en forma de icono positivo y negativo |
+| LIKERT	| Escala de 5 puntos (1 a 5) donde 1 = "Muy Insatisfecho", 2 = "Insatisfecho", 3 = "Indiferente", 4 = "Satisfecho" y 5 = "Muy Satisfecho" |
+| EMOTION	| Escala booleana (0 y 1) en forma de icono emoji positivo y negativo |
+| MULTIPLE	| Escala de selección única o de opción múltiple. |
+| INPUT	| Campo abierto para la inclusión de la respuesta. |
 
 ***Importante:** Los valores recibidos deben estar de acuerdo con las opciones de respuesta disponibles en cada métrica para que se pueda realizar la integración.
 
