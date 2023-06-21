@@ -649,9 +649,9 @@ La comunicación se realizará a través de la siguiente URL:
 https://indecx.com/v3/integrations/actions/[Identificador_da_acao]/invites
 ```
 
-las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se active a través de API, debe enviar un JSON a través del cuerpo a la URL mencionada anteriormente y su autenticación se realizará a través de la clave proporcionada a la empresa y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del cuerpo
+Las acciones deben crearse en la plataforma app-indecx.com y los envíos se pueden realizar a través de la plataforma o a través de la API. Cuando se active a través de API, debe enviar un JSON a través del body a la URL mencionada anteriormente y su autenticación se realizará a través de la company-key proporcionada y enviada a través de HEADER. Es importante que se envíe el identificador de la acción y que siga un patrón de envío del JSON a través del body
 
-## **Pedido**
+## **Request**
 
 ```javascript
 POST /v3/integrations/actions/T0AXXX/invites
@@ -676,7 +676,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-## **RESPUESTA**
+## **Response**
 
 ```javascript
 {
@@ -706,6 +706,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ## Generación de un enlace de encuesta con URL de devolución de llamadas 
 
 También es posible enviar un disparador y obtener el enlace a través de la API registrada en la callbackurl.
+
 ruta API **callbackurl**
 **maxmsg** Retorno máximo de registros en JSON. Ejemplo: si activa 1000 clientes con maxmsg = 100, recibirá 10 solicitudes con 100 registros cada una.
 
