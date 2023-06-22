@@ -199,6 +199,18 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]?limit=1000&startDate=
           "text": "Prazo",
           "review": 8
         },
+	{
+					
+	"type": "MULTIPLE",
+	"_id": "6494506193567c001327e4c4",
+	"text": "Qual motivo da sua avaliação",
+	"options": [
+		{
+		"option": "devolução e cancelamento da venda",
+		"subOption": "facilidade em cancelar a venda"
+		} 
+		]
+	}
       ],
       "channel": "email",
       "companyId": "5edfb0342e03a449708e67df",
@@ -286,6 +298,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]?limit=1000&startDate=
 | review  | Nota atribuída   |
 | answerText  | Retorno do texto em caso de pergunta adicional do tipo **INPUT**   |
 | multipleValues  | Retorno das respostas multiplas em caso de pergunta adicional do tipo **MULTIPLE**   |
+| options  | Retorno das respostas multiplas com subopções do tipo **MULTIPLE com SUB**   |
 
 **indicators**
 | Params  | Descrição |
