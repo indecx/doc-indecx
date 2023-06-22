@@ -914,7 +914,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## **RESPUESTA**
+## **Response**
 
 ```javascript
 [
@@ -939,7 +939,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ]
 ```
 
-# OBTENER Recopilar información de la encuesta
+# GET Recopilar información de la encuesta
 ![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Factions--info-orange)
 
 Acceder a la estructura del cuestionario programado dentro de Indecx. La comunicación se realizará a través de la siguiente URL:
@@ -951,7 +951,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## **RESPUESTA**
+## **Response**
 
 ```javascript
 {
@@ -1014,30 +1014,30 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ## Comprender los campos de devolución
 | Parámetros	| Descripción |
 | ------------- | ------------- |
-| ´_identificación´	| identificador de acción |
-| ID de control	| Identificador de control de acción |
-| Reenviar | Fechas	Lista de todas las fechas de reenvío| 
-| tipo de encuesta	| tipo de cuestionario |
-| nombre	| Nombre del cuestionario |
-| tipo	| Métrica principal del cuestionario |
-| pregunta	| Pregunta métrica clave |
-| Habilitar Anónimo	| Opción de anonimato de datos habilitada |
-| preguntas adicionales/tipo	| Tipo de pregunta adicional, por ejemplo: RESEÑAS, CSAT, ME GUSTA/NO ME GUSTA, EMOCIÓN, MÚLTIPLE, ENTRADA |
-| preguntas adicionales/texto	| Descripción adicional de la pregunta |
-| preguntas adicionales/tipo múltiple |	Tipo de selección única (radio) u opción múltiple (casilla de verificación) |
-| preguntas adicionales/opciones	| Opciones de elección para múltiples tipos. |
-| todas las respuestas Requeridas	| Respuestas de tipo obligatorio. |
+| _id	| Identificador de acción |
+| controlId	| Identificador de control de acción |
+| resendDates | Fechas	Lista de todas las fechas de reenvío| 
+| surveyType	| Tipo de cuestionario |
+| name	| Nombre del cuestionario |
+| type	| Métrica principal del cuestionario |
+| question	| Pregunta métrica clave |
+| enableAnonymous	| Opción de anonimato de datos habilitada |
+| adittionalQuestions.type	| Tipo de pregunta adicional, por ejemplo: REVIEWS,CSAT,LIKE/DISLIKE,LIKERT,EMOTION,MULTIPLE,INPUT |
+| adittionalQuestions.text	| Descripción adicional de la pregunta |
+| adittionalQuestions.multipleType |	Tipo de selección única (radio) u opción múltiple (casilla de verificación) |
+| adittionalQuestions.choices	| Opciones de elección para múltiples tipos. |
+| allAnswersRequired	| Respuestas de tipo obligatorio. |
 
 ## Comprender las opciones de respuesta por tipo
 | Parámetros	| Descripción |
 | ------------- | ------------- |
-| RESEÑAS	| Escala de 5 puntos (1 a 5) en forma de "estrella" |
+| REVIEWS	| Escala de 5 puntos (1 a 5) en forma de "estrella" |
 | CSAT	| Escala de 10 puntos (1 a 10) en forma de escala de evaluación |
-| GUSTAR DISGUSTAR	| Escala booleana (0 y 1) en forma de icono positivo y negativo |
-| ME GUSTA	| Escala de 5 puntos (1 a 5) donde 1 = "Muy Insatisfecho", 2 = "Insatisfecho", 3 = "Indiferente", 4 = "Satisfecho" y 5 = "Muy Satisfecho" |
-| EMOCIÓN	| Escala booleana (0 y 1) en forma de icono emoji positivo y negativo |
-| MÚLTIPLE	| Escala de selección única o de opción múltiple. |
-| APORTE	| Campo abierto para la inclusión de la respuesta. |
+| LIKE/DISLIKE	| Escala booleana (0 y 1) en forma de icono positivo y negativo |
+| LIKERT	| Escala de 5 puntos (1 a 5) donde 1 = "Muy Insatisfecho", 2 = "Insatisfecho", 3 = "Indiferente", 4 = "Satisfecho" y 5 = "Muy Satisfecho" |
+| EMOTION	| Escala booleana (0 y 1) en forma de icono emoji positivo y negativo |
+| MULTIPLE	| Escala de selección única o de opción múltiple. |
+| INPUT	| Campo abierto para la inclusión de la respuesta. |
 
 # POST Enviar cliente a la lista de bloqueo
 ![Badge](https://img.shields.io/badge/POST-send--blocklist-green)
