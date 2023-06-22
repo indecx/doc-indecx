@@ -251,6 +251,18 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
           "text": "Prazo",
           "review": 8
         },
+	{
+					
+	"type": "MULTIPLE",
+	"_id": "6494506193567c001327e4c4",
+	"text": "Qual motivo da sua avaliação",
+	"options": [
+		{
+		"option": "devolução e cancelamento da venda",
+		"subOption": "facilidade em cancelar a venda"
+		} 
+		]
+	}
       ],
       "channel": "email",
       "companyId": "5edfb0342e03a449708e67df",
@@ -338,6 +350,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | review  | Nota atribuída   |
 | answerText  | Retorno do texto em caso de pergunta adicional do tipo **INPUT**   |
 | multipleValues  | Retorno das respostas multiplas em caso de pergunta adicional do tipo **MULTIPLE**   |
+| options  | Retorno das respostas multiplas com subopções **MULTIPLE com SUB**   |
 
 **indicators**
 | Params  | Descrição |
