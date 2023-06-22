@@ -1049,7 +1049,7 @@ La comunicación se realizará a través de la siguiente URL:
 https://indecx.com/v3/integrations/send-blocklist
 ```
 
-## **Pedido**
+## **Request**
 
 ```javascript
 POST /v3/integrations/send-blacklist
@@ -1072,7 +1072,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-# OBTENER Recopilar información de la lista de bloqueo (no quiero recibir más contactos)
+# GET Recopilar información de la lista de bloqueo (no quiero recibir más contactos)
 
 ![Badge](https://img.shields.io/badge/GET-blocklist--info-orange)
 
@@ -1085,14 +1085,14 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## Parámetros de consulta     
+## Query Params     
 
 | Parámetros	| Descripción |
 | ------------- | ------------- |
-| página	| Devuelve los resultados de una página específica |
-| límite	| Devuelve un valor límite por página |
+| page	| Devuelve los resultados de una página específica |
+| limit	| Devuelve un valor límite por página |
 
-## RESPUESTA
+## Response
 
 ```bash
 {
@@ -1132,10 +1132,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | ------------- | ------------- |
 | actionName	| Compartir nombre |
 | actionControlId	| identificador de acción |
-| ID de invitación	| identificación de invitación |
-| razón	| Motivo de la inclusión en la lista de bloqueo |
-| correo electrónico	| correo electrónico del cliente |
-| Creado en	| Fecha de inclusión del registro en la lista de bloqueo |
+| inviteId	| identificación de invitación |
+| reason	| Motivo de la inclusión en la lista de bloqueo |
+| email	| correo electrónico del cliente |
+| createdAt	| Fecha de inclusión del registro en la lista de bloqueo |
 
 # GET Recopilar una lista de respuestas categorizadas
 ![Badge](https://img.shields.io/badge/GET-blocklist--info-orange)
@@ -1149,16 +1149,16 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## Parámetros de consulta
+## Query Params
 | Parámetros	| Descripción |
 | ------------- | ------------- |
-| página	| Devuelve los resultados de una página específica |
-| límite	| Devuelve un valor límite por página |
-| fecha de inicio	| Fecha de inicio del parámetro |
-| fecha final	| Fecha de finalización del parámetro |
-| tipo de fecha	| creado en o actualizado en |
+| page	| Devuelve los resultados de una página específica |
+| limit	| Devuelve un valor límite por página |
+| startDate	| Fecha de inicio del parámetro |
+| endDate	| Fecha de finalización del parámetro |
+| dateType	| creado en o actualizado en |
 
-Nota: Para el valor [Identifier_da_acao] se puede utilizar el parámetro "/all" para devolver todas las invitaciones de todas las acciones disponibles.
+Nota: Para el valor [Identificador_da_acao] se puede utilizar el parámetro "/all" para devolver todas las invitaciones de todas las acciones disponibles.
 
 Ejemplo de consulta:
 ```javascript
@@ -1168,7 +1168,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## **RESPUESTA**
+## **Response**
 
 ```javascript
 
@@ -1210,25 +1210,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ## Comprender los campos de devolución
 | Parámetros	| Descripción |
 | -- | -- |
-| ID de respuesta	| ID de respuesta |
-| ID de invitación	| identificación de invitación |
-| categoría	| Nombre de categoría asignado |
-| subcategoría	| Nombre de subcategoría asignado |
-| Creado en	| Fecha de inclusión de la respuesta |
-| actualizado en	| Fecha de actualización de la respuesta |
-| tipo de fecha	| Fecha de inclusión de la respuesta |
+| answerId	| ID de respuesta |
+| inviteId	| identificación de invitación |
+| category	| Nombre de categoría asignado |
+| subCategory	| Nombre de subcategoría asignado |
+| createdAt	| Fecha de inclusión de la respuesta |
+| updatedAt	| Fecha de actualización de la respuesta |
+| dateType	| Fecha de inclusión de la respuesta |
 
 ## Sucursal de registro POST (IH1)
 ![Badge](https://img.shields.io/badge/post-branch-green)
 
-También puede registrar una sucursal o unidad de negocio a través de la API. Esta rama, denominada Ih1 en la plataforma, se utilizará para separar datos y niveles de acceso por usuario.
+También puede registrar una sucursal o unidad de negocio a través de la API. Esta rama, denominada Ih1 en la plataforma, se utilizará para separar dados y niveles de acceso por usuario.
 ```bash
 {
   https://indecx.com/v3/integrations/branches
 }
 ```
 
-## Solicitar json
+## request json
 
 ```javascript
 POST /v3/integrations/branches
@@ -1249,7 +1249,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 ```
 
-### RESPUESTA
+### Response
 
 ```bash
 
@@ -1264,10 +1264,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ### Comprender los campos de devolución
 | Parámetros	| Descripción |
 | - | - |
-| ´_identificación´	| identificación de la sucursal |
-| activo	| estado |
-| nombre corporativo	| nombre de la sucursal |
-| tipo	| Tipo de sucursal |
+| _id	| ID de la sucursal |
+| activo	| status |
+| corporate_name	| nombre de la sucursal |
+| type	| Tipo de sucursal |
 
 # GET Lista de Sucursales Registradas (IH1)
 ![Badge](https://img.shields.io/badge/get-branch-orange)
@@ -1281,7 +1281,7 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
 
-## RESPUESTA
+## Response
 
 ```javascript
 
@@ -1309,4 +1309,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 ### Gracias💚
 
-¿Existe alguna ruta que te haga el día a día más fácil?? ¡Ponte en contacto con el equipo de Indecx CX que desarrollamos para ti! =) Actualizado el 20/06/2023
+¿Existe alguna ruta que te haga el día a día más fácil?? ¡Ponte en contacto con el equipo de Indecx CX que desarrollamos para ti! =) Actualizado el 22/06/2023
