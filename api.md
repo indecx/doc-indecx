@@ -207,7 +207,7 @@ https://indecx.com/v2/answers-info/[Identificador_da_acao]?limit=1000&startDate=
 	"options": [
 		{
 		"option": "devolução e cancelamento da venda",
-		"subOption": "facilidade em cancelar a venda"
+		"subOptions": ["comissão"]
 		} 
 		]
 	}
