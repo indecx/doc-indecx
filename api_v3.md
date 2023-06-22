@@ -259,7 +259,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 	"options": [
 		{
 		"option": "devolução e cancelamento da venda",
-		"subOption": "facilidade em cancelar a venda"
+		"subOptions": ["comissão"]
 		} 
 		]
 	}
