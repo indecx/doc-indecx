@@ -1024,7 +1024,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | enableAnonymous	| Opción de anonimato de datos habilitada |
 | adittionalQuestions.type	| Tipo de pregunta adicional, por ejemplo: REVIEWS,CSAT,LIKE/DISLIKE,LIKERT,EMOTION,MULTIPLE,INPUT |
 | adittionalQuestions.text	| Descripción adicional de la pregunta |
-| adittionalQuestions.multipleType |	Tipo de selección única (radio) u opción múltiple (casilla de verificación) |
+| adittionalQuestions.multipleType |	Tipo de selección única (radio) u opción múltiple (checkbox) |
 | adittionalQuestions.choices	| Opciones de elección para múltiples tipos. |
 | allAnswersRequired	| Respuestas de tipo obligatorio. |
 
