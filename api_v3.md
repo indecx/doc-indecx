@@ -64,7 +64,7 @@ seja uma prospecção, vendas, interação etc... No método disparo de convite 
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v3/integrations/[Identificador_da_acao]
+https://indecx.com/v3/integrations/send/[Identificador_da_acao]
 ```
 As ações deverão ser criadas na plataforma app-indecx.com e os disparos poderão ser efetuados via plataforma (manual) ou via API. Quando disparado via API, deve-se enviar um JSON via body para a URL mencionada acima e sua autenticação se dará através da company-key fornecida e enviada via HEADER.  Importante que seja enviado o identificador da ação e também que siga um padrão para envio do JSON via body.
 
