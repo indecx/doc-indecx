@@ -1323,6 +1323,93 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 	]
 ```
 
+# GET Coletar detalhes da ação
+![Badge](https://img.shields.io/badge/GET-details--info-orange)
+
+Este endpoint permite que você obtenha detalhes de uma ação específica.
+
+```javascript
+GET /v3/integrations/details-info/:controlId
+Host: indecx.com
+Content-Type: application
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
+## Query Params
+| Params  | Descrição |
+| ------------- | ------------- |
+| page  | Retorna os resultados de uma determinada página em específico  |
+| limit  | Retorna o um valor limite por página  |
+| startDate | Data inicial do parâmetro | 
+| endDate | Data final do parâmetro | 
+| status | Status da ação | 
+
+Exemplo de consulta:
+
+```javascript
+GET /v3/integrations/details-info/[Identificador_da_acao]?page=1&limit=10
+GET /v3/integrations/details-info/[Identificador_da_acao]?startDate=10-01-2022&endDate=10-01-2022
+GET /v3/integrations/details-info/[Identificador_da_acao]?status=[status da ação]
+
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
+
+
+## **Response**
+
+```javascript
+
+{
+    "page": 1,
+    "limit": 30,
+    "total": 5648,
+    "details": [
+        {
+            "_id": "6258af1bec2fae3ee56d461a",
+            "active": true,
+            "companyId": "62570d80d788a74c0e05aab7",
+            "actionId": "62570d80d788a74c0e05aab7",
+            "channel": "email",
+            "status": "sent",
+            "controlId": "T0AXXX",
+            "submitDate": "2022-04-14T23:32:43.288Z",
+            "createdAt": "2022-04-14T23:32:43.288Z",
+            "updatedAt": "2022-07-26T21:19:52.303Z",
+            "submitId": "625810a83b3c5d3ea7234302",
+            "Email": "user@example.com",
+            "Name": "User Name",
+            "Phone": "+5511999999999",
+            "validEmail": true,
+            "validPhone": true,
+            "indicators": []
+        }
+    ]
+}
+
+```
+
+## Entendendo os campos de retorno
+| Params  | Descrição |
+| ------------- | ------------- |
+| _id  | 	ID do detalhe da ação  |
+| active  | Se a ação está ativa ou não  |
+| companyId  | ID da empresa  |
+| actionId  | ID da ação  |
+| channel  | Canal da ação (ex: email)    |
+| status  | Status da ação (ex: enviado)    |
+| controlId  | ID de controle da ação   |
+| submitDate  | Data de submissão da ação   |
+| createdAt  | Data de criação da ação   |
+| updatedAt  | Data de atualização da ação   |
+| submitId  | Data de submissão da ação  |
+| Email  | Email do destinatário da ação  |
+| Name  | Nome do destinatário da ação |
+| Phone  | Telefone do destinatário da ação |
+| validEmail  | Se o email é válido ou não   |
+| validPhone  | Se o telefone é válido ou não   |
+| indicators  | Lista dos indicadores atribuídos ao convite   |
+
 ### Obrigado 💚
 
 Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = )
