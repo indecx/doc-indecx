@@ -10,6 +10,10 @@ A API IndeCX foi desenvolvida para que seja possível realizar diversas integra�
 Nessa documentação você encontrará exemplos de utilização de cada método.
 
 
+## Swagger
+https://indecx.com/api-docs/#/
+
+
 ## Introdução
 A API utiliza autenticação e autorização via Bearer Token para proteger as rotas de acesso restrito. O Bearer Token deve ser enviado no cabeçalho Authorization de todas as requisições que requerem autenticação.
 
