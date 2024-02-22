@@ -1346,12 +1346,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | startDate | Data inicial do parâmetro | 
 | endDate | Data final do parâmetro | 
 | status | Status da ação | 
+| dateType  | Tipo da data createdAt (criação da pesquisa) ou updatedAt (Atualização da pesquisa)  |
 
 Exemplo de consulta:
 
 ```javascript
 GET /v3/integrations/details-info/[Identificador_da_acao]?page=1&limit=10
-GET /v3/integrations/details-info/[Identificador_da_acao]?startDate=10-01-2022&endDate=10-01-2022
+GET /v3/integrations/details-info/[Identificador_da_acao]?startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt HTTP/1.1
 GET /v3/integrations/details-info/[Identificador_da_acao]?status=[status da ação]
 
 Host: indecx.com
