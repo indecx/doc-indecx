@@ -1415,6 +1415,89 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | validPhone  | Se o telefone é válido ou não   |
 | indicators  | Lista dos indicadores atribuídos ao convite   |
 
+# PUT Atualização de Convites
+![Badge](https://img.shields.io/badge/PUT-update--invites-green)
+
+Este endpoint permite que você atualize os detalhes de vários convites de uma vez. Ele aceita um array de convites, onde cada convite é um objeto contendo os campos `inviteId`, `name`, `email` e `phone`. O `inviteId` é obrigatório, enquanto `name`, `email` e `phone` são opcionais. Lembrando que não é permitido deixar todos os campos vazios e também não será possivel atualizar convites respondidos.
+
+## Requisição
+
+A comunicação será realizada através da seguinte URL:
+```bash
+https://indecx.com/v3/integrations/update-invite
+```
+
+**Corpo da Requisição:**
+
+```javascript
+POST /v3/integrations/update-invite
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
+
+{
+  "invites": [
+    {
+      "inviteId": "60d2f3b2f789b2128c761abc",
+      "name": "Novo Nome",
+      "email": "novoemail@example.com",
+      "phone": "+5511999999999"
+    },
+    {
+      "inviteId": "60d2f3b2f789b2128c761def",
+      "name": "Outro Nome",
+      "email": "outroemail@example.com",
+      "phone": "+5511888888888"
+    },
+     {
+      "inviteId": "60d2f3b2f789b2128c76dse4",
+      "name": "Outro Nome",
+      "email": "outroemail",
+      "phone": "+5511888888888"
+    }
+  ]
+}
+
+```
+**Resposta:**
+
+A resposta será um objeto contendo um array message, onde cada item corresponde a um convite enviado na requisição. Cada item será um objeto contendo inviteId e message, indicando o resultado da atualização para aquele convite.
+
+**Exemplo de resposta:**
+```
+{
+  "message": [
+    {
+      "inviteId": "60d2f3b2f789b2128c761abc",
+      "message": "Successfully updated invite."
+    },
+    {
+      "inviteId": "60d2f3b2f789b2128c761def",
+      "message": "Failure: Invalid email."
+    },
+    {
+      "inviteId": "60d2f3b2f789b2128c76dse4",
+      "message": "Failure: Invite already answered and cannot be updated."
+    }
+  ]
+}
+```
+
+## **Códigos de Resposta Possíveis**
+| Código | Descrição |
+| ------ | --------- |
+| 200    | "message": "Successfully updated invite."
+| 400    | "message": "Failure: All fields are empty." |
+| 400    | "message": "Failure: Invalid inviteId." |
+| 400    | "message": "Failure: Invalid phone number." |
+| 400    | "message": "Failure: Invalid email." |
+| 400    | "message": "Failure: Invalid name." |
+| 400    | "message": "Failure: Invite already answered and cannot be updated." |
+| 400    | "message": "Invite not found" |
+| 500    | "message": "Failure: [error message]" |
+
+
 ### Obrigado 💚
 
 Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = )
