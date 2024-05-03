@@ -1052,13 +1052,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | INPUT  | Campo aberto para inclusão de resposta.  |
 
 # POST Envio de cliente para blocklist
-![Badge](https://img.shields.io/badge/POST-send--blocklist-green)
+![Badge](https://img.shields.io/badge/POST-send--blacklist-green)
 
-Caso você queira adicionar uma lista de clientes dentro da blocklist para evitar que esse e-mail receba novos contato, você pode realizar através dessa rota.
+Caso você queira adicionar um cliente à lista de bloqueio (blocklist) para evitar que ele receba novos contatos, você pode fazer isso através desta rota. Agora, além do e-mail, você também pode adicionar um cliente à lista de bloqueio utilizando o ID de cliente (`clientId`) ou número de telefone (`phone`).
+
+Além disso, pelo menos um dos canais de contato (`e-mail`, `clientId` ou `phone`) deve ser fornecido.
+
 
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v3/integrations/send-blocklist
+https://indecx.com/v3/integrations/send-blacklist
 ```
 ## **Request**
 ```javascript
@@ -1069,14 +1072,29 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 {
    "email":"contato_3@indecx.com.br",
-   "reason":"Não quer receber contato"
-	
+   "reason":"Não quer receber contato",
+   "clientId":"123456",
+   "phone":"19999999999"
 }
 ```
 ## **Response**
 ```javascript
 {
 	"message": "Sent to the blocklist successfully."
+}
+```
+## **Error Response**
+
+### **At least one channel is required**
+```javascript
+{
+	"message": "At least one channel (email, clientId, or phone) is required."
+}
+```
+### **Internal Server Error**
+```javascript
+{
+	"message": "Send to the blocklist failed."
 }
 ```
 
