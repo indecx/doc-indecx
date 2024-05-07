@@ -1442,19 +1442,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
       "inviteId": "60d2f3b2f789b2128c761abc",
       "name": "Novo Nome",
       "email": "novoemail@example.com",
-      "phone": "+5511999999999"
+      "phone": "5511999999999"
     },
     {
       "inviteId": "60d2f3b2f789b2128c761def",
       "name": "Outro Nome",
       "email": "outroemail@example.com",
-      "phone": "+5511888888888"
+      "phone": "5511888888888"
     },
      {
       "inviteId": "60d2f3b2f789b2128c76dse4",
       "name": "Outro Nome",
       "email": "outroemail",
-      "phone": "+5511888888888"
+      "phone": "5511888888888"
     }
   ]
 }
