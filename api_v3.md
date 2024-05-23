@@ -1087,7 +1087,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 Você também pode ter acesso a lista de todos os clientes que entraram em blaclist.:
 
 ```javascript
-GET /v3/integrations/blocklist-info/T0AXXX
+GET /v3/integrations/blacklist-info
 Host: indecx.com
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
