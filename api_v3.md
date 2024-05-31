@@ -1497,6 +1497,105 @@ A resposta será um objeto contendo um array message, onde cada item corresponde
 | 400    | "message": "Invite not found" |
 | 500    | "message": "Failure: [error message]" |
 
+# GET Coletar Informações de Quarentenas
+![Badge](https://img.shields.io/badge/GET-quarantines--info-green)
+
+Este endpoint permite que você obtenha informações detalhadas sobre quarentenas.
+
+```javascript
+GET /v3/integrations/quarantines-info/:controlId
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+```
+## Query Params
+| Params  | Descrição |
+| ------------- | ------------- |
+| page  | Retorna os resultados de uma determinada página em específico  |
+| limit  | Retorna o um valor limite por página  |
+| startDate | Data inicial do parâmetro | 
+| endDate | Data final do parâmetro | 
+| status | Status da ação | 
+| dateType  | Tipo da data createdAt (criação da pesquisa) ou updatedAt (Atualização da pesquisa)  |
+|groupId| ID do grupo de ações|
+|clientId| ID do cliente|
+|phone|	Número de telefone do destinatário|
+|email|	Email do destinatário|
+|actionId| ID da ação|
+|companyId| ID da empresa |
+
+```javascript
+GET /v3/integrations/quarantines-info/?phone=[telefone do destinatário]
+GET /v3/integrations/quarantines-info/?email=[email do destinatário]
+GET /v3/integrations/quarantines-info/?clientId[id do cliente]
+GET /v3/integrations/quarantines-info/?groupId[ID do grupo de ações] ou all(irá buscar em todas as ações)
+GET /v3/integrations/quarantines-info/?actionId[ID da ação] ou all (irá buscar em todos os grupos de ação)
+GET /v3/integrations/quarantines-info/?page=1&limit=10
+GET /v3/integrations/quarantines-info/?startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+GET /v3/integrations/quarantines-info (trás todas as quarentenas)
+
+
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
+```
+
+## **Response**
+
+```javascript
+
+{
+    "page": 1,
+    "limit": 50,
+    "total": 1419,
+    "quarantines": [
+        {
+            "_id": "4234defa8901hijk2345lmno",
+            "expirationDate": "2024-07-01T11:30:00.000Z",
+            "type": "alert",
+            "clientId": "98012345000123",
+            "companyId": "5678abcd9012efgh3456ijkl",
+            "createdAt": "2024-06-01T11:30:00.000Z",
+            "updatedAt": "2024-06-01T11:30:00.000Z"
+        },
+        {
+            "_id": "5234efab9012ijkl3456mnop",
+            "expirationDate": "2024-07-01T12:00:00.000Z",
+            "type": "notification",
+            "clientId": "12345678000145",
+            "actionId": "abcd1234efgh5678ijkl9012",
+            "createdAt": "2024-06-01T12:00:00.000Z",
+            "updatedAt": "2024-06-01T12:00:00.000Z"
+        },
+        {
+            "_id": "6234fabc0123jklm4567nopq",
+            "expirationDate": "2024-07-01T12:30:00.000Z",
+            "type": "reminder",
+            "email": "example2@example.com",
+            "groupId": "7654dcba3210kjih8765mnop",
+            "createdAt": "2024-06-01T12:30:00.000Z",
+            "updatedAt": "2024-06-01T12:30:00.000Z"
+        }
+    ]
+}
+
+```
+## Entendendo os campos de retorno
+| Params  | Descrição |
+| ------------- | ------------- |
+| _id | ID do detalhe da ação  |
+| expirationDate | Data para o para sair da quarentena  |
+| Email | Email do destinatário da ação  |
+| Phone | Telefone do destinatário da ação |
+| companyId | ID da empresa  |
+| actionId | ID da ação  |
+| groupId | ID do grupo de ações|
+| type | Por onde o cliente entrou na quarentena |
+| createdAt | Data de criação da ação   |
+| updatedAt | Data de atualização da ação   |
+
+
 
 ### Obrigado 💚
 
