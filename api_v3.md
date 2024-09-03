@@ -842,6 +842,34 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 			"review": ["Opção 1", "Opção 2"]
 		},
 		{
+           		 "type": "MULTIPLE-SUBS",
+                         "text": "Qual o motivo da sua nota?",
+                         "review": [
+                {
+                    "text": "Atendimento",
+                    "subOptions": [
+                        {
+                            "text": "Tempo de resposta"
+                        },
+                        {
+                            "text": "Qualidade do atendimento"
+                        }
+                    ]
+                },
+                {
+                    "text": "Produto",
+                    "subOptions": [
+                        {
+                            "text": "Qualidade do produto"
+                        },
+                        {
+                            "text": "Preço"
+                        }
+                    ]
+                }
+            ]
+        },
+		{
 			"type": "INPUT",
 			"text": "Qual foi seu vendedor",
 			"review": "Francisco da silva"
@@ -898,6 +926,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | LIKERT  | Escala de 5 pontos (1 a 5) sendo 1 = "Muito insatisfeito" , 2 = "Insatisfeito", 3 = "Indiferente", 4 = "Satisfeito" e 5 = "Muito Satisfeito" |
 | EMOTION  | Escala boleana (0 e 1) na forma de ícone emoji positivo e negativo   |
 | MULTIPLE  | Escala do tipo seleção única ou múltipla escolha.  |
+| MULTIPLE-SUBS  | Escala do tipo seleção única ou múltipla escolha com Subopções  |
 | INPUT  | Campo aberto para inclusão de resposta.  |
 
 *Importante: Os valores recebidos precisam estar de acordo com as opções de respostas disponíveis em cada métrica para que seja possível a realização da integração.
