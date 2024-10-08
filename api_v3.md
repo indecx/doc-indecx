@@ -783,6 +783,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
   ]
 }
 ```
+## **Envio de lembrete pela INDECX**
+Caso você queira que a INDECX envie lembretes automáticos para os clientes que tenham o link gerado pela API, é necessário seguir os seguintes passos:
+
+1-Configurar a quantidade de lembretes e os canais de envio diretamente na ação.
+2-Adicionar no header da API o parâmetro include-reminder:true. Dessa forma, sempre que um novo link for gerado via API, um lembrete automático também será criado com base nas configurações definidas na ação.
+
 
 # POST Envio de respostas transacionais para o Indecx
 ![Badge](https://img.shields.io/badge/POST-v3/integrations/%2Factions-green)
