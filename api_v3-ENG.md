@@ -21,7 +21,7 @@ To authenticate with the API, you must send an authentication request with your 
 ![Badge](https://img.shields.io/badge/GET-authorization--token-orange)
 ```bash
 https://indecx.com/v3/integrations/authorization/token
-
+```
 | Params  | Description |
 | ------------- | ------------- |
 | company-key  | $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX  |
