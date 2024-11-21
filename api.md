@@ -944,7 +944,7 @@ Para ter acesso a estrutura do questionário programado dentro do Indecx. A comu
 | _id  | ID da ação  |
 | controlId  | Identificador de controle da ação   |
 | resendDates  | Lista de todas as data que houveram reenvio  |
-| surveyType  | tipo do questionário  |
+| surveyType  | Tipo do questionário  |
 | name  | Nome do questionário    |
 | type  | Métrica principal do questionário    |
 | question  | Pergunta da métrica principal   |
