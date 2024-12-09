@@ -396,7 +396,8 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
             "review": 4
           }
         ]
-      }
+      },
+      "transcription": "testando um dois três testando."
     }
   ]
 }
@@ -416,6 +417,7 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
 | email  | E-mail do cliente   |
 | phone  | Telefone do cliente  |
 | feedback  | Comentário realizado pelo cliente no momento da resposta   |
+| transcription  | Transcrição do audio   |
 | categories  | Categorização do comentário (feedback)   |
 | channel  | Canal de coleta da resposta   |
 | companyId  | ID da empresa   |
