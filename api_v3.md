@@ -208,16 +208,19 @@ Exemplo de consulta:
 GET /v3/integrations/answers-info/[Identificador_da_acao]?limit=1000&startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt HTTP/1.1
 Host: indecx.com
 Content-Type: application/json
+Treatments-Details: true
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 ```
+obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os seguintes valores: Treatments-Details: true
 
 ## **Response**
 ```javascript
- {
-   "page": 1,
-   "limit": 50,
-   "total": 825,
-   "answers": [
+{
+  "page": 1,
+  "limit": 50,
+  "total": 825,
+  "answers": [
+    {
       "_id": "60b680790be5ec68f9aaa8ac",
       "active": true,
       "date": "2021-06-01T18:46:17.374Z",
@@ -225,13 +228,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
       "anonymousResponse": false,
       "clientId": null,
       "categories": [
-         {
-            "category": "Atendimento Insatisfatorio",
-            "subCategory": "Gerente"
-         },
-         {
-            "category": "Conteúdo programático"
-         }
+        {
+          "category": "Atendimento Insatisfatorio",
+          "subCategory": "Gerente"
+        },
+        {
+          "category": "Conteúdo programático"
+        }
       ],
       "tags": [],
       "subTags": [],
@@ -248,25 +251,24 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
           "text": "Atendimento",
           "review": 5
         },
-	{
+        {
           "multipleValues": [],
           "_id": "60b690786b90df6a1c0c25c8",
           "type": "CSAT",
           "text": "Prazo",
           "review": 8
         },
-	{
-					
-	"type": "MULTIPLE",
-	"_id": "6494506193567c001327e4c4",
-	"text": "Qual motivo da sua avaliação",
-	"options": [
-		{
-		"option": "devolução e cancelamento da venda",
-		"subOptions": ["comissão"]
-		} 
-		]
-	}
+        {
+          "type": "MULTIPLE",
+          "_id": "6494506193567c001327e4c4",
+          "text": "Qual motivo da sua avaliação",
+          "options": [
+            {
+              "option": "devolução e cancelamento da venda",
+              "subOptions": ["comissão"]
+            }
+          ]
+        }
       ],
       "channel": "email",
       "companyId": "5edfb0342e03a449708e67df",
@@ -283,7 +285,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
           "indicatorId": "60999b6846cfe15d3e276b67",
           "key": "2021-06-01"
         },
-	{
+        {
           "_id": "60b66440e4c523692528689c",
           "column": "seller_id",
           "value": "18/05/3038",
@@ -296,27 +298,109 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
           "value": "biz",
           "indicatorId": "609970140ad6c05d4c8ae98e",
           "key": "biz"
-        },
-	],
+        }
+      ],
       "controlId": "S8C0VE",
       "metric": "nps-0-10",
       "createdAt": "2021-06-01T18:46:17.380Z",
       "updatedAt": "2021-06-01T18:46:17.780Z",
       "sentimentAnalyzeGCP": {
         "score": 0,
-        "keyPhrases": [
-          "Atendimento",
-          "Melhor"
-        ]
-	},
+        "keyPhrases": ["Atendimento", "Melhor"]
+      },
       "treatments": {
-        "status": "aberto",
-        "sponsor": "Ninguém",
-        "comments": [],
-        "date": "2021-06-01T18:46:17.374Z",
-        "categories": []
+        "status": "respondido",
+        "startDateTreatment": "2024-12-09T17:57:01.870Z",
+        "solvedDate": "2024-12-09T17:57:01.870Z",
+        "updateDateTreatment": "2024-12-09T17:57:01.870Z",
+        "feed": [
+          {
+            "attachments": [],
+            "_id": "6750b1feae83b0002059b2e9",
+            "type": "status",
+            "sender": "robot",
+            "change": "aberto",
+            "date": "2024-12-04T19:48:14.825Z"
+          },
+          {
+            "attachments": [],
+            "_id": "6750b1ff734fa60013ee2e2e",
+            "type": "alert",
+            "sender": "robot",
+            "change": "diego@email.com.br",
+            "date": "2024-12-04T19:48:15.017Z"
+          },
+          {
+            "attachments": [],
+            "_id": "6750b1ff734fa60013ee2e2f",
+            "type": "alert",
+            "sender": "robot",
+            "change": "jessica@email.com.br",
+            "date": "2024-12-04T19:48:15.018Z"
+          },
+          {
+            "attachments": [],
+            "_id": "6750ba953b8ed8002189502d",
+            "type": "responsible",
+            "sender": "danilo@email.com.br",
+            "change": "Danilo Augusto",
+            "date": "2024-12-04T20:24:53.404Z"
+          },
+          {
+            "attachments": [],
+            "_id": "67572e9740f0d70033ff815f",
+            "type": "close-the-loop",
+            "sender": "caio@email.com.br",
+            "change": "caio@email.com.br realizou um registro de contato.",
+            "date": "2024-12-09T17:53:27.846Z"
+          },
+          {
+            "attachments": [],
+            "_id": "67572f6ddae947002696b180",
+            "type": "status",
+            "sender": "caio@email.com.br",
+            "change": "Respondido",
+            "date": "2024-12-09T17:57:01.871Z"
+          }
+        ],
+        "closeTheLoopFeedback": [
+          {
+            "id": "1729880807989",
+            "text": "O problema foi resolvido?",
+            "type": "LIKE/DISLIKE",
+            "review": 1
+          },
+          {
+            "id": "1729880821504",
+            "text": "Por qual motivo?",
+            "type": "MULTIPLE",
+            "choices": [
+              {
+                "id": "81592332723962",
+                "text": "Motivo 1"
+              },
+              {
+                "id": "81592332236237",
+                "text": "Motivo 2"
+              },
+              {
+                "id": "81610410199731",
+                "text": "Motivo 3"
+              }
+            ]
+          },
+          {
+            "id": "1729881623225",
+            "text": "Satisfação do cliente.",
+            "type": "REVIEWS",
+            "review": 4
+          }
+        ]
       }
     }
+  ]
+}
+
 ```
 
 ## Entendendo os campos de retorno
@@ -373,10 +457,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | Params  | Descrição |
 | ------------- | ------------- |
 | status  | Status da tratativa  |
-| sponsor  | Nome do responsável  |
-| comments  | Comentário registrado pelo responsável  |
-| date  | Data da tratativa  |
-| categories  | Categorias incluídas nas respostas   |
+| startDateTreatment  | Data de inicio da tratativa  |
+| solvedDate  | Data de fim da tratativa  |
+| updateDateTreatment  | Data de atualização da tratativa  |
+| feed.attachments  | nome dos arquivos anexados  |
+| feed._id  | id de controle do feed  |
+| feed.type  | Tipo da interação. (status,Alert,responsible,close-the-loop)  |
+| feed.sender  | Quem realizou a integração   |
+| feed.change  | Registro/Mudança registrada no feed   |
+| feed.date  | Data de registro no feed   |
+
+**closeTheLoopFeedback**
+| Params  | Descrição |
+| ------------- | ------------- |
+| id  | id de controle do fluxo de tratativa  |
+| text  | Pergunta do fluxo de tratativa  |
+| type  | Tipo da resposta  |
+| review  | Nota atribuída  |
+| choices.id  | id de controle da alternativa (Apenas para type = MULTIPLE)  |
+| choices.text  | Alternativa respondida (Apenas para type = MULTIPLE  |
 
 # GET Coletar Informações dos convites
 ![Badge](https://img.shields.io/badge/GET-invites--info-orange)
@@ -1592,7 +1691,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
         {
             "_id": "4234defa8901hijk2345lmno",
             "expirationDate": "2024-07-01T11:30:00.000Z",
-            "type": "alert",
+            "type": "submit",
             "clientId": "98012345000123",
             "companyId": "5678abcd9012efgh3456ijkl",
             "createdAt": "2024-06-01T11:30:00.000Z",
@@ -1601,7 +1700,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
         {
             "_id": "5234efab9012ijkl3456mnop",
             "expirationDate": "2024-07-01T12:00:00.000Z",
-            "type": "notification",
+            "type": "submit",
             "clientId": "12345678000145",
             "actionId": "abcd1234efgh5678ijkl9012",
             "createdAt": "2024-06-01T12:00:00.000Z",
@@ -1610,7 +1709,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
         {
             "_id": "6234fabc0123jklm4567nopq",
             "expirationDate": "2024-07-01T12:30:00.000Z",
-            "type": "reminder",
+            "type": "answer",
             "email": "example2@example.com",
             "groupId": "7654dcba3210kjih8765mnop",
             "createdAt": "2024-06-01T12:30:00.000Z",
@@ -1630,7 +1729,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | companyId | ID da empresa  |
 | actionId | ID da ação  |
 | groupId | ID do grupo de ações|
-| type | Por onde o cliente entrou na quarentena |
+| type | Por onde o cliente entrou na quarentena: answer resposta ou submit disparo |
 | createdAt | Data de criação da ação   |
 | updatedAt | Data de atualização da ação   |
 
