@@ -531,6 +531,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 			"updatedAt": "2022-01-13T19:09:31.635Z",
 			"answeredId": "61df50e72d5402779195a001",
 			"deletedAnswer": false,
+			"deleted": false,
+			"indicators": [
+				{
+					"column": "sigla",
+					"value": "RSA"
+				}
+			]
 		},
 		{
 			"_id": "61e078eba3320b1122232799",
@@ -546,6 +553,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 			"createdAt": "2022-01-13T19:09:31.634Z",
 			"updatedAt": "2022-01-13T19:09:31.634Z",
 			"deletedAnswer": false,
+			"deleted": false,
+			"indicators": [
+				{
+					"column": "sigla",
+					"value": "RSA"
+				}
+			]
 		},
 		{
 			"_id": "61e078eba3321111e7332779",
@@ -561,6 +575,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 			"createdAt": "2022-01-13T19:09:31.633Z",
 			"updatedAt": "2022-01-13T19:09:31.633Z",
 			"deletedAnswer": false,
+			"deleted": true,
+			"indicators": [
+				{
+					"column": "sigla",
+					"value": "RSA"
+				}
+			]
+		}
 		}
 	]
 }
@@ -583,6 +605,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | updateAt  | Data de update do convite   |
 | answeredId  | ID da resposta   |
 | deletedAnswer | Verifica se a resposta foi excluída |
+| deleted | Verifica se a invite foi excluído |
+| indicators.column | Nome do indicador |
+| indicators.value | Valor do indicador |
 
 
 
@@ -1740,4 +1765,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 ### Obrigado 💚
 
 Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = )
-Atualizado em 01/01/2023
+Atualizado em 09/12/2024
