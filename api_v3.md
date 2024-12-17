@@ -1668,7 +1668,7 @@ A resposta será um objeto contendo um array message, onde cada item corresponde
 Este endpoint permite que você obtenha informações detalhadas sobre quarentenas.
 
 ```javascript
-GET /v3/integrations/quarantines-info/:controlId
+GET /v3/integrations/quarentines-info/:controlId
 Host: indecx.com
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
@@ -1690,14 +1690,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 |companyId| ID da empresa |
 
 ```javascript
-GET /v3/integrations/quarantines-info?phone=[telefone do destinatário]
-GET /v3/integrations/quarantines-info?email=[email do destinatário]
-GET /v3/integrations/quarantines-info?clientId[id do cliente]
-GET /v3/integrations/quarantines-info?groupId[ID do grupo de ações] ou all(irá buscar em todas as ações)
-GET /v3/integrations/quarantines-info?actionId[ID da ação] ou all (irá buscar em todos os grupos de ação)
-GET /v3/integrations/quarantines-info?page=1&limit=10
-GET /v3/integrations/quarantines-info?startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
-GET /v3/integrations/quarantines-info (trás todas as quarentenas)
+GET /v3/integrations/quarentines-info?phone=[telefone do destinatário]
+GET /v3/integrations/quarentines-info?email=[email do destinatário]
+GET /v3/integrations/quarentines-info?clientId[id do cliente]
+GET /v3/integrations/quarentines-info?groupId[ID do grupo de ações] ou all(irá buscar em todas as ações)
+GET /v3/integrations/quarentines-info?actionId[ID da ação] ou all (irá buscar em todos os grupos de ação)
+GET /v3/integrations/quarentines-info?page=1&limit=10
+GET /v3/integrations/quarentines-info?startDate=10-01-2022&endDate=10-01-2022&dateType=createdAt
+GET /v3/integrations/quarentines-info (trás todas as quarentenas)
 
 
 Host: indecx.com
