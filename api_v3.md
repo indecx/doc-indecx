@@ -216,190 +216,234 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
 ## **Response**
 ```javascript
 {
-  "page": 1,
-  "limit": 50,
-  "total": 825,
-  "answers": [
-    {
-      "_id": "60b680790be5ec68f9aaa8ac",
-      "active": true,
-      "date": "2021-06-01T18:46:17.374Z",
-      "answerDate": "2021-06-01T18:46:17.374Z",
-      "anonymousResponse": false,
-      "clientId": null,
-      "categories": [
-        {
-          "category": "Atendimento Insatisfatorio",
-          "subCategory": "Gerente"
-        },
-        {
-          "category": "Conteúdo programático"
-        }
-      ],
-      "tags": [],
-      "subTags": [],
-      "deleted": false,
-      "name": "Nome do Cliente A",
-      "email": "clientea@gmail.com",
-      "phone": 1199999222,
-      "feedback": "O atendimento poderia ser melhor",
-      "additionalQuestions": [
-        {
-          "multipleValues": [],
-          "_id": "60b690786b90df6a1c0c25c7",
-          "type": "REVIEWS",
-          "text": "Atendimento",
-          "review": 5
-        },
-        {
-          "multipleValues": [],
-          "_id": "60b690786b90df6a1c0c25c8",
-          "type": "CSAT",
-          "text": "Prazo",
-          "review": 8
-        },
-        {
-          "type": "MULTIPLE",
-          "_id": "6494506193567c001327e4c4",
-          "text": "Qual motivo da sua avaliação",
-          "options": [
+   "page":1,
+   "limit":50,
+   "total":825,
+   "answers":[
+      {
+         "_id":"60b680790be5ec68f9aaa8ac",
+         "active":true,
+         "date":"2021-06-01T18:46:17.374Z",
+         "answerDate":"2021-06-01T18:46:17.374Z",
+         "anonymousResponse":false,
+         "clientId":null,
+         "categories":[
             {
-              "option": "devolução e cancelamento da venda",
-              "subOptions": ["comissão"]
+               "category":"Atendimento Insatisfatorio",
+               "subCategory":"Gerente"
+            },
+            {
+               "category":"Conteúdo programático"
             }
-          ]
-        }
-      ],
-      "channel": "email",
-      "companyId": "5edfb0342e03a449708e67df",
-      "actionId": "6074572fa732a85e3683bf9f",
-      "inviteId": "60b66441e4c5236925287995",
-      "detailsId": "60b66440e4c523692528689a",
-      "text": "Em uma escala de 0 a 10, o quanto você indicaria a Indecx para amigos ou familiares?",
-      "review": 7,
-      "indicators": [
-        {
-          "_id": "60b66440e4c523692528689b",
-          "column": "sent_date",
-          "value": "2021-06-01",
-          "indicatorId": "60999b6846cfe15d3e276b67",
-          "key": "2021-06-01"
-        },
-        {
-          "_id": "60b66440e4c523692528689c",
-          "column": "seller_id",
-          "value": "18/05/3038",
-          "indicatorId": "6099701094450d5d31861a87",
-          "key": "415785"
-        },
-        {
-          "_id": "60b66440e4c523692528689d",
-          "column": "seller_type",
-          "value": "biz",
-          "indicatorId": "609970140ad6c05d4c8ae98e",
-          "key": "biz"
-        }
-      ],
-      "controlId": "S8C0VE",
-      "metric": "nps-0-10",
-      "createdAt": "2021-06-01T18:46:17.380Z",
-      "updatedAt": "2021-06-01T18:46:17.780Z",
-      "sentimentAnalyzeGCP": {
-        "score": 0,
-        "keyPhrases": ["Atendimento", "Melhor"]
-      },
-      "treatments": {
-        "status": "respondido",
-        "startDateTreatment": "2024-12-09T17:57:01.870Z",
-        "solvedDate": "2024-12-09T17:57:01.870Z",
-        "updateDateTreatment": "2024-12-09T17:57:01.870Z",
-        "feed": [
-          {
-            "attachments": [],
-            "_id": "6750b1feae83b0002059b2e9",
-            "type": "status",
-            "sender": "robot",
-            "change": "aberto",
-            "date": "2024-12-04T19:48:14.825Z"
-          },
-          {
-            "attachments": [],
-            "_id": "6750b1ff734fa60013ee2e2e",
-            "type": "alert",
-            "sender": "robot",
-            "change": "diego@email.com.br",
-            "date": "2024-12-04T19:48:15.017Z"
-          },
-          {
-            "attachments": [],
-            "_id": "6750b1ff734fa60013ee2e2f",
-            "type": "alert",
-            "sender": "robot",
-            "change": "jessica@email.com.br",
-            "date": "2024-12-04T19:48:15.018Z"
-          },
-          {
-            "attachments": [],
-            "_id": "6750ba953b8ed8002189502d",
-            "type": "responsible",
-            "sender": "danilo@email.com.br",
-            "change": "Danilo Augusto",
-            "date": "2024-12-04T20:24:53.404Z"
-          },
-          {
-            "attachments": [],
-            "_id": "67572e9740f0d70033ff815f",
-            "type": "close-the-loop",
-            "sender": "caio@email.com.br",
-            "change": "caio@email.com.br realizou um registro de contato.",
-            "date": "2024-12-09T17:53:27.846Z"
-          },
-          {
-            "attachments": [],
-            "_id": "67572f6ddae947002696b180",
-            "type": "status",
-            "sender": "caio@email.com.br",
-            "change": "Respondido",
-            "date": "2024-12-09T17:57:01.871Z"
-          }
-        ],
-        "closeTheLoopFeedback": [
-          {
-            "id": "1729880807989",
-            "text": "O problema foi resolvido?",
-            "type": "LIKE/DISLIKE",
-            "review": 1
-          },
-          {
-            "id": "1729880821504",
-            "text": "Por qual motivo?",
-            "type": "MULTIPLE",
-            "choices": [
-              {
-                "id": "81592332723962",
-                "text": "Motivo 1"
-              },
-              {
-                "id": "81592332236237",
-                "text": "Motivo 2"
-              },
-              {
-                "id": "81610410199731",
-                "text": "Motivo 3"
-              }
+         ],
+         "tags":[
+            
+         ],
+         "subTags":[
+            
+         ],
+         "deleted":false,
+         "name":"Nome do Cliente A",
+         "email":"clientea@gmail.com",
+         "phone":1199999222,
+         "feedback":"O atendimento poderia ser melhor",
+         "additionalQuestions":[
+            {
+               "multipleValues":[
+                  
+               ],
+               "_id":"60b690786b90df6a1c0c25c7",
+               "type":"REVIEWS",
+               "text":"Atendimento",
+               "review":5
+            },
+            {
+               "multipleValues":[
+                  
+               ],
+               "_id":"60b690786b90df6a1c0c25c8",
+               "type":"CSAT",
+               "text":"Prazo",
+               "review":8
+            },
+            {
+               "type":"MULTIPLE",
+               "_id":"6494506193567c001327e4c4",
+               "text":"Qual motivo da sua avaliação",
+               "options":[
+                  {
+                     "option":"devolução e cancelamento da venda",
+                     "subOptions":[
+                        "comissão"
+                     ]
+                  }
+               ]
+            }
+         ],
+         "channel":"email",
+         "companyId":"5edfb0342e03a449708e67df",
+         "actionId":"6074572fa732a85e3683bf9f",
+         "inviteId":"60b66441e4c5236925287995",
+         "detailsId":"60b66440e4c523692528689a",
+         "text":"Em uma escala de 0 a 10, o quanto você indicaria a Indecx para amigos ou familiares?",
+         "review":7,
+         "indicators":[
+            {
+               "_id":"60b66440e4c523692528689b",
+               "column":"sent_date",
+               "value":"2021-06-01",
+               "indicatorId":"60999b6846cfe15d3e276b67",
+               "key":"2021-06-01"
+            },
+            {
+               "_id":"60b66440e4c523692528689c",
+               "column":"seller_id",
+               "value":"18/05/3038",
+               "indicatorId":"6099701094450d5d31861a87",
+               "key":"415785"
+            },
+            {
+               "_id":"60b66440e4c523692528689d",
+               "column":"seller_type",
+               "value":"biz",
+               "indicatorId":"609970140ad6c05d4c8ae98e",
+               "key":"biz"
+            }
+         ],
+         "controlId":"S8C0VE",
+         "metric":"nps-0-10",
+         "createdAt":"2021-06-01T18:46:17.380Z",
+         "updatedAt":"2021-06-01T18:46:17.780Z",
+         "sentimentAnalyzeGCP":{
+            "score":0,
+            "keyPhrases":[
+               "Atendimento",
+               "Melhor"
             ]
-          },
-          {
-            "id": "1729881623225",
-            "text": "Satisfação do cliente.",
-            "type": "REVIEWS",
-            "review": 4
-          }
-        ]
-      },
-      "transcription": "testando um dois três testando."
-    }
-  ]
+         },
+         "treatments":{
+            "status":"respondido",
+            "startDateTreatment":"2024-12-09T17:57:01.870Z",
+            "solvedDate":"2024-12-09T17:57:01.870Z",
+            "updateDateTreatment":"2024-12-09T17:57:01.870Z",
+            "feed":[
+               {
+                  "attachments":[
+                     
+                  ],
+                  "_id":"6750b1feae83b0002059b2e9",
+                  "type":"status",
+                  "sender":"robot",
+                  "change":"aberto",
+                  "date":"2024-12-04T19:48:14.825Z"
+               },
+               {
+                  "attachments":[
+                     
+                  ],
+                  "_id":"6750b1ff734fa60013ee2e2e",
+                  "type":"alert",
+                  "sender":"robot",
+                  "change":"diego@email.com.br",
+                  "date":"2024-12-04T19:48:15.017Z"
+               },
+               {
+                  "attachments":[
+                     
+                  ],
+                  "_id":"6750b1ff734fa60013ee2e2f",
+                  "type":"alert",
+                  "sender":"robot",
+                  "change":"jessica@email.com.br",
+                  "date":"2024-12-04T19:48:15.018Z"
+               },
+               {
+                  "attachments":[
+                     
+                  ],
+                  "_id":"6750ba953b8ed8002189502d",
+                  "type":"responsible",
+                  "sender":"danilo@email.com.br",
+                  "change":"Danilo Augusto",
+                  "date":"2024-12-04T20:24:53.404Z"
+               },
+               {
+                  "attachments":[
+                     
+                  ],
+                  "_id":"67572e9740f0d70033ff815f",
+                  "type":"close-the-loop",
+                  "sender":"caio@email.com.br",
+                  "change":"caio@email.com.br realizou um registro de contato.",
+                  "date":"2024-12-09T17:53:27.846Z"
+               },
+               {
+                  "attachments":[
+                     
+                  ],
+                  "_id":"67572f6ddae947002696b180",
+                  "type":"status",
+                  "sender":"caio@email.com.br",
+                  "change":"Respondido",
+                  "date":"2024-12-09T17:57:01.871Z"
+               }
+            ],
+            "closeTheLoopFeedback":[
+               {
+                  "id":"1729880807989",
+                  "text":"O problema foi resolvido?",
+                  "type":"LIKE/DISLIKE",
+                  "review":1
+               },
+               {
+                  "id":"1729880821504",
+                  "text":"Por qual motivo?",
+                  "type":"MULTIPLE",
+                  "choices":[
+                     {
+                        "id":"81592332723962",
+                        "text":"Motivo 1"
+                     },
+                     {
+                        "id":"81592332236237",
+                        "text":"Motivo 2"
+                     },
+                     {
+                        "id":"81610410199731",
+                        "text":"Motivo 3"
+                     }
+                  ]
+               },
+               {
+                  "id":"1729542407943",
+                  "text":"Multipla com sub",
+                  "type":"MULTIPLE",
+                  "choices":[
+                     {
+                        "choice":{
+                           "id":"42419980793614",
+                           "text":"1"
+                        },
+                        "subchoices":[
+                           {
+                              "id":"42429126886992",
+                              "text":"1.1"
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "id":"1729881623225",
+                  "text":"Satisfação do cliente.",
+                  "type":"REVIEWS",
+                  "review":4
+               }
+            ]
+         },
+         "transcription":"testando um dois três testando."
+      }
+   ]
 }
 
 ```
