@@ -1307,6 +1307,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | ------------- | ------------- |
 | page  | Retorna os resultados de uma determinada página em específico  |
 | limit  | Retorna o um valor limite por página  |
+| startDate  | Data inicial do parâmetro  |
+| endDate  | Data final do parâmetro  |
+| dateType  | Tipo da data createdAt (criação da blocklist)|
 
 ## **Response**
 
@@ -1314,6 +1317,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 {
 	"page": 1,
 	"limit": 1000,
+	"total":500,
 	"data": [
 		{
 			"actionName": "Ação A",
