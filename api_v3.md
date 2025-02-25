@@ -772,14 +772,12 @@ A cada nova resposta você receberá um retorno com todas as informações do cl
     "feedback": "Demora na entrega do veículo. ",
     "additionalQuestions": [
       {
-        "multipleValues": [],
         "_id": "60ae3842a81a5d534cbcfb22",
         "type": "REVIEWS",
         "text": "Como você avalia sua experiência geral?",
         "review": 3
       },
       {
-        "multipleValues": [],
         "_id": "60ae3842a81a5d534cbcfb23",
         "type": "REVIEWS",
         "text": "Qual a possibilidade de voltar a utilizar os serviços?",
