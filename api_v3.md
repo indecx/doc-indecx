@@ -245,14 +245,12 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
          "feedback": "O atendimento poderia ser melhor",
          "additionalQuestions": [
             {
-               "multipleValues": [],
                "_id": "60b690786b90df6a1c0c25c7",
                "type": "REVIEWS",
                "text": "Atendimento",
                "review": 5
             },
             {
-               "multipleValues": [],
                "_id": "60b690786b90df6a1c0c25c8",
                "type": "CSAT",
                "text": "Prazo",
