@@ -226,6 +226,8 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
          "date": "2021-06-01T18:46:17.374Z",
          "answerDate": "2021-06-01T18:46:17.374Z",
          "anonymousResponse": false,
+         "partialSaved": false,
+         "partialCompleted": false,
          "clientId": null,
          "categories": [
             {
@@ -446,6 +448,8 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
 | date  | Data e hora da resposta  |
 | answerDate  | Data e hora da resposta  |
 | anonymousResponse  | Identificação se o cliente quis se identificar ou não.  |
+| partialSaved | Indica se resposta está em uma ação com funcionaidade de parcial |
+| partialCompleted | Indica se resposta está salva parcial ou não |
 | clientId  | Identificador único do cliente   |
 | name  | Nome do cliente   |
 | email  | E-mail do cliente   |
