@@ -199,6 +199,7 @@ https://indecx.com/v3/integrations/answers-info/[Identificador_da_acao]?[params]
 | dateType  | Tipo da data createdAt (criação da pesquisa) ou updatedAt (Atualização da pesquisa)  |
 | email  | Parâmetro de email do respondente  |
 | phone  | Parâmetro de telefone do respondente  |
+| clientId  | Parâmetro do código do cliente  |
 
 Obs: Para o valor [Identificador_da_acao] pode ser utilzado o parâmetro "/all" para retornar todas as resposta de todas as ações disponíveis.
 
