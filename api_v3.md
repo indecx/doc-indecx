@@ -1092,7 +1092,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | indicators.column  | Nome do indicador  |
 | indicators.value  | Valor do indicador  |
 
-*Importante: O campo inviteId somente é utilizado quando utilizamos uma conbinação da API de geração de link + API de resposta transacional, não sendo obrigatório para casos de inclusão simples de resposta. Para mais informações de como utilizar o inviteId, entre em contato com o time de suporte da Indecx.
+*Importante: O campo inviteId somente é utilizado quando utilizamos uma combinação da API de geração de link + API de resposta transacional, não sendo obrigatório para casos de inclusão simples de resposta. Para mais informações de como utilizar o inviteId, entre em contato com o time de suporte da Indecx.
 
 ## Entendendo as opções de respostas por tipo
 
