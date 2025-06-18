@@ -343,90 +343,6 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
                         "text": "Motivo 3"
                      }
                   ]
-               },
-               {
-                  "id": "1729542407943",
-                  "text": "Multipla com sub",
-                  "type": "MULTIPLE",
-                  "choices": [
-                     {
-                        "choice": {
-                           "id": "42419980793614",
-                           "text": "1"
-                        },
-                        "subchoices": [
-                           {
-                              "id": "42429126886992",
-                              "text": "1.1"
-                           }
-                        ]
-                     }
-                  ]
-               },
-               {
-                  "id": "1740502858239",
-                  "text": "Pergunta do tipo review",
-                  "type": "REVIEWS",
-                  "review": 5
-               },
-               {
-                  "id": "1740502868672",
-                  "text": "Pergunta do tipo escala 0 - 10",
-                  "type": "CSAT",
-                  "review": 10
-               },
-               {
-                  "id": "1740502885619",
-                  "text": "Pergunta do tipo likert",
-                  "type": "LIKERT",
-                  "review": 5
-               },
-               {
-                  "id": "1740502893953",
-                  "text": "Pergunta do tipo emotion",
-                  "type": "EMOTION",
-                  "review": 1
-               },
-               {
-                  "id": "1740502905236",
-                  "text": "Pergunta do tipo likert/emotion",
-                  "type": "LIKERT/EMOTION",
-                  "review": 5
-               },
-               {
-                  "id": "1740502921836",
-                  "text": "Pergunta tipo NPS",
-                  "type": "NPS",
-                  "review": 10
-               },
-               {
-                  "id": "1740502929617",
-                  "text": "Pergunta tipo Like/Dislike",
-                  "type": "LIKE/DISLIKE",
-                  "review": 1
-               },
-               {
-                  "id": "1740502942834",
-                  "text": "Pergunta aberta",
-                  "type": "INPUT"
-               },
-               {
-                  "id": "1740502951717",
-                  "text": "Pergunta tipo CES 1 - 5",
-                  "type": "CES",
-                  "review": 5
-               },
-               {
-                  "id": "1740502966633",
-                  "text": "Pergunta tipo CSAT 1 - 5",
-                  "type": "CSAT-1-5",
-                  "review": 5
-               },
-               {
-                  "id": "1740502979349",
-                  "text": "Pergunta tipo CES 1 - 7",
-                  "type": "CES17",
-                  "review": 7
                }
             ]
          },
@@ -434,11 +350,50 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
          "browser_name": "Chrome",
          "system_name": "Windows",
          "platform_type": "desktop"
+      },
+      {
+         "_id": "70c680790be5ec68f9aaa9bc",
+         "active": true,
+         "date": "2021-06-02T10:30:20.500Z",
+         "answerDate": "2021-06-02T10:30:20.500Z",
+         "anonymousResponse": false,
+         "partialSaved": false,
+         "partialCompleted": false,
+         "clientId": null,
+         "categories": [],
+         "tags": [],
+         "subTags": [],
+         "deleted": false,
+         "name": "Cliente Pesquisa Exploratória",
+         "email": "cliente@example.com",
+         "phone": 11988776655,
+         "additionalQuestions": [
+            {
+               "_id": "70c690786b90df6a1c0c26d8",
+               "type": "INPUT",
+               "text": "Qual sua opinião sobre nosso produto?",
+               "answerText": "Produto muito bom, atende às expectativas"
+            },
+            {
+               "_id": "70c690786b90df6a1c0c26d9",
+               "type": "MULTIPLE",
+               "text": "Quais recursos você mais utiliza?",
+               "multipleValues": ["Recurso A", "Recurso C"]
+            }
+         ],
+         "channel": "email",
+         "companyId": "5edfb0342e03a449708e67df",
+         "actionId": "7074572fa732a85e3683c0a0",
+         "inviteId": "70c66441e4c5236925287a06",
+         "detailsId": "70c66440e4c523692528690b",
+         "indicators": [],
+         "controlId": "EXP123",
+         "metric": "exploratory",
+         "createdAt": "2021-06-02T10:30:20.505Z",
+         "updatedAt": "2021-06-02T10:30:20.705Z"
       }
    ]
 }
-
-
 ```
 
 ## Entendendo os campos de retorno
@@ -455,7 +410,7 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
 | name  | Nome do cliente   |
 | email  | E-mail do cliente   |
 | phone  | Telefone do cliente  |
-| feedback  | Comentário realizado pelo cliente no momento da resposta   |
+| feedback  | Comentário realizado pelo cliente no momento da resposta (não disponível para metric "exploratory")   |
 | transcription  | Transcrição do audio   |
 | categories  | Categorização do comentário (feedback)   |
 | channel  | Canal de coleta da resposta   |
@@ -463,9 +418,9 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
 | actionId  | ID da ação   |
 | inviteId  | ID do convite   |
 | detailsId  | ID dos detalhes da importação   |
-| text  | Pergunta da métrica principal   |
-| review  | Nota atribuida na métrica principal   |
-| metric  | Métrica principal   |
+| text  | Pergunta da métrica principal (não disponível para metric "exploratory")   |
+| review  | Nota atribuida na métrica principal (não disponível para metric "exploratory")   |
+| metric  | Métrica principal (nps-0-10, csat, ces, reviews, exploratory, etc.)   |
 | createdAt  | Data da criação da resposta   |
 | updateAt  | Data de update da resposta   |
 | deleted | Verifica se a resposta foi excluída |
@@ -521,6 +476,8 @@ obs: Para ter o retorno dos detalhes das tratativas adicionar ao header os segui
 | review  | Nota atribuída  |
 | choices.id  | id de controle da alternativa (Apenas para type = MULTIPLE)  |
 | choices.text  | Alternativa respondida (Apenas para type = MULTIPLE  |
+
+**Importante**: Para pesquisas do tipo **exploratory** (pesquisa exploratória), a métrica será retornada como "exploratory".
 
 # GET Coletar Informações dos convites
 ![Badge](https://img.shields.io/badge/GET-invites--info-orange)
@@ -660,7 +617,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 Através desse método, você pode ter acesso a lista de todos os clientes que ainda não responderam a sua pesquisa.
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v3/integrations/[Identificador_da_acao]?[params]
+https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?[params]
 ```
 
 ## Query Params
@@ -714,6 +671,27 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
       "indicators": [],
       "metric": "nps-0-10",
       "createdAt": "2021-05-28T12:21:23.668Z"
+    },
+    {
+      "_id": "70b0e0430ca11b72bbba7727",
+      "answered": false,
+      "resendDates": [],
+      "active": true,
+      "reminderDates": [],
+      "controlId": "2N422K",
+      "actionId": {
+        "name": "Pesquisa Exploratória",
+        "controlId": "EXP001"
+      },
+      "name": "Maria Silva Santos",
+      "email": "maria.santos@email.com",
+      "phone": "5511988776655",
+      "shortUrl": "https://id-cx.co/9KpE6tMM/s",
+      "validEmail": true,
+      "validPhone": true,
+      "indicators": [],
+      "metric": "exploratory",
+      "createdAt": "2021-05-29T14:15:10.890Z"
     }
   ],
   "page": 1,
@@ -740,11 +718,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | validEmail  | Validador do campo e-mail  |
 | validPhone  | Validador do campo telefone |
 | indicators  | Lista dos indicadores atribuídos ao convite   |
-| metric  | Métrica principal do convite   |
-| createdAt  | ???????   |
+| metric  | Métrica principal do convite (nps-0-10, csat, ces, reviews, exploratory, etc.)   |
+| createdAt  | Data de criação do convite   |
 | page  | Paginação do retorno   |
 | limit  | Limite máximo de retorno da consulta    |
 | total  | Total de registros da consulta   |
+
+**Importante**: Para pesquisas do tipo **exploratory** (pesquisa exploratória), o campo `metric` será retornada como "exploratory".
 
 # WEBHOOK Coletar Respostas
 ![Badge](https://img.shields.io/badge/webhook-answers-red)
@@ -970,14 +950,14 @@ https://indecx.com/v3/integrations/create-answer/[Identificador_da_acao]
 ```
 Para que esse recebimento por parte do Indecx seja possível, é necessário ter uma ação criada com as configurações de questionários compatíveis com o que foi respondido pelo cliente.
 
-## **Request**
+## **Request - Pesquisa com Métrica Principal**
 ```javascript
 POST /v3/integrations/create-answer/T0AXXX
 Host: indecx.com
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
 
-  {
+{
    "inviteId":"6143d38aaf080f75ffbdaCCC",
    "name":"José Paulo",
    "email":"jose@gmail.com.br",
@@ -1066,6 +1046,48 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
+## **Request - Pesquisa Exploratória**
+```javascript
+POST /v3/integrations/create-answer/EXP001
+Host: indecx.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
+
+{
+   "inviteId":"7143d38aaf080f75ffbdaEEE",
+   "name":"Maria Silva",
+   "email":"maria@gmail.com.br",
+   "phone":"11988776655",
+   "createdAt":"2025-03-01 15:30:00",
+   "additionalQuestions":[
+      {
+         "type":"INPUT",
+         "text":"Qual sua opinião sobre nosso produto?",
+         "review":"Produto muito bom, atende às expectativas"
+      },
+      {
+         "type":"MULTIPLE",
+         "text":"Quais recursos você mais utiliza?",
+         "review":[
+            "Recurso A",
+            "Recurso C"
+         ]
+      },
+      {
+         "type":"REVIEWS",
+         "text":"Como você avalia nossa interface?",
+         "review":4
+      }
+   ],
+   "indicators":[
+      {
+         "column":"Departamento",
+         "value":"TI"
+      }
+   ]
+}
+```
+
 ## **Response**
 
 ```javascript
@@ -1075,8 +1097,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 }
 ```
 
-
-
 ## Entendendo os campos da requisição
 
 | Params  | Descrição |
@@ -1085,14 +1105,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | name  | Nome do respondente   |
 | email  | E-mail do respondente  |
 | phone  | Telefone do respondente  |
-| review  | Nota atribuída para a métrica principal da pesquisa  |
-| feedback  | Campo de comentário do cliente    |
+| review  | Nota atribuída para a métrica principal da pesquisa (não obrigatório para type "exploratory")  |
+| feedback  | Campo de comentário do cliente (não obrigatório para type "exploratory")    |
 | adittionalQuestions.type  | Tipo da pergunta adicional ex:REVIEWS,CSAT,LIKE/DISLIKE,LIKERT,EMOTION,MULTIPLE,INPUT   |
 | adittionalQuestions.text  | Descrição da pergunta adicional   |
 | indicators.column  | Nome do indicador  |
 | indicators.value  | Valor do indicador  |
 
-*Importante: O campo inviteId somente é utilizado quando utilizamos uma combinação da API de geração de link + API de resposta transacional, não sendo obrigatório para casos de inclusão simples de resposta. Para mais informações de como utilizar o inviteId, entre em contato com o time de suporte da Indecx.
+*Importante: 
+- O campo inviteId somente é utilizado quando utilizamos uma combinação da API de geração de link + API de resposta transacional, não sendo obrigatório para casos de inclusão simples de resposta.
+- Para pesquisas do tipo **exploratory** (pesquisa exploratória), os campos `review` e `feedback` não são obrigatórios e podem ser omitidos da requisição.
+- Para mais informações de como utilizar o inviteId, entre em contato com o time de suporte da Indecx.
 
 ## Entendendo as opções de respostas por tipo
 
@@ -1141,7 +1164,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
     "name": "Ação de pesquisa da área de pós-venda",
     "channel": "emailsms",
     "controlId": "5Q0WB7",
-    "createdAt": "2020-01-15T20:11:59.540Z"
+    "createdAt": "2020-01-15T20:11:59.540Z",
+    "question": "Em uma escala de 0 a 10, quanto você indicaria nossa empresa?"
   },
   {
     "_id": "61a6704c35927d3d11fe18f9"
@@ -1150,113 +1174,22 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
     "name": "Ação de pesquisa da área de Vendas",
     "channel": "emailsms",
     "controlId": "5YSZVS",
-    "createdAt": "2020-01-20T17:16:14.951Z"
+    "createdAt": "2020-01-20T17:16:14.951Z",
+    "question": "Em uma escala de 0 a 10, quanto você indicaria nosso atendimento?"
+  },
+  {
+    "_id": "71a6704c35927d3d11fe19g0"
+    "surveyType": "survey",
+    "type": "exploratory",
+    "name": "Pesquisa Exploratória de Produtos",
+    "channel": "email",
+    "controlId": "EXP001",
+    "createdAt": "2020-01-25T09:30:45.120Z"
   }
 ]
 ```
 
-
-# GET Coletar informações do questionário
-![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Factions--info-orange)
-
-Para ter acesso a estrutura do questionário programado dentro do Indecx. A comunicação será realizada através da seguinte URL:
-
-
-```javascript
-GET /v3/integrations/actions-info/T0AXXX
-Host: indecx.com
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkMmIkMTAkQkxWNENKQVl...
-```
-
-## **Response**
-
-```javascript
-{
-  "_id": "60ae764cec27e759d6268563",
-  "controlId": "PJ48WM",
-  "surveyType": "survey",
-  "name": "Teste ClientID",
-  "type": "nps-0-10",
-  "question": "Em uma escala de 0 a 10, quanto você indicaria a IndeCX para um amigo ou familiar?",
-  "enableAnonymous": null,
-  "adittionalQuestions": [
-    {
-      "type": "REVIEWS",
-      "text": "Atendimento"
-    },
-    {
-      "type": "CSAT",
-      "text": "Prazo"
-    },
-    {
-      "type": "LIKE/DISLIKE",
-      "text": "Satisfação com o produto"
-    },
-    {
-      "type": "LIKERT",
-      "text": "Qual sua avaliação sobre o tema A?"
-    },
-    {
-      "type": "EMOTION",
-      "text": "Foi entregue no prazo?"
-    },
-    {
-      "type": "MULTIPLE",
-      "text": "o que você acha?",
-      "multipleType": "radio",
-      "choices": [
-        {
-          "text": "Opção 1"
-        },
-        {
-          "text": "Opção 2"
-        },
-        {
-          "text": "Opção 3"
-        },
-        {
-          "text": "Opção 4"
-        }
-      ]
-    },
-    {
-      "type": "INPUT",
-      "text": "pergunta Input"
-    }
-  ],
-  "allAnswersRequired": false
-}
-```
-## Entendendo os campos de retorno
-
-| Params  | Descrição |
-| ------------- | ------------- |
-| _id  | ID da ação  |
-| controlId  | Identificador de controle da ação   |
-| resendDates  | Lista de todas as data que houveram reenvio  |
-| surveyType  | tipo do questionário  |
-| name  | Nome do questionário    |
-| type  | Métrica principal do questionário    |
-| question  | Pergunta da métrica principal   |
-| enableAnonymous  | Habilitado opção de anonimização dos dados   |
-| adittionalQuestions.type  | Tipo da pergunta adicional ex:REVIEWS,CSAT,LIKE/DISLIKE,LIKERT,EMOTION,MULTIPLE,INPUT   |
-| adittionalQuestions.text  | Descrição da pergunta adicional   |
-| adittionalQuestions.multipleType  | Tipo de seleção única (radio) ou múltipla escolha (checkbox)  |
-| adittionalQuestions.choices  | Opções de escolha para tipo múltipla.  |
-| allAnswersRequired  | Respostas do tipo obrigatória.  |
-
-## Entendendo as opções de respostas por tipo
-
-| Params  | Descrição |
-| ------------- | ------------- |
-| REVIEWS  | Escala de 5 pontos (1 a 5) na forma "estrela"|
-| CSAT  | Escala de 10 pontos (1 a 10) na forma escala de avaliação  |
-| LIKE/DISLIKE  | Escala boleana (0 e 1) na forma de ícone positivo e negativo  |
-| LIKERT  | Escala de 5 pontos (1 a 5) sendo 1 = "Muito insatisfeito" , 2 = "Insatisfeito", 3 = "Indiferente", 4 = "Satisfeito" e 5 = "Muito Satisfeito" |
-| EMOTION  | Escala boleana (0 e 1) na forma de ícone emoji positivo e negativo   |
-| MULTIPLE  | Escala do tipo seleção única ou múltipla escolha.  |
-| INPUT  | Campo aberto para inclusão de resposta.  |
+**Importante**: Para pesquisas exploratórias, o campo `type` retornará "exploratory".
 
 # POST Envio de cliente para blocklist
 ![Badge](https://img.shields.io/badge/POST-send--blocklist-green)
