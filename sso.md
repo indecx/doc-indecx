@@ -36,7 +36,7 @@ Este guia descreve como configurar **Single Sign-On (SSO) SAML** entre o Microso
 ### 📊 Dados Fornecidos pela INDECX
 | Campo | Valor |
 |-------|-------|
-| **Entity ID (SP EntityID)** | `https://www.app-indecx.com/` |
+| **Entity ID (SP EntityID)** | `https://v3.app-indecx.com/` |
 | **Reply URL / ACS URL** | `https://indecx.com/v2/sso/{mycompany}/acs` |
 
 ### 📤 Dados a Obter do Azure AD
@@ -81,7 +81,7 @@ Tipo: "Integrate any other application you don't find in the gallery (Non-galler
 3. Na seção **Basic SAML Configuration** → **Edit**
 
 ```yaml
-Identifier (Entity ID): https://www.app-indecx.com/
+Identifier (Entity ID): https://v3.app-indecx.com/
 Reply URL (ACS URL): https://indecx.com/v2/sso/{mycompany}/acs
 ```
 
