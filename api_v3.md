@@ -137,22 +137,38 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
       {
          "nome":"ClienteA",
          "email":"ClienteD@gmail.com",
-         "telefone":""
+         "telefone":"",
+         "Filial":"Filial A",
+         "Area":"SP",
+         "Regiao":"Campinas",
+         "Tipo":"Vendas",
       },
       {
          "nome":"ClienteB",
-         "email":"ClienteD@gmail.com",
-         "telefone":""
+         "email":"ClienteB@gmail.com",
+         "telefone":"",
+         "Filial":"Filial B",
+         "Area":"SP",
+         "Regiao":"Campinas",
+         "Tipo":"Vendas",
       },
-		  {
+      {
          "nome":"ClienteC",
-         "email":"ClienteD@gmail.com",
-         "telefone":""
+         "email":"ClienteC@gmail.com",
+         "telefone":"",
+         "Filial":"Filial C",
+         "Area":"SP",
+         "Regiao":"Campinas",
+         "Tipo":"Vendas",
       },
-		  {
+      {
          "nome":"ClienteD",
          "email":"ClienteD@gmail.com",
-         "telefone":""
+         "telefone":"",
+         "Filial":"Filial D",
+         "Area":"SP",
+         "Regiao":"Campinas",
+         "Tipo":"Vendas",
       }
    ]
 }
