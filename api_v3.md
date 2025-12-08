@@ -1822,7 +1822,34 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 | createdAt | Data de criação da ação   |
 | updatedAt | Data de atualização da ação   |
 
+## 🔁 Fluxo de Integração
 
+```mermaid
+sequenceDiagram
+
+    participant Client as ERP / CRM
+    participant Auth as IndeCX Auth
+    participant API as IndeCX API
+    participant Channel as Email/SMS/WhatsApp
+    participant Webhook as Webhook Cliente
+
+    Client->>Auth: POST /authorization/token (company-key)
+    Auth-->>Client: Bearer Token
+
+    Client->>API: GET /actions-info
+    API-->>Client: Lista de ações
+
+    Client->>API: POST /send/{acao}
+    API->>Channel: Envio do convite
+    Channel-->>Client: Convite enviado
+
+    Client-->>API: Responde pesquisa
+
+    API-->>Webhook: Webhook com resposta JSON
+
+    Client->>API: GET /answers-info
+    API-->>Client: Consulta respostas
+```
 
 ### Obrigado 💚
 
