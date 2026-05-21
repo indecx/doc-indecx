@@ -1963,4 +1963,3 @@ sequenceDiagram
 ### Obrigado 💚
 
 Sentiu falta de alguma rota que vai facilitar o seu dia a dia?? Entre em contato com o time de CX da Indecx que desenvolvemos para você! = )
-Atualizado em 09/12/2024
