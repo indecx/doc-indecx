@@ -671,12 +671,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIkM
 
 
 # GET Coletar clientes não respondentes
-![Badge](https://img.shields.io/badge/GET-v3/integrations/%2Fno--response-orange)
+![Badge](https://img.shields.io/badge/GET-v3/integrations%2Fno--response-orange)
 
 Através desse método, você pode ter acesso a lista de todos os clientes que ainda não responderam a sua pesquisa.
 A comunicação será realizada através da seguinte URL:
 ```bash
-https://indecx.com/v3/integrations/[Identificador_da_acao]?[params]
+https://indecx.com/v3/integrations/no-response/[Identificador_da_acao]?[params]
 ```
 
 ## Query Params
