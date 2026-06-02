@@ -1356,7 +1356,7 @@ O campo `date` utiliza padrão UTC, dessa forma possibilita registrar atualizaç
 Exemplo do parâmetro **"2026-05-26T15:56:00"** será registrado nos seguintes horários:
 Brasil 12:56:00 (UTC-3) , EUA Nova York 11:56:00 (UTC-5)
 
-## **Request (Exemplo Bearer Token / v3)**
+## **Request**
 
 ```javascript
 PUT /v3/integrations/feedback-follow-ups HTTP/1.1
