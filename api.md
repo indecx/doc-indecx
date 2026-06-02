@@ -1223,6 +1223,121 @@ API permite ter acesso a lista de todas as unidades cadastradas na plataforma.
 	}
 	]
 ```
+# PUT Atualizar tratativas (Follow-ups)
+
+![Badge](https://img.shields.io/badge/PUT-.v2%2Ffeedback--follow--ups-blue)
+
+Esta API permite a atualização em lote de dados relacionados à tratativa (follow-up) de respostas da pesquisa. Você pode alterar o campo de **status**, modificar ou remover o **responsável** (responsible), alterar os **seguidores** (followers), atribuir **comentários** (comment) na timeline da tratativa e associar **tags/subtags** a uma ou mais respostas via API.
+
+A comunicação será realizada através da seguinte URL:
+
+```bash
+https://indecx.com/v2/feedback-follow-ups
+```
+
+A API recebe um JSON contendo uma lista (`answers`). Cada objeto da lista corresponde aos dados a serem atualizados em uma resposta específica.
+
+## JSON Configuração
+
+**Importante**
+Apenas o campo `answerId` é obrigatório em cada objeto do array `answers`. Os campos `status`, `responsible`, `followers`, `comment`, `tags` e `date` são totalmente independentes; envie apenas o que desejar atualizar na requisição.
+
+- **Limites de requisição:** A chamada à API suporta no máximo 100 objetos _answers_ por requisição. São permitidas 20 requisições simultâneas por segundo por company-key.
+- **Tipos de dados aceitos:**
+  - `answerId`: _String_ - Identificador da resposta na Indecx. Pode ser enviado tanto no formato do `_id` (Ex: `69a989ee38b677001aa10df2`) quanto do `controlId` (Ex: `ILRN21D1`).
+  - `status`: _String_ - O nome do novo status da tratativa. A string sofrerá uma normalização textual para encontrar o valor correto definido nas parametrizações da sua conta. Os status padrão são: `aberto`, `em_analise`, `escalonada`, e `respondido`.
+  - `responsible`: _String_ - Email do usuário já existente responsável pela tratativa. Envie string vazia `""` para remover totalmente um responsável atual da tratativa e desvincula-lo.
+  - `followers`: _Array de string_ (`["email1", "email2"]`) com emails de seguidores que devem acompanhar a tratativa. Para remover todos os seguidores, envie um array vazio `[]`.
+  - `comment`: _String_ - Texto contendo um comentário aberto para constar na timeline da resposta. Limite restrito a 5000 chars.
+  - `tags`: _Array de objetos JSON_ especificando as tags e (opcionalmente) subTags com base na árvore de tags cadastrada na ação. Ex: `[{"tag": "Sem contato", "subTag": "Dificuldade de contato"}]`.
+  - `date`: _String_ - Data de referência da atualização no padrão UTC (Ex: `"2026-05-26T15:56:00"`). Quando informado, esse valor é utilizado como timestamp base para todas as alterações registradas no objeto: data de início da tratativa, data da última atualização, data de resolução (status `respondido`), data de reabertura (status `reaberto`) e o timestamp dos eventos inseridos na timeline de notificações. Quando omitido, a data/hora corrente do processamento da requisição é utilizada automaticamente.
+
+**Importante:**
+O campo `date` utiliza padrão UTC, dessa forma possibilita registrar atualizações com horários locais de outros países.
+Exemplo do parâmetro **"2026-05-26T15:56:00"** será registrado nos seguintes horários:
+Brasil 12:56:00 (UTC-3) , EUA Nova York 11:56:00 (UTC-5)
+
+## **Request**
+
+```javascript
+PUT /v2/feedback-follow-ups HTTP/1.1
+Host: indecx.com
+Content-Type: application/json
+company-key: $2b$10$BLV4CJAYKSTkktvkJTCVj.dM4H3lHKyiSjoRt3npXGxcNljXXXXX
+{
+    "answers": [
+        {
+            "answerId": "69a989ee38b677001aa10df2",
+            "status": "em_analise",
+            "comment": "Não conseguimos contato com o cliente, vamos ligar novamente ao final do mês",
+            "responsible": "joao.silva@empresa.com.br",
+            "followers": ["maria.souza@empresa.com.br", "pedro.sanches@empresa.com.br"],
+            "tags": [
+                { "tag": "Sem contato", "subTag": "Dificuldade de contato" }
+            ],
+            "date": "2026-05-26T15:56:00"
+        },
+        {
+            "answerId": "ILRN21D1",
+            "responsible": "",
+            "followers": []
+        }
+    ]
+}
+```
+
+## **Response**
+
+```javascript
+{
+    "answers": [
+        {
+            "answerId": "6a0b266d211f890013db3379",
+            "status": "OK",
+            "comment": "OK",
+            "responsible": "OK",
+            "followers": "OK",
+            "tags": "OK",
+            "message": "Tratativa atualizada com sucesso"
+        },
+        {
+            "answerId": "6a0de79935e5d1001aed2d0b",
+            "responsible": "OK",
+            "followers": "OK",
+            "message": "Tratativa atualizada com sucesso"
+        }
+    ]
+}
+```
+
+**Retornos possíveis (HTTP Status)**
+| Código | Descrição |
+| ------------- | ------------- |
+| 200 | OK - Requisição aceita com sucesso e array answers validado. |
+| 400 | Excedeu o limite de 100 objetos de resposta no body da mensagem. |
+| 401 | Api key is missing / Company not found / Invalid api key / Unauthorized. |
+| 429 | Rate limit exceeded - Foram disparadas mais de 20 conexões API por segundo pelo cliente. |
+| 500 | Internal Server Error |
+
+## Entendendo os dados do Response de Validações e de Retorno (Message)
+
+O corpo de resposta JSON retorna as validações de sucesso e inconsistências detalhadas de forma individual por objeto de resposta modificado da matriz "answers" original que foi despachada para o ENDPOINT.
+
+- **Formatação**: Status **"OK"** sinaliza sucesso absoluto no campo. Inconsistências retornam textos em _Strings_.
+- **Validações Por Campo**:
+  - `status`: _"Status não cadastrado na conta"_. A string enviada não corresponde aos padrões básicos e em nem status de tratativa customizados cadastrados na aba configurações.
+  - `comment`: _"Limite de caracteres ultrapassado"_. Extrapolou a regra dos 5000 caracteres de comprimento da _String_.
+  - `responsible e followers`: _"Usuário inválido"_. O ID de e-mail buscado e mapeado não encontrou conta Indecx configurada em seu respectivo nome para se associar. Podendo retornar _"Formato de array inválido"_ no caso dos follows caso não mande `["email"]`.
+  - `tags`: Árvore de tags não cadastrada na ação ou formato inválido: _"Ação da resposta não possui árvore de tags configurada"_, _"Tag ou SubTag não cadastrada na conta"_ ou _"Formato de array inválido"_.
+  - `answerId`: Retorna que essa resposta foi excluída ou não existe: _"Resposta inválida ou deletada"_.
+
+**Campo Geral Message - Validação Central**
+
+- `Tratativa atualizada com sucesso`: 100% dos parâmetros submetidos daquele objeto retornaram OK para o processador de rotinas API!
+- `Tratativa atualizada parcialmente`: Em cenários em que se atualizaram múltiplos campos, onde alguns retornaram com êxito (OK) enquanto outros campos caíram nos erros descritos anteriormente.
+- `Tratativa já estava atualizada com os mesmos dados`: O payload enviado pela API era inteiramente idêntico ao já guardado e salvo em Banco de Dados naquela AnswerId.
+- `Tratativa não atualizada`: Todos os payloads de mudanças falharam e as antigas persistiram.
+
 
 # PUT Atualizar tratativas (Follow-ups)
 
